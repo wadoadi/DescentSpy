@@ -161,8 +161,8 @@ The app has three tabs:
 - `assets/descentspy_app_icon.png` and platform icon catalogs — custom
   DescentSpy launcher icon for Android and iOS.
 - `lib/settings_page.dart` — appearance and point-search keyboard selection,
-  GPS permission retry, GPS fix diagnostics, and navigation to the point
-  manager.
+  vertical path profile selection, GPS permission retry, GPS fix diagnostics,
+  and navigation to the point manager.
 - `lib/calculations.dart` — pure altitude planning, live rate, GPS groundspeed,
   selectable 3°/5° path profiles, and runway wind calculations. Prefer
   extending/test-driving calculations here rather than embedding formulas in
@@ -176,6 +176,8 @@ The app has three tabs:
 - `assets/UK-VRPs.csv` — user-provided VRP catalogue, declared in
   `pubspec.yaml`.
 - `assets/POINT_DATA_SOURCES.txt` — data source attribution and limitations.
+- `README.md` — user-facing project overview, setup, development, and build
+  instructions.
 - `test/widget_test.dart` — calculation and widget regression tests.
 - `android/app/src/main/AndroidManifest.xml` and `ios/Runner/Info.plist` —
   platform location permissions and user-facing disclosure.
@@ -207,8 +209,16 @@ flutter devices
 flutter run -d <device-id> --debug
 ```
 
+Build release binaries with `flutter build apk --release` on Android or
+`flutter build ios --release` on macOS with Xcode and signing configured. The
+current Android release build uses debug signing; configure production signing
+before distributing it.
+
 The Android Gradle JVM args include
 `--enable-native-access=ALL-UNNAMED` in `android/gradle.properties`.
+
+The user-facing setup, safety, data-source, test, and build overview is in
+`README.md`; keep it aligned with this guide when those details change.
 
 ## Keeping this guide current
 
