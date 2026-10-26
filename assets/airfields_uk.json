@@ -1,0 +1,8154 @@
+[
+  {
+    "name": "Aberdeen International",
+    "kind": "airfield",
+    "lat": 57.2019,
+    "lon": -2.1978,
+    "icao": "EGPD",
+    "size": "large"
+  },
+  {
+    "name": "Aberporth",
+    "kind": "airfield",
+    "lat": 52.1153,
+    "lon": -4.5569,
+    "icao": "EGFA",
+    "size": "small"
+  },
+  {
+    "name": "Andrewsfield",
+    "kind": "airfield",
+    "lat": 51.895,
+    "lon": 0.4492,
+    "icao": "EGSL",
+    "size": "small"
+  },
+  {
+    "name": "Anglesey",
+    "kind": "airfield",
+    "lat": 53.2481,
+    "lon": -4.5353,
+    "icao": "EGOV",
+    "size": "medium"
+  },
+  {
+    "name": "Bagby Thirsk",
+    "kind": "airfield",
+    "lat": 54.2112,
+    "lon": -1.2924,
+    "icao": "EGNG",
+    "size": "small"
+  },
+  {
+    "name": "Barra",
+    "kind": "airfield",
+    "lat": 57.0228,
+    "lon": -7.4431,
+    "icao": "EGPR",
+    "size": "medium"
+  },
+  {
+    "name": "Barrow Walney Island",
+    "kind": "airfield",
+    "lat": 54.1286,
+    "lon": -3.2675,
+    "icao": "EGNL",
+    "size": "medium"
+  },
+  {
+    "name": "Beccles",
+    "kind": "airfield",
+    "lat": 52.4353,
+    "lon": 1.6183,
+    "icao": "EGSM",
+    "size": "small"
+  },
+  {
+    "name": "Bedford",
+    "kind": "airfield",
+    "lat": 52.2307,
+    "lon": -0.4638,
+    "icao": "EGBF",
+    "size": "small"
+  },
+  {
+    "name": "Belfast International",
+    "kind": "airfield",
+    "lat": 54.6575,
+    "lon": -6.2158,
+    "icao": "EGAA",
+    "size": "large"
+  },
+  {
+    "name": "Bembridge",
+    "kind": "airfield",
+    "lat": 50.6781,
+    "lon": -1.1094,
+    "icao": "EGHJ",
+    "size": "small"
+  },
+  {
+    "name": "Benbecula",
+    "kind": "airfield",
+    "lat": 57.4811,
+    "lon": -7.3628,
+    "icao": "EGPL",
+    "size": "medium"
+  },
+  {
+    "name": "Beverley/Linley Hill",
+    "kind": "airfield",
+    "lat": 53.8984,
+    "lon": -0.3614,
+    "icao": "EGNY",
+    "size": "small"
+  },
+  {
+    "name": "Birmingham",
+    "kind": "airfield",
+    "lat": 52.4539,
+    "lon": -1.748,
+    "icao": "EGBB",
+    "size": "large"
+  },
+  {
+    "name": "Blackbushe",
+    "kind": "airfield",
+    "lat": 51.3239,
+    "lon": -0.8475,
+    "icao": "EGLK",
+    "size": "medium"
+  },
+  {
+    "name": "Blackpool",
+    "kind": "airfield",
+    "lat": 53.7717,
+    "lon": -3.0286,
+    "icao": "EGNH",
+    "size": "medium"
+  },
+  {
+    "name": "Bodmin",
+    "kind": "airfield",
+    "lat": 50.4997,
+    "lon": -4.6658,
+    "icao": "EGLA",
+    "size": "small"
+  },
+  {
+    "name": "Bournemouth",
+    "kind": "airfield",
+    "lat": 50.7805,
+    "lon": -1.8396,
+    "icao": "EGHH",
+    "size": "medium"
+  },
+  {
+    "name": "Brighton City",
+    "kind": "airfield",
+    "lat": 50.8356,
+    "lon": -0.2972,
+    "icao": "EGKA",
+    "size": "medium"
+  },
+  {
+    "name": "Brimpton",
+    "kind": "airfield",
+    "lat": 51.3835,
+    "lon": -1.1721,
+    "icao": "EGLP",
+    "size": "small"
+  },
+  {
+    "name": "Bristol",
+    "kind": "airfield",
+    "lat": 51.3823,
+    "lon": -2.7165,
+    "icao": "EGGD",
+    "size": "large"
+  },
+  {
+    "name": "Broadford",
+    "kind": "airfield",
+    "lat": 57.2531,
+    "lon": -5.8278,
+    "icao": "EGEI",
+    "size": "small"
+  },
+  {
+    "name": "Caernarfon",
+    "kind": "airfield",
+    "lat": 53.1018,
+    "lon": -4.3376,
+    "icao": "EGCK",
+    "size": "small"
+  },
+  {
+    "name": "Cambridge City",
+    "kind": "airfield",
+    "lat": 52.205,
+    "lon": 0.175,
+    "icao": "EGSC",
+    "size": "medium"
+  },
+  {
+    "name": "Campbeltown",
+    "kind": "airfield",
+    "lat": 55.4372,
+    "lon": -5.6864,
+    "icao": "EGEC",
+    "size": "medium"
+  },
+  {
+    "name": "Cardiff International",
+    "kind": "airfield",
+    "lat": 51.3967,
+    "lon": -3.3433,
+    "icao": "EGFF",
+    "size": "large"
+  },
+  {
+    "name": "Carlisle Lake District",
+    "kind": "airfield",
+    "lat": 54.9375,
+    "lon": -2.8092,
+    "icao": "EGNC",
+    "size": "medium"
+  },
+  {
+    "name": "Chalgrove",
+    "kind": "airfield",
+    "lat": 51.6761,
+    "lon": -1.0808,
+    "icao": "EGLJ",
+    "size": "small"
+  },
+  {
+    "name": "Challock",
+    "kind": "airfield",
+    "lat": 51.2083,
+    "lon": 0.8292,
+    "icao": "EGKE",
+    "size": "small"
+  },
+  {
+    "name": "City of Derry",
+    "kind": "airfield",
+    "lat": 55.0428,
+    "lon": -7.1611,
+    "icao": "EGAE",
+    "size": "medium"
+  },
+  {
+    "name": "Clacton",
+    "kind": "airfield",
+    "lat": 51.785,
+    "lon": 1.13,
+    "icao": "EGSQ",
+    "size": "small"
+  },
+  {
+    "name": "Coal Aston",
+    "kind": "airfield",
+    "lat": 53.3048,
+    "lon": -1.4289,
+    "icao": "EGCA",
+    "size": "small"
+  },
+  {
+    "name": "Coll",
+    "kind": "airfield",
+    "lat": 56.6019,
+    "lon": -6.6178,
+    "icao": "EGEL",
+    "size": "small"
+  },
+  {
+    "name": "Colonsay",
+    "kind": "airfield",
+    "lat": 56.0575,
+    "lon": -6.2431,
+    "icao": "EGEY",
+    "size": "small"
+  },
+  {
+    "name": "Compton Abbas",
+    "kind": "airfield",
+    "lat": 50.9672,
+    "lon": -2.1536,
+    "icao": "EGHA",
+    "size": "small"
+  },
+  {
+    "name": "Cornwall Newquay",
+    "kind": "airfield",
+    "lat": 50.4406,
+    "lon": -4.9954,
+    "icao": "EGHQ",
+    "size": "medium"
+  },
+  {
+    "name": "Cotswold",
+    "kind": "airfield",
+    "lat": 51.6685,
+    "lon": -2.0566,
+    "icao": "EGBP",
+    "size": "small"
+  },
+  {
+    "name": "Cranfield",
+    "kind": "airfield",
+    "lat": 52.0722,
+    "lon": -0.6167,
+    "icao": "EGTC",
+    "size": "medium"
+  },
+  {
+    "name": "Crowfield",
+    "kind": "airfield",
+    "lat": 52.173,
+    "lon": 1.1106,
+    "icao": "EGSO",
+    "size": "small"
+  },
+  {
+    "name": "Cumbernauld",
+    "kind": "airfield",
+    "lat": 55.9747,
+    "lon": -3.9756,
+    "icao": "EGPG",
+    "size": "small"
+  },
+  {
+    "name": "Damyns Hall",
+    "kind": "airfield",
+    "lat": 51.5276,
+    "lon": 0.2442,
+    "icao": "EGML",
+    "size": "small"
+  },
+  {
+    "name": "Deanland Lewes",
+    "kind": "airfield",
+    "lat": 50.8811,
+    "lon": 0.1543,
+    "icao": "EGKL",
+    "size": "small"
+  },
+  {
+    "name": "Denham",
+    "kind": "airfield",
+    "lat": 51.5883,
+    "lon": -0.5131,
+    "icao": "EGLD",
+    "size": "small"
+  },
+  {
+    "name": "Derby",
+    "kind": "airfield",
+    "lat": 52.8597,
+    "lon": -1.6175,
+    "icao": "EGBD",
+    "size": "small"
+  },
+  {
+    "name": "Dundee",
+    "kind": "airfield",
+    "lat": 56.4525,
+    "lon": -3.0258,
+    "icao": "EGPN",
+    "size": "medium"
+  },
+  {
+    "name": "Dunkeswell",
+    "kind": "airfield",
+    "lat": 50.861,
+    "lon": -3.2339,
+    "icao": "EGTU",
+    "size": "small"
+  },
+  {
+    "name": "Dunsfold",
+    "kind": "airfield",
+    "lat": 51.1172,
+    "lon": -0.5358,
+    "icao": "EGTD",
+    "size": "small"
+  },
+  {
+    "name": "Duxford",
+    "kind": "airfield",
+    "lat": 52.0908,
+    "lon": 0.1319,
+    "icao": "EGSU",
+    "size": "small"
+  },
+  {
+    "name": "Eaglescott",
+    "kind": "airfield",
+    "lat": 50.9287,
+    "lon": -3.9884,
+    "icao": "EGHU",
+    "size": "small"
+  },
+  {
+    "name": "Earls Colne",
+    "kind": "airfield",
+    "lat": 51.9144,
+    "lon": 0.6825,
+    "icao": "EGSR",
+    "size": "small"
+  },
+  {
+    "name": "East Midlands",
+    "kind": "airfield",
+    "lat": 52.8311,
+    "lon": -1.3281,
+    "icao": "EGNX",
+    "size": "large"
+  },
+  {
+    "name": "Eday",
+    "kind": "airfield",
+    "lat": 59.1906,
+    "lon": -2.7722,
+    "icao": "EGED",
+    "size": "medium"
+  },
+  {
+    "name": "Edinburgh",
+    "kind": "airfield",
+    "lat": 55.9501,
+    "lon": -3.3723,
+    "icao": "EGPH",
+    "size": "large"
+  },
+  {
+    "name": "Elmsett",
+    "kind": "airfield",
+    "lat": 52.0755,
+    "lon": 0.9777,
+    "icao": "EGST",
+    "size": "small"
+  },
+  {
+    "name": "Elstree",
+    "kind": "airfield",
+    "lat": 51.6558,
+    "lon": -0.3258,
+    "icao": "EGTR",
+    "size": "small"
+  },
+  {
+    "name": "Enniskillen/St Angelo",
+    "kind": "airfield",
+    "lat": 54.3983,
+    "lon": -7.6512,
+    "icao": "EGAB",
+    "size": "medium"
+  },
+  {
+    "name": "Exeter International",
+    "kind": "airfield",
+    "lat": 50.7343,
+    "lon": -3.414,
+    "icao": "EGTE",
+    "size": "medium"
+  },
+  {
+    "name": "Fair Isle",
+    "kind": "airfield",
+    "lat": 59.5347,
+    "lon": -1.6285,
+    "icao": "EGEF",
+    "size": "small"
+  },
+  {
+    "name": "Fairoaks",
+    "kind": "airfield",
+    "lat": 51.3481,
+    "lon": -0.5589,
+    "icao": "EGTF",
+    "size": "small"
+  },
+  {
+    "name": "Farnborough",
+    "kind": "airfield",
+    "lat": 51.2758,
+    "lon": -0.7763,
+    "icao": "EGLF",
+    "size": "medium"
+  },
+  {
+    "name": "Farthing Corner / Stoneacre Farm",
+    "kind": "airfield",
+    "lat": 51.3328,
+    "lon": 0.6011,
+    "icao": "EGMF",
+    "size": "small"
+  },
+  {
+    "name": "Fenland",
+    "kind": "airfield",
+    "lat": 52.7392,
+    "lon": -0.0297,
+    "icao": "EGCL",
+    "size": "small"
+  },
+  {
+    "name": "Feshiebridge Glider Field",
+    "kind": "airfield",
+    "lat": 57.1037,
+    "lon": -3.8917,
+    "icao": "EGZL",
+    "size": "small"
+  },
+  {
+    "name": "Fife",
+    "kind": "airfield",
+    "lat": 56.1833,
+    "lon": -3.2203,
+    "icao": "EGPJ",
+    "size": "small"
+  },
+  {
+    "name": "Fowlmere",
+    "kind": "airfield",
+    "lat": 52.0775,
+    "lon": 0.0617,
+    "icao": "EGMA",
+    "size": "small"
+  },
+  {
+    "name": "Full Sutton",
+    "kind": "airfield",
+    "lat": 53.9806,
+    "lon": -0.8647,
+    "icao": "EGNU",
+    "size": "small"
+  },
+  {
+    "name": "George Best Belfast City",
+    "kind": "airfield",
+    "lat": 54.6181,
+    "lon": -5.8725,
+    "icao": "EGAC",
+    "size": "medium"
+  },
+  {
+    "name": "Glasgow",
+    "kind": "airfield",
+    "lat": 55.8719,
+    "lon": -4.4331,
+    "icao": "EGPF",
+    "size": "large"
+  },
+  {
+    "name": "Glasgow Prestwick",
+    "kind": "airfield",
+    "lat": 55.5015,
+    "lon": -4.5772,
+    "icao": "EGPK",
+    "size": "large"
+  },
+  {
+    "name": "Gloucestershire",
+    "kind": "airfield",
+    "lat": 51.8942,
+    "lon": -2.1672,
+    "icao": "EGBJ",
+    "size": "medium"
+  },
+  {
+    "name": "Goodwood",
+    "kind": "airfield",
+    "lat": 50.8598,
+    "lon": -0.7601,
+    "icao": "EGHR",
+    "size": "small"
+  },
+  {
+    "name": "Haverfordwest",
+    "kind": "airfield",
+    "lat": 51.8331,
+    "lon": -4.9611,
+    "icao": "EGFE",
+    "size": "medium"
+  },
+  {
+    "name": "Hawarden",
+    "kind": "airfield",
+    "lat": 53.1781,
+    "lon": -2.9778,
+    "icao": "EGNR",
+    "size": "medium"
+  },
+  {
+    "name": "Headcorn",
+    "kind": "airfield",
+    "lat": 51.1569,
+    "lon": 0.6417,
+    "icao": "EGKH",
+    "size": "small"
+  },
+  {
+    "name": "Henstridge",
+    "kind": "airfield",
+    "lat": 50.985,
+    "lon": -2.3572,
+    "icao": "EGHS",
+    "size": "small"
+  },
+  {
+    "name": "Humberside",
+    "kind": "airfield",
+    "lat": 53.5762,
+    "lon": -0.3495,
+    "icao": "EGNJ",
+    "size": "medium"
+  },
+  {
+    "name": "Inverness",
+    "kind": "airfield",
+    "lat": 57.5425,
+    "lon": -4.0475,
+    "icao": "EGPE",
+    "size": "medium"
+  },
+  {
+    "name": "Islay",
+    "kind": "airfield",
+    "lat": 55.6827,
+    "lon": -6.2575,
+    "icao": "EGPI",
+    "size": "medium"
+  },
+  {
+    "name": "Isle of Wight/Sandown",
+    "kind": "airfield",
+    "lat": 50.6531,
+    "lon": -1.1822,
+    "icao": "EGHN",
+    "size": "small"
+  },
+  {
+    "name": "Kirkwall",
+    "kind": "airfield",
+    "lat": 58.9579,
+    "lon": -2.9051,
+    "icao": "EGPA",
+    "size": "medium"
+  },
+  {
+    "name": "Land's End",
+    "kind": "airfield",
+    "lat": 50.1028,
+    "lon": -5.6706,
+    "icao": "EGHC",
+    "size": "small"
+  },
+  {
+    "name": "Lasham",
+    "kind": "airfield",
+    "lat": 51.1874,
+    "lon": -1.0317,
+    "icao": "EGHL",
+    "size": "medium"
+  },
+  {
+    "name": "Leeds Bradford",
+    "kind": "airfield",
+    "lat": 53.8659,
+    "lon": -1.6606,
+    "icao": "EGNM",
+    "size": "large"
+  },
+  {
+    "name": "Leeds East",
+    "kind": "airfield",
+    "lat": 53.8347,
+    "lon": -1.1947,
+    "icao": "EGXG",
+    "size": "medium"
+  },
+  {
+    "name": "Leicester",
+    "kind": "airfield",
+    "lat": 52.6066,
+    "lon": -1.0302,
+    "icao": "EGBG",
+    "size": "small"
+  },
+  {
+    "name": "Lerwick / Tingwall",
+    "kind": "airfield",
+    "lat": 60.1922,
+    "lon": -1.2436,
+    "icao": "EGET",
+    "size": "small"
+  },
+  {
+    "name": "Leuchars Station",
+    "kind": "airfield",
+    "lat": 56.374,
+    "lon": -2.8689,
+    "icao": "EGQL",
+    "size": "medium"
+  },
+  {
+    "name": "Little Gransden",
+    "kind": "airfield",
+    "lat": 52.166,
+    "lon": -0.1492,
+    "icao": "EGMJ",
+    "size": "small"
+  },
+  {
+    "name": "Liverpool John Lennon",
+    "kind": "airfield",
+    "lat": 53.3349,
+    "lon": -2.8496,
+    "icao": "EGGP",
+    "size": "large"
+  },
+  {
+    "name": "Llanbedr",
+    "kind": "airfield",
+    "lat": 52.8117,
+    "lon": -4.1236,
+    "icao": "EGFD",
+    "size": "small"
+  },
+  {
+    "name": "London Biggin Hill",
+    "kind": "airfield",
+    "lat": 51.3308,
+    "lon": 0.0325,
+    "icao": "EGKB",
+    "size": "medium"
+  },
+  {
+    "name": "London City",
+    "kind": "airfield",
+    "lat": 51.5053,
+    "lon": 0.0553,
+    "icao": "EGLC",
+    "size": "medium"
+  },
+  {
+    "name": "London Gatwick",
+    "kind": "airfield",
+    "lat": 51.1487,
+    "lon": -0.1857,
+    "icao": "EGKK",
+    "size": "large"
+  },
+  {
+    "name": "London Heathrow",
+    "kind": "airfield",
+    "lat": 51.4707,
+    "lon": -0.4599,
+    "icao": "EGLL",
+    "size": "large"
+  },
+  {
+    "name": "London Luton",
+    "kind": "airfield",
+    "lat": 51.8747,
+    "lon": -0.3683,
+    "icao": "EGGW",
+    "size": "large"
+  },
+  {
+    "name": "London Oxford",
+    "kind": "airfield",
+    "lat": 51.8369,
+    "lon": -1.32,
+    "icao": "EGTK",
+    "size": "medium"
+  },
+  {
+    "name": "London Southend",
+    "kind": "airfield",
+    "lat": 51.5706,
+    "lon": 0.6936,
+    "icao": "EGMC",
+    "size": "medium"
+  },
+  {
+    "name": "London Stansted",
+    "kind": "airfield",
+    "lat": 51.885,
+    "lon": 0.235,
+    "icao": "EGSS",
+    "size": "large"
+  },
+  {
+    "name": "Longside",
+    "kind": "airfield",
+    "lat": 57.5168,
+    "lon": -1.8646,
+    "icao": "EGPS",
+    "size": "small"
+  },
+  {
+    "name": "Lydd London Ashford",
+    "kind": "airfield",
+    "lat": 50.9562,
+    "lon": 0.9391,
+    "icao": "EGMD",
+    "size": "medium"
+  },
+  {
+    "name": "MOD St Athan",
+    "kind": "airfield",
+    "lat": 51.4052,
+    "lon": -3.4333,
+    "icao": "EGDX",
+    "size": "medium"
+  },
+  {
+    "name": "Manchester",
+    "kind": "airfield",
+    "lat": 53.3494,
+    "lon": -2.2795,
+    "icao": "EGCC",
+    "size": "large"
+  },
+  {
+    "name": "Manchester Barton",
+    "kind": "airfield",
+    "lat": 53.4717,
+    "lon": -2.3897,
+    "icao": "EGCB",
+    "size": "small"
+  },
+  {
+    "name": "Marshland",
+    "kind": "airfield",
+    "lat": 52.6436,
+    "lon": 0.295,
+    "icao": "EGSI",
+    "size": "small"
+  },
+  {
+    "name": "Middle Wallop",
+    "kind": "airfield",
+    "lat": 51.1439,
+    "lon": -1.5689,
+    "icao": "EGVP",
+    "size": "small"
+  },
+  {
+    "name": "MoD Boscombe Down",
+    "kind": "airfield",
+    "lat": 51.1522,
+    "lon": -1.7474,
+    "icao": "EGDM",
+    "size": "medium"
+  },
+  {
+    "name": "Netheravon",
+    "kind": "airfield",
+    "lat": 51.2472,
+    "lon": -1.7543,
+    "icao": "EGDN",
+    "size": "small"
+  },
+  {
+    "name": "Netherthorpe",
+    "kind": "airfield",
+    "lat": 53.3172,
+    "lon": -1.1956,
+    "icao": "EGNF",
+    "size": "small"
+  },
+  {
+    "name": "Newcastle International",
+    "kind": "airfield",
+    "lat": 55.038,
+    "lon": -1.6896,
+    "icao": "EGNT",
+    "size": "large"
+  },
+  {
+    "name": "Newmarket Heath",
+    "kind": "airfield",
+    "lat": 52.2351,
+    "lon": 0.3506,
+    "icao": "EGSW",
+    "size": "small"
+  },
+  {
+    "name": "Newtownards",
+    "kind": "airfield",
+    "lat": 54.5811,
+    "lon": -5.6919,
+    "icao": "EGAD",
+    "size": "small"
+  },
+  {
+    "name": "North Ronaldsay",
+    "kind": "airfield",
+    "lat": 59.3675,
+    "lon": -2.4344,
+    "icao": "EGEN",
+    "size": "small"
+  },
+  {
+    "name": "North Weald",
+    "kind": "airfield",
+    "lat": 51.7217,
+    "lon": 0.1542,
+    "icao": "EGSX",
+    "size": "small"
+  },
+  {
+    "name": "Norwich",
+    "kind": "airfield",
+    "lat": 52.6758,
+    "lon": 1.2828,
+    "icao": "EGSH",
+    "size": "medium"
+  },
+  {
+    "name": "Nottingham City",
+    "kind": "airfield",
+    "lat": 52.92,
+    "lon": -1.0792,
+    "icao": "EGBN",
+    "size": "medium"
+  },
+  {
+    "name": "Oaksey Park",
+    "kind": "airfield",
+    "lat": 51.6322,
+    "lon": -2.0147,
+    "icao": "EGTW",
+    "size": "small"
+  },
+  {
+    "name": "Oban",
+    "kind": "airfield",
+    "lat": 56.4635,
+    "lon": -5.3997,
+    "icao": "EGEO",
+    "size": "small"
+  },
+  {
+    "name": "Old Buckenham",
+    "kind": "airfield",
+    "lat": 52.4975,
+    "lon": 1.0519,
+    "icao": "EGSV",
+    "size": "small"
+  },
+  {
+    "name": "Old Sarum",
+    "kind": "airfield",
+    "lat": 51.0989,
+    "lon": -1.7842,
+    "icao": "EGLS",
+    "size": "small"
+  },
+  {
+    "name": "Old Warden",
+    "kind": "airfield",
+    "lat": 52.0846,
+    "lon": -0.3201,
+    "icao": "EGTH",
+    "size": "small"
+  },
+  {
+    "name": "Papa Westray",
+    "kind": "airfield",
+    "lat": 59.351,
+    "lon": -2.9004,
+    "icao": "EGEP",
+    "size": "small"
+  },
+  {
+    "name": "Pembrey West Wales",
+    "kind": "airfield",
+    "lat": 51.7139,
+    "lon": -4.3122,
+    "icao": "EGFP",
+    "size": "small"
+  },
+  {
+    "name": "Perranporth",
+    "kind": "airfield",
+    "lat": 50.3306,
+    "lon": -5.1793,
+    "icao": "EGTP",
+    "size": "small"
+  },
+  {
+    "name": "Perth/Scone",
+    "kind": "airfield",
+    "lat": 56.4392,
+    "lon": -3.3722,
+    "icao": "EGPT",
+    "size": "small"
+  },
+  {
+    "name": "Peterborough Business",
+    "kind": "airfield",
+    "lat": 52.4681,
+    "lon": -0.2511,
+    "icao": "EGSF",
+    "size": "small"
+  },
+  {
+    "name": "Peterborough/Sibson",
+    "kind": "airfield",
+    "lat": 52.5571,
+    "lon": -0.387,
+    "icao": "EGSP",
+    "size": "small"
+  },
+  {
+    "name": "Popham",
+    "kind": "airfield",
+    "lat": 51.1947,
+    "lon": -1.2331,
+    "icao": "EGHP",
+    "size": "small"
+  },
+  {
+    "name": "Predannack",
+    "kind": "airfield",
+    "lat": 50.0012,
+    "lon": -5.2308,
+    "icao": "EGDO",
+    "size": "small"
+  },
+  {
+    "name": "RAF Abingdon",
+    "kind": "airfield",
+    "lat": 51.6906,
+    "lon": -1.3166,
+    "icao": "EGUD",
+    "size": "small"
+  },
+  {
+    "name": "RAF Barkston Heath",
+    "kind": "airfield",
+    "lat": 52.9606,
+    "lon": -0.5594,
+    "icao": "EGYE",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Benson",
+    "kind": "airfield",
+    "lat": 51.6144,
+    "lon": -1.096,
+    "icao": "EGUB",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Brize Norton",
+    "kind": "airfield",
+    "lat": 51.75,
+    "lon": -1.5836,
+    "icao": "EGVN",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Coningsby",
+    "kind": "airfield",
+    "lat": 53.093,
+    "lon": -0.166,
+    "icao": "EGXC",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Cosford",
+    "kind": "airfield",
+    "lat": 52.6405,
+    "lon": -2.3053,
+    "icao": "EGWC",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Cranwell",
+    "kind": "airfield",
+    "lat": 53.0273,
+    "lon": -0.4931,
+    "icao": "EGYD",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Fairford",
+    "kind": "airfield",
+    "lat": 51.6836,
+    "lon": -1.7892,
+    "icao": "EGVA",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Halton",
+    "kind": "airfield",
+    "lat": 51.7907,
+    "lon": -0.738,
+    "icao": "EGWN",
+    "size": "small"
+  },
+  {
+    "name": "RAF Henlow",
+    "kind": "airfield",
+    "lat": 52.0182,
+    "lon": -0.3039,
+    "icao": "EGWE",
+    "size": "small"
+  },
+  {
+    "name": "RAF Honington",
+    "kind": "airfield",
+    "lat": 52.3426,
+    "lon": 0.7729,
+    "icao": "EGXH",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Lakenheath",
+    "kind": "airfield",
+    "lat": 52.4095,
+    "lon": 0.5612,
+    "icao": "EGUL",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Leeming",
+    "kind": "airfield",
+    "lat": 54.2972,
+    "lon": -1.5389,
+    "icao": "EGXE",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Little Rissington",
+    "kind": "airfield",
+    "lat": 51.8665,
+    "lon": -1.695,
+    "icao": "EGVL",
+    "size": "small"
+  },
+  {
+    "name": "RAF Lossiemouth",
+    "kind": "airfield",
+    "lat": 57.7052,
+    "lon": -3.3392,
+    "icao": "EGQS",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Marham",
+    "kind": "airfield",
+    "lat": 52.6484,
+    "lon": 0.5507,
+    "icao": "EGYM",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Mildenhall",
+    "kind": "airfield",
+    "lat": 52.3619,
+    "lon": 0.4864,
+    "icao": "EGUN",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Mona",
+    "kind": "airfield",
+    "lat": 53.2586,
+    "lon": -4.3735,
+    "icao": "EGOQ",
+    "size": "small"
+  },
+  {
+    "name": "RAF Northolt",
+    "kind": "airfield",
+    "lat": 51.553,
+    "lon": -0.4182,
+    "icao": "EGWU",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Odiham",
+    "kind": "airfield",
+    "lat": 51.2341,
+    "lon": -0.9428,
+    "icao": "EGVO",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Shawbury",
+    "kind": "airfield",
+    "lat": 52.7982,
+    "lon": -2.668,
+    "icao": "EGOS",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Spadeadam",
+    "kind": "airfield",
+    "lat": 55.05,
+    "lon": -2.55,
+    "icao": "EGOM",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Syerston",
+    "kind": "airfield",
+    "lat": 53.0228,
+    "lon": -0.9111,
+    "icao": "EGXY",
+    "size": "small"
+  },
+  {
+    "name": "RAF Topcliffe",
+    "kind": "airfield",
+    "lat": 54.2041,
+    "lon": -1.3803,
+    "icao": "EGXZ",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Waddington",
+    "kind": "airfield",
+    "lat": 53.1662,
+    "lon": -0.5238,
+    "icao": "EGXW",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Wittering",
+    "kind": "airfield",
+    "lat": 52.6126,
+    "lon": -0.4765,
+    "icao": "EGXT",
+    "size": "medium"
+  },
+  {
+    "name": "RAF Woodvale",
+    "kind": "airfield",
+    "lat": 53.5816,
+    "lon": -3.0555,
+    "icao": "EGOW",
+    "size": "small"
+  },
+  {
+    "name": "RNAS Culdrose",
+    "kind": "airfield",
+    "lat": 50.0861,
+    "lon": -5.2557,
+    "icao": "EGDR",
+    "size": "medium"
+  },
+  {
+    "name": "RNAS Merryfield",
+    "kind": "airfield",
+    "lat": 50.9643,
+    "lon": -2.9384,
+    "icao": "EGDW",
+    "size": "small"
+  },
+  {
+    "name": "RNAS Yeovilton",
+    "kind": "airfield",
+    "lat": 51.0094,
+    "lon": -2.6388,
+    "icao": "EGDY",
+    "size": "medium"
+  },
+  {
+    "name": "Redhill",
+    "kind": "airfield",
+    "lat": 51.2136,
+    "lon": -0.1386,
+    "icao": "EGKR",
+    "size": "small"
+  },
+  {
+    "name": "Retford Gamston",
+    "kind": "airfield",
+    "lat": 53.2806,
+    "lon": -0.9514,
+    "icao": "EGNE",
+    "size": "small"
+  },
+  {
+    "name": "Rochester",
+    "kind": "airfield",
+    "lat": 51.3519,
+    "lon": 0.5033,
+    "icao": "EGTO",
+    "size": "small"
+  },
+  {
+    "name": "Royal Marines Base Chivenor",
+    "kind": "airfield",
+    "lat": 51.0872,
+    "lon": -4.1503,
+    "icao": "EGDC",
+    "size": "medium"
+  },
+  {
+    "name": "Sanday",
+    "kind": "airfield",
+    "lat": 59.2503,
+    "lon": -2.5767,
+    "icao": "EGES",
+    "size": "small"
+  },
+  {
+    "name": "Sandtoft",
+    "kind": "airfield",
+    "lat": 53.5594,
+    "lon": -0.859,
+    "icao": "EGCF",
+    "size": "small"
+  },
+  {
+    "name": "Seething",
+    "kind": "airfield",
+    "lat": 52.511,
+    "lon": 1.4169,
+    "icao": "EGSJ",
+    "size": "small"
+  },
+  {
+    "name": "Sherburn-in-Elmet",
+    "kind": "airfield",
+    "lat": 53.7885,
+    "lon": -1.2169,
+    "icao": "EGCJ",
+    "size": "small"
+  },
+  {
+    "name": "Shipdham",
+    "kind": "airfield",
+    "lat": 52.6294,
+    "lon": 0.9281,
+    "icao": "EGSA",
+    "size": "small"
+  },
+  {
+    "name": "Shobdon",
+    "kind": "airfield",
+    "lat": 52.2417,
+    "lon": -2.8811,
+    "icao": "EGBS",
+    "size": "small"
+  },
+  {
+    "name": "Skegness (Ingoldmells)",
+    "kind": "airfield",
+    "lat": 53.1716,
+    "lon": 0.3294,
+    "icao": "EGNI",
+    "size": "small"
+  },
+  {
+    "name": "Sleap",
+    "kind": "airfield",
+    "lat": 52.8348,
+    "lon": -2.7703,
+    "icao": "EGCV",
+    "size": "small"
+  },
+  {
+    "name": "Solent",
+    "kind": "airfield",
+    "lat": 50.8142,
+    "lon": -1.2033,
+    "icao": "EGHF",
+    "size": "small"
+  },
+  {
+    "name": "Southampton",
+    "kind": "airfield",
+    "lat": 50.9503,
+    "lon": -1.3568,
+    "icao": "EGHI",
+    "size": "medium"
+  },
+  {
+    "name": "St. Mary's",
+    "kind": "airfield",
+    "lat": 49.9134,
+    "lon": -6.2919,
+    "icao": "EGHE",
+    "size": "small"
+  },
+  {
+    "name": "Stapleford",
+    "kind": "airfield",
+    "lat": 51.6525,
+    "lon": 0.1558,
+    "icao": "EGSG",
+    "size": "small"
+  },
+  {
+    "name": "Stornoway",
+    "kind": "airfield",
+    "lat": 58.2156,
+    "lon": -6.3311,
+    "icao": "EGPO",
+    "size": "medium"
+  },
+  {
+    "name": "Stronsay",
+    "kind": "airfield",
+    "lat": 59.1553,
+    "lon": -2.6414,
+    "icao": "EGER",
+    "size": "small"
+  },
+  {
+    "name": "Strubby",
+    "kind": "airfield",
+    "lat": 53.311,
+    "lon": 0.173,
+    "icao": "EGCG",
+    "size": "small"
+  },
+  {
+    "name": "Sturgate",
+    "kind": "airfield",
+    "lat": 53.3812,
+    "lon": -0.6848,
+    "icao": "EGCS",
+    "size": "small"
+  },
+  {
+    "name": "Sumburgh",
+    "kind": "airfield",
+    "lat": 59.8789,
+    "lon": -1.2956,
+    "icao": "EGPB",
+    "size": "medium"
+  },
+  {
+    "name": "Swansea",
+    "kind": "airfield",
+    "lat": 51.6014,
+    "lon": -4.071,
+    "icao": "EGFH",
+    "size": "medium"
+  },
+  {
+    "name": "Sywell",
+    "kind": "airfield",
+    "lat": 52.3053,
+    "lon": -0.7931,
+    "icao": "EGBK",
+    "size": "small"
+  },
+  {
+    "name": "Tatenhill",
+    "kind": "airfield",
+    "lat": 52.8143,
+    "lon": -1.7679,
+    "icao": "EGBM",
+    "size": "small"
+  },
+  {
+    "name": "Teesside International",
+    "kind": "airfield",
+    "lat": 54.5092,
+    "lon": -1.4294,
+    "icao": "EGNV",
+    "size": "medium"
+  },
+  {
+    "name": "Tern Hill",
+    "kind": "airfield",
+    "lat": 52.8728,
+    "lon": -2.5327,
+    "icao": "EGOE",
+    "size": "small"
+  },
+  {
+    "name": "Thruxton",
+    "kind": "airfield",
+    "lat": 51.2106,
+    "lon": -1.6,
+    "icao": "EGHO",
+    "size": "small"
+  },
+  {
+    "name": "Thurrock",
+    "kind": "airfield",
+    "lat": 51.5375,
+    "lon": 0.3676,
+    "icao": "EGMT",
+    "size": "small"
+  },
+  {
+    "name": "Tilstock",
+    "kind": "airfield",
+    "lat": 52.9324,
+    "lon": -2.6474,
+    "icao": "EGCT",
+    "size": "small"
+  },
+  {
+    "name": "Tiree",
+    "kind": "airfield",
+    "lat": 56.4992,
+    "lon": -6.8692,
+    "icao": "EGPU",
+    "size": "medium"
+  },
+  {
+    "name": "Truro",
+    "kind": "airfield",
+    "lat": 50.2784,
+    "lon": -5.1423,
+    "icao": "EGHY",
+    "size": "small"
+  },
+  {
+    "name": "Turweston",
+    "kind": "airfield",
+    "lat": 52.0408,
+    "lon": -1.0956,
+    "icao": "EGBT",
+    "size": "small"
+  },
+  {
+    "name": "Unst",
+    "kind": "airfield",
+    "lat": 60.7472,
+    "lon": -0.8538,
+    "icao": "EGPW",
+    "size": "small"
+  },
+  {
+    "name": "Upavon",
+    "kind": "airfield",
+    "lat": 51.2866,
+    "lon": -1.7822,
+    "icao": "EGDJ",
+    "size": "small"
+  },
+  {
+    "name": "Warton",
+    "kind": "airfield",
+    "lat": 53.7451,
+    "lon": -2.8831,
+    "icao": "EGNO",
+    "size": "medium"
+  },
+  {
+    "name": "Wattisham",
+    "kind": "airfield",
+    "lat": 52.1275,
+    "lon": 0.9562,
+    "icao": "EGUW",
+    "size": "medium"
+  },
+  {
+    "name": "Wellesbourne Mountford",
+    "kind": "airfield",
+    "lat": 52.1894,
+    "lon": -1.6141,
+    "icao": "EGBW",
+    "size": "small"
+  },
+  {
+    "name": "Welshpool",
+    "kind": "airfield",
+    "lat": 52.6286,
+    "lon": -3.1533,
+    "icao": "EGCW",
+    "size": "small"
+  },
+  {
+    "name": "Westray",
+    "kind": "airfield",
+    "lat": 59.3505,
+    "lon": -2.9501,
+    "icao": "EGEW",
+    "size": "small"
+  },
+  {
+    "name": "Whalsay",
+    "kind": "airfield",
+    "lat": 60.3768,
+    "lon": -0.9272,
+    "icao": "EGEH",
+    "size": "small"
+  },
+  {
+    "name": "White Waltham",
+    "kind": "airfield",
+    "lat": 51.5008,
+    "lon": -0.7744,
+    "icao": "EGLM",
+    "size": "small"
+  },
+  {
+    "name": "Wick John O'Groats",
+    "kind": "airfield",
+    "lat": 58.4589,
+    "lon": -3.0931,
+    "icao": "EGPC",
+    "size": "medium"
+  },
+  {
+    "name": "Wickenby",
+    "kind": "airfield",
+    "lat": 53.3167,
+    "lon": -0.3497,
+    "icao": "EGNW",
+    "size": "small"
+  },
+  {
+    "name": "Wolverhampton Halfpenny Green",
+    "kind": "airfield",
+    "lat": 52.5175,
+    "lon": -2.2594,
+    "icao": "EGBO",
+    "size": "small"
+  },
+  {
+    "name": "Wycombe Air Park",
+    "kind": "airfield",
+    "lat": 51.6118,
+    "lon": -0.8083,
+    "icao": "EGTB",
+    "size": "small"
+  },
+  {
+    "name": "Yeovil/Westland",
+    "kind": "airfield",
+    "lat": 50.94,
+    "lon": -2.6586,
+    "icao": "EGHG",
+    "size": "small"
+  },
+  {
+    "name": "Felthorpe",
+    "kind": "airfield",
+    "lat": 52.7059,
+    "lon": 1.19449,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ledbury Airfield",
+    "kind": "airfield",
+    "lat": 52.0019,
+    "lon": -2.47416,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Milfield Glider Field",
+    "kind": "airfield",
+    "lat": 55.591636,
+    "lon": -2.087231,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bruntingthorpe Aerodrome",
+    "kind": "airfield",
+    "lat": 52.492972,
+    "lon": -1.12509,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Coal Aston Airfield",
+    "kind": "airfield",
+    "lat": 53.304809,
+    "lon": -1.42886,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Fetlar Airstrip",
+    "kind": "airfield",
+    "lat": 60.603333,
+    "lon": -0.872778,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Fishburn Airfield",
+    "kind": "airfield",
+    "lat": 54.686798,
+    "lon": -1.45831,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kirkbride Airfield",
+    "kind": "airfield",
+    "lat": 54.882099,
+    "lon": -3.204731,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Draycot Farm Aerodrome",
+    "kind": "airfield",
+    "lat": 51.493401,
+    "lon": -1.74382,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Causeway Airfield",
+    "kind": "airfield",
+    "lat": 55.058817,
+    "lon": -6.58439,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Aboyne Airfield",
+    "kind": "airfield",
+    "lat": 57.075003,
+    "lon": -2.839832,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Spanhoe Airfield",
+    "kind": "airfield",
+    "lat": 52.558264,
+    "lon": -0.620132,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Aston Down Airfield",
+    "kind": "airfield",
+    "lat": 51.708056,
+    "lon": -2.130556,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bidford Airfield",
+    "kind": "airfield",
+    "lat": 52.137778,
+    "lon": -1.850278,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Brent Tor Glider Field",
+    "kind": "airfield",
+    "lat": 50.5925,
+    "lon": -4.145278,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bryngwyn Bach Airfield",
+    "kind": "airfield",
+    "lat": 53.270314,
+    "lon": -3.355823,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Burn Airfield",
+    "kind": "airfield",
+    "lat": 53.747511,
+    "lon": -1.085806,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Camphill Airfield",
+    "kind": "airfield",
+    "lat": 53.305,
+    "lon": -1.731389,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bristol and Gloucestershire Gliding Club",
+    "kind": "airfield",
+    "lat": 51.713682,
+    "lon": -2.283697,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Shenstone Hall Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.639565,
+    "lon": -1.821718,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Croft Farm Airfield",
+    "kind": "airfield",
+    "lat": 52.085667,
+    "lon": -2.135722,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Dorset Gliding Club (Eyres Field)",
+    "kind": "airfield",
+    "lat": 50.708933,
+    "lon": -2.219496,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Newton Peveril Airfield",
+    "kind": "airfield",
+    "lat": 50.794959,
+    "lon": -2.096689,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stancombe Farm Airstrip (Private)",
+    "kind": "airfield",
+    "lat": 50.72453,
+    "lon": -2.634466,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Melbury Airstrip",
+    "kind": "airfield",
+    "lat": 50.879714,
+    "lon": -2.617745,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Langar Airfield",
+    "kind": "airfield",
+    "lat": 52.89593,
+    "lon": -0.90101,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Middle Pymore Farm Airstrip (Private)",
+    "kind": "airfield",
+    "lat": 50.751282,
+    "lon": -2.759542,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bath Wilts & North Dorset Gliding Club",
+    "kind": "airfield",
+    "lat": 51.128899,
+    "lon": -2.246017,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Heywood Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.003954,
+    "lon": -3.240817,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cottage Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.669634,
+    "lon": -1.523465,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Old Park Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.546906,
+    "lon": -3.717291,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Horse Leys Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.785362,
+    "lon": -1.096752,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "White Ox Mead Airstrip",
+    "kind": "airfield",
+    "lat": 51.319857,
+    "lon": -2.400939,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Eshott Airfield",
+    "kind": "airfield",
+    "lat": 55.280484,
+    "lon": -1.714897,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lower Upham Airfield",
+    "kind": "airfield",
+    "lat": 50.972508,
+    "lon": -1.248493,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lower Upham Farm Aerodrome",
+    "kind": "airfield",
+    "lat": 51.496695,
+    "lon": -1.712708,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Clench Common Airfield",
+    "kind": "airfield",
+    "lat": 51.390238,
+    "lon": -1.733427,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Keyston Airfield",
+    "kind": "airfield",
+    "lat": 52.367395,
+    "lon": -0.478239,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Northrepps Aerodrome",
+    "kind": "airfield",
+    "lat": 52.893807,
+    "lon": 1.32106,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Easter Airfield",
+    "kind": "airfield",
+    "lat": 57.753343,
+    "lon": -3.94279,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bowerswaine Farm Airfield",
+    "kind": "airfield",
+    "lat": 50.889923,
+    "lon": -1.985821,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wing Farm Airfield",
+    "kind": "airfield",
+    "lat": 51.163355,
+    "lon": -2.208607,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Colemore Farm Airfield",
+    "kind": "airfield",
+    "lat": 51.060926,
+    "lon": -1.010742,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Eggesford Airfield",
+    "kind": "airfield",
+    "lat": 50.866839,
+    "lon": -3.86312,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lower Manor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.627441,
+    "lon": -2.51853,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Yatesbury Airfield",
+    "kind": "airfield",
+    "lat": 51.43182,
+    "lon": -1.910401,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Milton Airfield",
+    "kind": "airfield",
+    "lat": 52.584698,
+    "lon": -0.329528,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Roche Barton Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.419951,
+    "lon": -4.805554,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Walton Wood Airfield",
+    "kind": "airfield",
+    "lat": 53.629285,
+    "lon": -1.26554,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Boston Aerodrome",
+    "kind": "airfield",
+    "lat": 52.974601,
+    "lon": -0.071828,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Steventon Private Airstrip",
+    "kind": "airfield",
+    "lat": 51.620986,
+    "lon": -1.344431,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Porthtowan Airfield",
+    "kind": "airfield",
+    "lat": 50.285065,
+    "lon": -5.228403,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Branscombe Airfield",
+    "kind": "airfield",
+    "lat": 50.697839,
+    "lon": -3.15566,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Farway Common Airfield",
+    "kind": "airfield",
+    "lat": 50.735827,
+    "lon": -3.179173,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Audley End Airfield",
+    "kind": "airfield",
+    "lat": 52.007042,
+    "lon": 0.224104,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Eddsfield Airfield",
+    "kind": "airfield",
+    "lat": 54.111252,
+    "lon": -0.461929,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Egerton Airfield",
+    "kind": "airfield",
+    "lat": 51.188302,
+    "lon": 0.684844,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "High Easter Airfield",
+    "kind": "airfield",
+    "lat": 51.806235,
+    "lon": 0.341105,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hibaldstow Airfield",
+    "kind": "airfield",
+    "lat": 53.495814,
+    "lon": -0.516922,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hinton-in-the-Hedges Airfield",
+    "kind": "airfield",
+    "lat": 52.028717,
+    "lon": -1.207157,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Elvington Airfield",
+    "kind": "airfield",
+    "lat": 53.922976,
+    "lon": -0.993347,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lane Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.115802,
+    "lon": -3.196275,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Finmere Aerodrome",
+    "kind": "airfield",
+    "lat": 51.985282,
+    "lon": -1.056383,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Great Massingham Airfield",
+    "kind": "airfield",
+    "lat": 52.781793,
+    "lon": 0.679607,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Manor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.307821,
+    "lon": -1.673527,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Staindrop Private Airstrip",
+    "kind": "airfield",
+    "lat": 54.57053,
+    "lon": -1.792738,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bolt Head Airfield",
+    "kind": "airfield",
+    "lat": 50.22383,
+    "lon": -3.801637,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Knockrome Airstrip",
+    "kind": "airfield",
+    "lat": 55.87265,
+    "lon": -5.921757,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Oxenhope Airfield",
+    "kind": "airfield",
+    "lat": 53.813771,
+    "lon": -1.933598,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wigtown Airfield",
+    "kind": "airfield",
+    "lat": 54.8527,
+    "lon": -4.442,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Glassonby Airfield",
+    "kind": "airfield",
+    "lat": 54.737994,
+    "lon": -2.651861,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Berrier Airstrip",
+    "kind": "airfield",
+    "lat": 54.656504,
+    "lon": -2.93365,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bedlands Gate Airfield",
+    "kind": "airfield",
+    "lat": 54.570822,
+    "lon": -2.671125,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Jackrells Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.032542,
+    "lon": -0.330362,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Great Oakley Airfield",
+    "kind": "airfield",
+    "lat": 51.912343,
+    "lon": 1.182142,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wombleton Airfield",
+    "kind": "airfield",
+    "lat": 54.231147,
+    "lon": -0.974655,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Strathaven Airfield",
+    "kind": "airfield",
+    "lat": 55.679968,
+    "lon": -4.113381,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "East Fortune Airfield",
+    "kind": "airfield",
+    "lat": 56.000849,
+    "lon": -2.735324,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "East Kirkby Airfield",
+    "kind": "airfield",
+    "lat": 53.13758,
+    "lon": 0.002098,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Willow Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.421725,
+    "lon": -0.910137,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Weybourne Airstrip",
+    "kind": "airfield",
+    "lat": 52.947824,
+    "lon": 1.1232,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wadswick Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.411085,
+    "lon": -2.220385,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bellarena Airfield",
+    "kind": "airfield",
+    "lat": 55.139413,
+    "lon": -6.969049,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Black Spring Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.780593,
+    "lon": -0.527873,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Caunton Airfield",
+    "kind": "airfield",
+    "lat": 53.118159,
+    "lon": -0.893483,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cuckoo Tye Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.068223,
+    "lon": 0.736201,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cruglas Synod Inn Airstrip",
+    "kind": "airfield",
+    "lat": 52.129609,
+    "lon": -4.366433,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ditton Priors Airstrip",
+    "kind": "airfield",
+    "lat": 52.503434,
+    "lon": -2.562513,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "East Winch Airstrip",
+    "kind": "airfield",
+    "lat": 52.72397,
+    "lon": 0.524011,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Easton Maudit Airstrip",
+    "kind": "airfield",
+    "lat": 52.213547,
+    "lon": -0.70149,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Midland Glider Club",
+    "kind": "airfield",
+    "lat": 52.514838,
+    "lon": -2.878761,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Park Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.882421,
+    "lon": -0.608161,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Priory Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.452504,
+    "lon": 1.130862,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Sittles Farm Airfield",
+    "kind": "airfield",
+    "lat": 52.707127,
+    "lon": -1.750055,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hanley Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.298995,
+    "lon": -2.469511,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Glenswinton Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.047763,
+    "lon": -4.031649,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Insch Airstrip",
+    "kind": "airfield",
+    "lat": 57.310997,
+    "lon": -2.648415,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Westonzoyland Airfield",
+    "kind": "airfield",
+    "lat": 51.10684,
+    "lon": -2.908688,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Plaistows Airfield",
+    "kind": "airfield",
+    "lat": 51.728167,
+    "lon": -0.380173,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Nantclwyd Airstrip",
+    "kind": "airfield",
+    "lat": 53.063218,
+    "lon": -3.32298,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wingland Airfield",
+    "kind": "airfield",
+    "lat": 52.814181,
+    "lon": 0.113048,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Thornborough Grounds Airstrip",
+    "kind": "airfield",
+    "lat": 52.005948,
+    "lon": -0.935376,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Watchford Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.9023839,
+    "lon": -3.0981345,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Twycross (Gopsall House) Airstrip",
+    "kind": "airfield",
+    "lat": 52.643194,
+    "lon": -1.471772,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Whitehill Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.097053,
+    "lon": 0.016454,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pear Tree Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.903206,
+    "lon": -1.076158,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Jericho Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.01043,
+    "lon": -1.057198,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Jubilee Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.630789,
+    "lon": 0.064125,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ashley's Field Airstrip",
+    "kind": "airfield",
+    "lat": 53.219069,
+    "lon": 0.270528,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Clutton Hill Airstrip",
+    "kind": "airfield",
+    "lat": 51.341508,
+    "lon": -2.522674,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rayne Hall Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.885498,
+    "lon": 0.522122,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Spence Airfield",
+    "kind": "airfield",
+    "lat": 51.839053,
+    "lon": -2.59089,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Sandhill Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.605203,
+    "lon": -1.674562,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tower Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.259481,
+    "lon": -0.655653,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pent Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.109091,
+    "lon": 1.053118,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Holly Meadow Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.004871,
+    "lon": -1.656872,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stoodleigh Barton Private Airstrip",
+    "kind": "airfield",
+    "lat": 50.957271,
+    "lon": -3.530185,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Talybont Airstrip",
+    "kind": "airfield",
+    "lat": 52.61241,
+    "lon": -4.075038,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "North Moor Aero Club Airfield",
+    "kind": "airfield",
+    "lat": 53.534129,
+    "lon": -0.6848,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Redmoor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.840335,
+    "lon": -0.971795,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Oaklands Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.847169,
+    "lon": -1.439688,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Berrow Airstrip",
+    "kind": "airfield",
+    "lat": 52.000922,
+    "lon": -2.356869,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stoney Lane Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.331893,
+    "lon": -1.994214,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Old Hay Airfield",
+    "kind": "airfield",
+    "lat": 51.178758,
+    "lon": 0.425623,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Laddingford Aerodrome",
+    "kind": "airfield",
+    "lat": 51.1914,
+    "lon": 0.411277,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "High Cross Airstrip",
+    "kind": "airfield",
+    "lat": 51.850634,
+    "lon": -0.003405,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kingsmuir Airfield",
+    "kind": "airfield",
+    "lat": 56.268957,
+    "lon": -2.750857,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Little Chase Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.357289,
+    "lon": -1.622811,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wild Geese Skydive Centre",
+    "kind": "airfield",
+    "lat": 54.987625,
+    "lon": -6.644028,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Whiterashes Farm Airstrip",
+    "kind": "airfield",
+    "lat": 57.319016,
+    "lon": -2.248819,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Grove Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.31413,
+    "lon": -0.866172,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Nuthampstead Airstrip",
+    "kind": "airfield",
+    "lat": 51.995294,
+    "lon": 0.070144,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Melrose Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.868434,
+    "lon": -0.837945,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Peterlee Airfield",
+    "kind": "airfield",
+    "lat": 54.766838,
+    "lon": -1.384377,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wharf Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.627313,
+    "lon": -1.418407,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rufforth East Airfield",
+    "kind": "airfield",
+    "lat": 53.952146,
+    "lon": -1.174893,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Monewden Airstrip",
+    "kind": "airfield",
+    "lat": 52.168089,
+    "lon": 1.260251,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Shacklewell Lodge Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.652515,
+    "lon": -0.570994,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Chirk Airfield",
+    "kind": "airfield",
+    "lat": 52.947437,
+    "lon": -3.046047,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Crowland Glider Field",
+    "kind": "airfield",
+    "lat": 52.709547,
+    "lon": -0.139669,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Gutchpool Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.057251,
+    "lon": -2.233409,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Gorrel Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.9438009,
+    "lon": -4.386336,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Swanton Morley Airfield",
+    "kind": "airfield",
+    "lat": 52.734804,
+    "lon": 0.962011,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stones Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.989162,
+    "lon": 0.65789,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Clipgate Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.187037,
+    "lon": 1.153392,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Charlton Park Airstrip",
+    "kind": "airfield",
+    "lat": 51.599665,
+    "lon": -2.078113,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Felixkirk Airstrip",
+    "kind": "airfield",
+    "lat": 54.25185,
+    "lon": -1.294692,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Top Farm Airfield",
+    "kind": "airfield",
+    "lat": 52.123039,
+    "lon": -0.117424,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Griffin's Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.077296,
+    "lon": -0.511852,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Peplow Airstrip",
+    "kind": "airfield",
+    "lat": 52.8028279,
+    "lon": -2.5019638,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Long Stratton Airstrip",
+    "kind": "airfield",
+    "lat": 52.4881514,
+    "lon": 1.2165196,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lower Withial Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.125318,
+    "lon": -2.596594,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Upper Harford Airstrip",
+    "kind": "airfield",
+    "lat": 51.888613,
+    "lon": -1.818346,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rosemarket Airstrip",
+    "kind": "airfield",
+    "lat": 51.74526,
+    "lon": -4.9642344,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Westover Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.842154,
+    "lon": -4.167039,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ince Blundell Microlight Airfield",
+    "kind": "airfield",
+    "lat": 53.536226,
+    "lon": -3.031497,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Mitchell's Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.337386,
+    "lon": 0.182883,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kingfisher's Bridge Airstrip",
+    "kind": "airfield",
+    "lat": 52.3305139,
+    "lon": 0.2681335,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Newnham Airstrip",
+    "kind": "airfield",
+    "lat": 52.01986,
+    "lon": -0.167785,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "South Cave / Mount Airy Airfield",
+    "kind": "airfield",
+    "lat": 53.772322,
+    "lon": -0.575937,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Little Staughton Airfield",
+    "kind": "airfield",
+    "lat": 52.242757,
+    "lon": -0.363302,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lydeway Field",
+    "kind": "airfield",
+    "lat": 51.33096,
+    "lon": -1.928939,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lower Grounds Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.735708,
+    "lon": -2.601444,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stow Airstrip",
+    "kind": "airfield",
+    "lat": 53.321569,
+    "lon": -0.678138,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Niden Manor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.1258096,
+    "lon": -1.1700706,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stoke Golding Airfield",
+    "kind": "airfield",
+    "lat": 52.5800833,
+    "lon": -1.4313333,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Deenethorpe Airfield",
+    "kind": "airfield",
+    "lat": 52.506271,
+    "lon": -0.589011,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lyveden Airfield",
+    "kind": "airfield",
+    "lat": 52.465318,
+    "lon": -0.574808,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Newnham Grounds Airstrip",
+    "kind": "airfield",
+    "lat": 52.2376234,
+    "lon": -1.1416561,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lark Engine Farmhouse Airstrip",
+    "kind": "airfield",
+    "lat": 52.4226804,
+    "lon": 0.3776757,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Haxey Airstrip",
+    "kind": "airfield",
+    "lat": 53.4924766,
+    "lon": -0.8143633,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hatton Airstrip",
+    "kind": "airfield",
+    "lat": 57.4067508,
+    "lon": -1.9115685,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hall Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.300953,
+    "lon": 0.274894,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Charterhall Airfield",
+    "kind": "airfield",
+    "lat": 55.707598,
+    "lon": -2.378504,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Castle Kennedy Airfield",
+    "kind": "airfield",
+    "lat": 54.897551,
+    "lon": -4.936961,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Finningley Village Airstrip",
+    "kind": "airfield",
+    "lat": 53.5081624,
+    "lon": -0.9409418,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Garforth Airstrip",
+    "kind": "airfield",
+    "lat": 53.790653,
+    "lon": -1.356093,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Midlem Airstrip",
+    "kind": "airfield",
+    "lat": 55.540033,
+    "lon": -2.74271,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Milden Airstrip",
+    "kind": "airfield",
+    "lat": 52.069747,
+    "lon": 0.857061,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Little Down Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.361079,
+    "lon": -2.545702,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Upwood Glider Field",
+    "kind": "airfield",
+    "lat": 52.437321,
+    "lon": -0.142813,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ranston Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.915376,
+    "lon": -2.184233,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "East Lochlane Farm Airstrip",
+    "kind": "airfield",
+    "lat": 56.3678531,
+    "lon": -3.8722739,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Halwell Airstrip",
+    "kind": "airfield",
+    "lat": 50.365216,
+    "lon": -3.707156,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Green Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.1600872,
+    "lon": -1.5481724,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Nayland Airstrip",
+    "kind": "airfield",
+    "lat": 51.974486,
+    "lon": 0.849895,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Great Ashfield Airstrip",
+    "kind": "airfield",
+    "lat": 52.256084,
+    "lon": 0.932766,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Claybrooke Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.509143,
+    "lon": -1.279523,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Croft Airstrip",
+    "kind": "airfield",
+    "lat": 53.123123,
+    "lon": 0.252256,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Craysmarsh Airstrip",
+    "kind": "airfield",
+    "lat": 51.363649,
+    "lon": -2.090858,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Haydock Park Airstrip",
+    "kind": "airfield",
+    "lat": 53.478357,
+    "lon": -2.622433,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bryn Gates Airfield",
+    "kind": "airfield",
+    "lat": 53.513189,
+    "lon": -2.625593,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rush Green Airstrip",
+    "kind": "airfield",
+    "lat": 51.904275,
+    "lon": -0.248437,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Otherton Airfield",
+    "kind": "airfield",
+    "lat": 52.709484,
+    "lon": -2.092081,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Napps Field Airstrip",
+    "kind": "airfield",
+    "lat": 51.65625,
+    "lon": 0.42067,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Abergavenny Airstrip",
+    "kind": "airfield",
+    "lat": 51.795023,
+    "lon": -2.994372,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Allensmore Airfield",
+    "kind": "airfield",
+    "lat": 51.989967,
+    "lon": -2.781699,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Archerfield Airstrip",
+    "kind": "airfield",
+    "lat": 56.043574,
+    "lon": -2.801755,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Woodview Airfield",
+    "kind": "airfield",
+    "lat": 54.370158,
+    "lon": -6.59167,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bakersfield Airstrip",
+    "kind": "airfield",
+    "lat": 52.48487,
+    "lon": -0.618103,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Baxterley Aerodrome",
+    "kind": "airfield",
+    "lat": 52.56877,
+    "lon": -1.614299,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Beeches Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.159269,
+    "lon": -0.725236,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Belle Vue Airfield",
+    "kind": "airfield",
+    "lat": 50.976851,
+    "lon": -4.097184,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Benington Airfield",
+    "kind": "airfield",
+    "lat": 51.883113,
+    "lon": -0.123301,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Binstead Airfield",
+    "kind": "airfield",
+    "lat": 50.722077,
+    "lon": -1.204915,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Blair Atholl Airfield",
+    "kind": "airfield",
+    "lat": 56.763509,
+    "lon": -3.825599,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Boughton North Airfield",
+    "kind": "airfield",
+    "lat": 52.590886,
+    "lon": 0.517013,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stoke Ferry Airfield",
+    "kind": "airfield",
+    "lat": 52.584145,
+    "lon": 0.515755,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bowerchalke Airfield",
+    "kind": "airfield",
+    "lat": 50.983648,
+    "lon": -1.991682,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bowldown Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.628872,
+    "lon": -2.237254,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Breidden Airfield",
+    "kind": "airfield",
+    "lat": 52.702036,
+    "lon": -3.092449,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bridlington Airfield",
+    "kind": "airfield",
+    "lat": 54.120749,
+    "lon": -0.236527,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bucknall Airfield",
+    "kind": "airfield",
+    "lat": 53.200044,
+    "lon": -0.253226,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Calcot Airfield",
+    "kind": "airfield",
+    "lat": 51.794453,
+    "lon": -1.835485,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Chipping Airfield",
+    "kind": "airfield",
+    "lat": 53.885042,
+    "lon": -2.620864,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Skelling Farm Glider Field",
+    "kind": "airfield",
+    "lat": 54.697922,
+    "lon": -2.584196,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Garton Field Airstrip",
+    "kind": "airfield",
+    "lat": 53.796785,
+    "lon": -0.091667,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Glebe Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.006495,
+    "lon": -0.690165,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Grangewood Airstrip",
+    "kind": "airfield",
+    "lat": 52.732617,
+    "lon": -1.582621,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Dunnyvadden Airstrip",
+    "kind": "airfield",
+    "lat": 54.8487273,
+    "lon": -6.2069651,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Chilsfold Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.05991,
+    "lon": -0.592954,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bute Airfield",
+    "kind": "airfield",
+    "lat": 55.756777,
+    "lon": -5.047962,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Sandford Hall Airstrip",
+    "kind": "airfield",
+    "lat": 52.804565,
+    "lon": -2.990793,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Brook Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.9192308,
+    "lon": -1.7375729,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cliffe Airstrip",
+    "kind": "airfield",
+    "lat": 53.785797,
+    "lon": -0.999844,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Castlerock Airstrip",
+    "kind": "airfield",
+    "lat": 55.1582291,
+    "lon": -6.7915365,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Exning Airstrip",
+    "kind": "airfield",
+    "lat": 52.2901671,
+    "lon": 0.3698329,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cottered Airstrip",
+    "kind": "airfield",
+    "lat": 51.948102,
+    "lon": -0.098191,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Holmbeck Farm Airfield",
+    "kind": "airfield",
+    "lat": 51.910275,
+    "lon": -0.729577,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stoke Airfield",
+    "kind": "airfield",
+    "lat": 51.4456,
+    "lon": 0.633467,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Chatteris Airfield",
+    "kind": "airfield",
+    "lat": 52.4873,
+    "lon": 0.089111,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Long Acres Farm",
+    "kind": "airfield",
+    "lat": 52.129787,
+    "lon": -0.310853,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Darley Moor Airfield",
+    "kind": "airfield",
+    "lat": 52.9693,
+    "lon": -1.74868,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Derryogue",
+    "kind": "airfield",
+    "lat": 54.0517,
+    "lon": -6.029625,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Decoy Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.865514,
+    "lon": -0.303276,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Shifnal Airfield",
+    "kind": "airfield",
+    "lat": 52.668116,
+    "lon": -2.401969,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Forest Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.669214,
+    "lon": -3.0299325,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Falgunzeon Glider Airfield",
+    "kind": "airfield",
+    "lat": 54.9445493,
+    "lon": -3.7393838,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Yorkshire Gliding Club",
+    "kind": "airfield",
+    "lat": 54.2306616,
+    "lon": -1.2111429,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Croughton Manor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.9878923,
+    "lon": -1.2071769,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Barling Airfield",
+    "kind": "airfield",
+    "lat": 51.569041,
+    "lon": 0.794642,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Latch Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.8742,
+    "lon": -3.45464,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "North Hill Glider Field",
+    "kind": "airfield",
+    "lat": 50.851586,
+    "lon": -3.274816,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Walkeridge Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.2922274,
+    "lon": -1.2482383,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Seighford Glider Field",
+    "kind": "airfield",
+    "lat": 52.827865,
+    "lon": -2.203651,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "North Wales Gliding Club",
+    "kind": "airfield",
+    "lat": 53.043229,
+    "lon": -3.2219454,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Abbots Bromley Airfield",
+    "kind": "airfield",
+    "lat": 52.819638,
+    "lon": -1.900911,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hollym Airfield",
+    "kind": "airfield",
+    "lat": 53.7157,
+    "lon": 0.049669,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pitsford Water Aerodrome",
+    "kind": "airfield",
+    "lat": 52.3153,
+    "lon": -0.871944,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Sutton Meadows Airfield",
+    "kind": "airfield",
+    "lat": 52.38711,
+    "lon": 0.06061,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Coleman Green Airstrip",
+    "kind": "airfield",
+    "lat": 51.7918157,
+    "lon": -0.274944,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pocklington Airfield",
+    "kind": "airfield",
+    "lat": 53.925647,
+    "lon": -0.79432,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "South Wales Gliding Club",
+    "kind": "airfield",
+    "lat": 51.719348,
+    "lon": -2.848748,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Currock Hill Glider Field",
+    "kind": "airfield",
+    "lat": 54.932695,
+    "lon": -1.846739,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Little Snoring Airfield",
+    "kind": "airfield",
+    "lat": 52.860285,
+    "lon": 0.903092,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Main Hall Farm Airfield",
+    "kind": "airfield",
+    "lat": 52.271944,
+    "lon": -0.070833,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Chilbolton Airfield",
+    "kind": "airfield",
+    "lat": 51.136852,
+    "lon": -1.419439,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Saint Michaels Airfield",
+    "kind": "airfield",
+    "lat": 53.8518,
+    "lon": -2.79346,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Chase Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.5681,
+    "lon": -2.38754,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lamb Holm Airfield",
+    "kind": "airfield",
+    "lat": 58.8876,
+    "lon": -2.89184,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Graveley Airstrip",
+    "kind": "airfield",
+    "lat": 51.9407,
+    "lon": -0.203425,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Knockbain Farm Airstrip",
+    "kind": "airfield",
+    "lat": 57.589189,
+    "lon": -4.466958,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Crockham Hill Airfield",
+    "kind": "airfield",
+    "lat": 51.233604,
+    "lon": 0.08001,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hardwicke Airstrip",
+    "kind": "airfield",
+    "lat": 52.0853,
+    "lon": -3.06163,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Harringe Court Airfield",
+    "kind": "airfield",
+    "lat": 51.091745,
+    "lon": 0.988812,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Yearby Airstrip",
+    "kind": "airfield",
+    "lat": 54.5847,
+    "lon": -1.06953,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Southdown Gliding Club",
+    "kind": "airfield",
+    "lat": 50.924053,
+    "lon": -0.474753,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Skydive Strathallan",
+    "kind": "airfield",
+    "lat": 56.324852,
+    "lon": -3.746366,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tandragee Airstrip",
+    "kind": "airfield",
+    "lat": 54.3865651,
+    "lon": -6.4001751,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Husbands Bosworth Airfield",
+    "kind": "airfield",
+    "lat": 52.438656,
+    "lon": -1.041789,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Membury Airfield",
+    "kind": "airfield",
+    "lat": 51.479812,
+    "lon": -1.560453,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Nether Huntlywood Airstrip",
+    "kind": "airfield",
+    "lat": 55.676638,
+    "lon": -2.60787,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "RAF Weston-on-the-Green",
+    "kind": "airfield",
+    "lat": 51.878712,
+    "lon": -1.218775,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "RAF Keevil",
+    "kind": "airfield",
+    "lat": 51.3129023,
+    "lon": -2.111585,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Shenington Gliding Club",
+    "kind": "airfield",
+    "lat": 52.0843451,
+    "lon": -1.4735737,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Slay Barn Private Airstrip",
+    "kind": "airfield",
+    "lat": 51.730686,
+    "lon": -1.143832,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wishanger Farm Private Airstrip",
+    "kind": "airfield",
+    "lat": 51.150481,
+    "lon": -0.808142,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Shotteswell/Banbury Airfield",
+    "kind": "airfield",
+    "lat": 52.099336,
+    "lon": -1.380587,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tibenham Airfield",
+    "kind": "airfield",
+    "lat": 52.455906,
+    "lon": 1.156054,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stratford-upon-Avon Gliding Club",
+    "kind": "airfield",
+    "lat": 52.23549,
+    "lon": -1.717787,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Jenkins Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.6404,
+    "lon": 0.202711,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Burnham Airstrip",
+    "kind": "airfield",
+    "lat": 52.938004,
+    "lon": 0.772644,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Askern Airfield",
+    "kind": "airfield",
+    "lat": 53.6104,
+    "lon": -1.13324,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Drayton St Leonard Airfield",
+    "kind": "airfield",
+    "lat": 51.6641,
+    "lon": -1.12693,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lleweni Parc Glyndwr Soaring Club",
+    "kind": "airfield",
+    "lat": 53.210445,
+    "lon": -3.3855523,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Barnards Farm",
+    "kind": "airfield",
+    "lat": 51.564,
+    "lon": 0.355231,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Brook Farm Ultralight Airstrip",
+    "kind": "airfield",
+    "lat": 53.897788,
+    "lon": -2.902233,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tillingham Airstrip",
+    "kind": "airfield",
+    "lat": 51.6928,
+    "lon": 0.872767,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ludham Airfield",
+    "kind": "airfield",
+    "lat": 52.7185,
+    "lon": 1.55172,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Charlton Mires Airstrip",
+    "kind": "airfield",
+    "lat": 55.478947,
+    "lon": -1.726299,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Baxby-Husthwaite Airfield",
+    "kind": "airfield",
+    "lat": 54.168991,
+    "lon": -1.226767,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Headon Microlight Airfield",
+    "kind": "airfield",
+    "lat": 53.280868,
+    "lon": -0.868435,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tarn Farm Airfield (Rossall Field)",
+    "kind": "airfield",
+    "lat": 53.933935,
+    "lon": -2.843614,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Easterton Glider Field",
+    "kind": "airfield",
+    "lat": 57.5874,
+    "lon": -3.30685,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Fort Augustus Airstrip",
+    "kind": "airfield",
+    "lat": 57.127577,
+    "lon": -4.670706,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Forwood Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.3026,
+    "lon": -0.85115,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Park Hall Airstrip",
+    "kind": "airfield",
+    "lat": 52.9824,
+    "lon": -1.37108,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Woodlow Farm Private Airstrip",
+    "kind": "airfield",
+    "lat": 52.1061,
+    "lon": -2.45333,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Manton Airfield",
+    "kind": "airfield",
+    "lat": 51.4237,
+    "lon": -1.77079,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Slieve Croob Airfield",
+    "kind": "airfield",
+    "lat": 54.329596,
+    "lon": -5.945292,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Swanborough Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.853737,
+    "lon": 0.001996,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Witherenden Airstrip",
+    "kind": "airfield",
+    "lat": 51.0046,
+    "lon": 0.621697,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Mendlesham Airstrip",
+    "kind": "airfield",
+    "lat": 52.2295,
+    "lon": 1.12393,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Willingale Airstrip",
+    "kind": "airfield",
+    "lat": 51.7292,
+    "lon": 0.286556,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Mitton Airstrip",
+    "kind": "airfield",
+    "lat": 52.732917,
+    "lon": -2.185017,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Brooklands Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.3575,
+    "lon": -0.242917,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stonehill Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.467085,
+    "lon": -3.843988,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Spilstead Farm Airfield",
+    "kind": "airfield",
+    "lat": 50.937535,
+    "lon": 0.520234,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Broadmeadow Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.025699,
+    "lon": -2.762393,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Woonton Airstrip",
+    "kind": "airfield",
+    "lat": 52.1626,
+    "lon": -2.9462,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Gransden Lodge Airfield",
+    "kind": "airfield",
+    "lat": 52.181597,
+    "lon": -0.112033,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Octon Airstrip",
+    "kind": "airfield",
+    "lat": 54.127292,
+    "lon": -0.430613,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "RAF Davidstow Moor",
+    "kind": "airfield",
+    "lat": 50.6363,
+    "lon": -4.6134,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hunsdon Airfield",
+    "kind": "airfield",
+    "lat": 51.8078,
+    "lon": 0.069644,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Culbokie Airstrip",
+    "kind": "airfield",
+    "lat": 57.586843,
+    "lon": -4.31636,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hertfordshire Microlight Club London Colney Airstrip",
+    "kind": "airfield",
+    "lat": 51.7056,
+    "lon": -0.274931,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pound Green Airfield",
+    "kind": "airfield",
+    "lat": 52.403662,
+    "lon": -2.355254,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ewesley Airstrip",
+    "kind": "airfield",
+    "lat": 55.2205,
+    "lon": -1.92621,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Calton Moor Airfield",
+    "kind": "airfield",
+    "lat": 53.0328,
+    "lon": -1.83495,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Watnall Airfield",
+    "kind": "airfield",
+    "lat": 53.0286,
+    "lon": -1.25577,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Titsey Airstrip",
+    "kind": "airfield",
+    "lat": 51.2756,
+    "lon": 0.0267556,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Over Farm Microlight",
+    "kind": "airfield",
+    "lat": 51.8761,
+    "lon": -2.28139,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Middlebank Top Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.7237,
+    "lon": -2.25557,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Osbaston Lodge Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.6367,
+    "lon": -1.39051,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Brookfield Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.428983,
+    "lon": -0.347879,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Onecoat Morridge Airstrip",
+    "kind": "airfield",
+    "lat": 53.114776,
+    "lon": -1.944237,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rathfriland Airstrip",
+    "kind": "airfield",
+    "lat": 54.253246,
+    "lon": -6.229055,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rhedyn Coch Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.2833,
+    "lon": -3.36713,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kemeys Commander Airstrip",
+    "kind": "airfield",
+    "lat": 51.73486,
+    "lon": -2.93477,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Viners Airstrip",
+    "kind": "airfield",
+    "lat": 52.4806,
+    "lon": -1.34255,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Thornhill Airfield",
+    "kind": "airfield",
+    "lat": 56.14888,
+    "lon": -4.18588,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "High Flats Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.8697,
+    "lon": -1.59656,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Birds Edge Airstrip",
+    "kind": "airfield",
+    "lat": 53.566906,
+    "lon": -1.684762,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Crossmaglen Airstrip",
+    "kind": "airfield",
+    "lat": 54.062915,
+    "lon": -6.55901,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "St Mellion Airstrip",
+    "kind": "airfield",
+    "lat": 50.475245,
+    "lon": -4.308403,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Redrock Airstrip",
+    "kind": "airfield",
+    "lat": 54.302863,
+    "lon": -6.585688,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Oakley Microlight Airfield",
+    "kind": "airfield",
+    "lat": 51.783458,
+    "lon": -1.074396,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Dunnamanagh Airstrip",
+    "kind": "airfield",
+    "lat": 54.889695,
+    "lon": -7.266047,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rattlesden Airfield",
+    "kind": "airfield",
+    "lat": 52.168195,
+    "lon": 0.866375,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Blackhill Airstrip",
+    "kind": "airfield",
+    "lat": 54.8042209,
+    "lon": -6.7556928,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Avon Lane Airfield",
+    "kind": "airfield",
+    "lat": 51.410211,
+    "lon": -2.447792,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Red House Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.178085,
+    "lon": -1.176136,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wold Lodge Airstrip",
+    "kind": "airfield",
+    "lat": 52.368446,
+    "lon": -0.633624,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Windsor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.197605,
+    "lon": 0.03781,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lindens Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.561675,
+    "lon": -0.202133,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Northorpe Fen Airstrip",
+    "kind": "airfield",
+    "lat": 52.745478,
+    "lon": -0.342343,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Poplars Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.234596,
+    "lon": -1.4206706,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Salterford Farm Airfield",
+    "kind": "airfield",
+    "lat": 53.0617449,
+    "lon": -1.0942177,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rookery Farm Airfield",
+    "kind": "airfield",
+    "lat": 51.473468,
+    "lon": -2.403245,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Englefield Airstrip",
+    "kind": "airfield",
+    "lat": 51.426607,
+    "lon": -1.111306,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Mill Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.5835,
+    "lon": -2.637706,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Byecross Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.077735,
+    "lon": -2.907816,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Firs Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.47222,
+    "lon": -1.36332,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Roddige Airfield",
+    "kind": "airfield",
+    "lat": 52.715263,
+    "lon": -1.745357,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Talgarth Glider Field",
+    "kind": "airfield",
+    "lat": 51.980947,
+    "lon": -3.205374,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Whittles Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.50107,
+    "lon": -1.03816,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Woodditton Airstrip",
+    "kind": "airfield",
+    "lat": 52.199799,
+    "lon": 0.44398,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wood Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.122101,
+    "lon": -0.69604,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Westfield Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.847722,
+    "lon": 0.282018,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tempest Airstrip",
+    "kind": "airfield",
+    "lat": 50.179428,
+    "lon": -5.449931,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pilmuir Farm Airstrip",
+    "kind": "airfield",
+    "lat": 56.2240212,
+    "lon": -2.9776945,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "North Moreton Airstrip",
+    "kind": "airfield",
+    "lat": 51.600467,
+    "lon": -1.182359,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Metropolitan Police Air Support Unit Lippitts Hill",
+    "kind": "airfield",
+    "lat": 51.653818,
+    "lon": 0.017171,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Earwig Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.184838,
+    "lon": -0.515664,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wormingford Glider Field",
+    "kind": "airfield",
+    "lat": 51.941419,
+    "lon": 0.789459,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Orchardleigh Private Airstrip",
+    "kind": "airfield",
+    "lat": 51.254077,
+    "lon": -2.324791,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Grange Farm Private Airstrip",
+    "kind": "airfield",
+    "lat": 53.322709,
+    "lon": -0.257693,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rendcomb Airfield",
+    "kind": "airfield",
+    "lat": 51.78252,
+    "lon": -1.95159,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Luxter Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.59597,
+    "lon": -0.892865,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Woodwalton Private Airstrip",
+    "kind": "airfield",
+    "lat": 52.421112,
+    "lon": -0.248596,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ridgewell Glider Field",
+    "kind": "airfield",
+    "lat": 52.049246,
+    "lon": 0.558272,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Achnasheen Airstrip",
+    "kind": "airfield",
+    "lat": 57.5708442,
+    "lon": -5.1888389,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ballone Castle Airstrip",
+    "kind": "airfield",
+    "lat": 57.83218,
+    "lon": -3.808523,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Glensanda Airstrip",
+    "kind": "airfield",
+    "lat": 56.5610514,
+    "lon": -5.5474649,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Forfar Airstrip",
+    "kind": "airfield",
+    "lat": 56.653363,
+    "lon": -2.832775,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rothwell Lodge Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.409698,
+    "lon": -0.791273,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rectory Farm Airfield",
+    "kind": "airfield",
+    "lat": 53.086138,
+    "lon": -0.848486,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Portmoak Glider Field",
+    "kind": "airfield",
+    "lat": 56.191031,
+    "lon": -3.328505,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Carrickmore Airstrip",
+    "kind": "airfield",
+    "lat": 54.572102,
+    "lon": -7.044873,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lukesfield Airstrip",
+    "kind": "airfield",
+    "lat": 51.178559,
+    "lon": 0.526992,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lower Botrea",
+    "kind": "airfield",
+    "lat": 50.112529,
+    "lon": -5.629546,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Sackville Farm Aerodrome",
+    "kind": "airfield",
+    "lat": 52.262422,
+    "lon": -0.486598,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Meppershall Airfield",
+    "kind": "airfield",
+    "lat": 52.02053,
+    "lon": -0.355031,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Raydon Wings Glider Field",
+    "kind": "airfield",
+    "lat": 52.018658,
+    "lon": 1.007259,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Carr Valley Microlight Airfield",
+    "kind": "airfield",
+    "lat": 53.688505,
+    "lon": -2.796592,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Brown Shutters Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.311203,
+    "lon": -2.309329,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Blooms Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.994456,
+    "lon": 0.556469,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Saltby Glider Field",
+    "kind": "airfield",
+    "lat": 52.829667,
+    "lon": -0.7125,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tarsan Lane Microlights",
+    "kind": "airfield",
+    "lat": 54.457555,
+    "lon": -6.436968,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Aughrim Airstrip",
+    "kind": "airfield",
+    "lat": 54.093511,
+    "lon": -6.045749,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Horham Airstrip",
+    "kind": "airfield",
+    "lat": 52.309167,
+    "lon": 1.2255,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cae Mawr Tyddyn Hen",
+    "kind": "airfield",
+    "lat": 53.157273,
+    "lon": -4.235529,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stow Maries Great War Aerodrome",
+    "kind": "airfield",
+    "lat": 51.66948,
+    "lon": 0.632684,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Chalksole Green Airstrip",
+    "kind": "airfield",
+    "lat": 51.144824,
+    "lon": 1.209165,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rivar Hill Glider Field",
+    "kind": "airfield",
+    "lat": 51.3414659,
+    "lon": -1.541894,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kirriemuir Farm Strip",
+    "kind": "airfield",
+    "lat": 56.650319,
+    "lon": -3.028797,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Winkwood Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.1449,
+    "lon": -0.66509,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Yoxford Airstrip",
+    "kind": "airfield",
+    "lat": 52.278433,
+    "lon": 1.509333,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Yafford House Private Airstrip",
+    "kind": "airfield",
+    "lat": 50.63144,
+    "lon": -1.36393,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Norton Malreward Airfield",
+    "kind": "airfield",
+    "lat": 51.382634,
+    "lon": -2.568741,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Warren Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.290216,
+    "lon": -2.719748,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wentworth Private Airstrip",
+    "kind": "airfield",
+    "lat": 53.475545,
+    "lon": -1.42101,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Topcroft Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.465262,
+    "lon": 1.328767,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Barcombe-North Airstrip",
+    "kind": "airfield",
+    "lat": 50.935009,
+    "lon": 0.031887,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Palmer Moor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.899582,
+    "lon": -1.801554,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Waits Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.034093,
+    "lon": 0.639439,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bagber Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.796899,
+    "lon": -2.265683,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Freshwater Fruit Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.681613,
+    "lon": -1.492295,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cadwell Park Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.316765,
+    "lon": -0.072246,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bankwood Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.045801,
+    "lon": -0.997581,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wortham Airstrip",
+    "kind": "airfield",
+    "lat": 52.345236,
+    "lon": 1.064814,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cockerham Airfield",
+    "kind": "airfield",
+    "lat": 53.965671,
+    "lon": -2.830332,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ringmer Glider Field",
+    "kind": "airfield",
+    "lat": 50.907978,
+    "lon": 0.105314,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "London Gliding Club",
+    "kind": "airfield",
+    "lat": 51.868549,
+    "lon": -0.545165,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Darlton Gliding Club",
+    "kind": "airfield",
+    "lat": 53.244587,
+    "lon": -0.859207,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stanton Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.33876,
+    "lon": -1.873359,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Truleigh Manor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.89813,
+    "lon": -0.253251,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tongham Airstrip",
+    "kind": "airfield",
+    "lat": 51.227645,
+    "lon": -0.728329,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Dairy House Farm Airfield",
+    "kind": "airfield",
+    "lat": 53.106477,
+    "lon": -2.5037106,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Sparr Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.035749,
+    "lon": -0.512273,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "North Reston Hall Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.325672,
+    "lon": 0.071807,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Willow Farm Louth Airstrip",
+    "kind": "airfield",
+    "lat": 53.357986,
+    "lon": 0.032615,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Eastfield Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.364727,
+    "lon": 0.119561,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hold Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.342661,
+    "lon": -0.782551,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hulcote Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.036523,
+    "lon": -0.618255,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Debach Airfield",
+    "kind": "airfield",
+    "lat": 52.134134,
+    "lon": 1.265958,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Southery Airstrip",
+    "kind": "airfield",
+    "lat": 52.53854,
+    "lon": 0.382986,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Shelsley Beauchamp Airstrip",
+    "kind": "airfield",
+    "lat": 52.260178,
+    "lon": -2.392041,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ranksborough Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.688977,
+    "lon": -0.775251,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ramsdean Private Airstrip",
+    "kind": "airfield",
+    "lat": 50.991179,
+    "lon": -0.9932,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lennox Plunton Airstrip",
+    "kind": "airfield",
+    "lat": 54.841753,
+    "lon": -4.15884,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pauncefoot Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.976818,
+    "lon": -1.520684,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pitlands Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.906077,
+    "lon": -0.865023,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pencraig Airstrip",
+    "kind": "airfield",
+    "lat": 52.833151,
+    "lon": -3.419661,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "North Rigton Private Airstrip",
+    "kind": "airfield",
+    "lat": 53.940831,
+    "lon": -1.552205,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "New Model Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.674236,
+    "lon": -0.489671,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Swinmore Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.074816,
+    "lon": -2.476278,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Middle West Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.619908,
+    "lon": -0.155396,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Middle Chinnock Airstrip",
+    "kind": "airfield",
+    "lat": 50.91548,
+    "lon": -2.737055,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Michaelwood Airstrip",
+    "kind": "airfield",
+    "lat": 51.654733,
+    "lon": -2.408098,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Mayfield Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.645872,
+    "lon": -4.764698,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Thankerton private airstrip",
+    "kind": "airfield",
+    "lat": 55.624192,
+    "lon": -3.618665,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Marsh Hill Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.774904,
+    "lon": -0.832815,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Marsh Court Manor Private Airstrip",
+    "kind": "airfield",
+    "lat": 51.098725,
+    "lon": -1.495085,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Athey's Moor Airfield",
+    "kind": "airfield",
+    "lat": 55.316961,
+    "lon": -1.785493,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Old Manor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.0443,
+    "lon": -0.3328,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bitteswell Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.475124,
+    "lon": -1.207507,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hoe Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.077079,
+    "lon": -2.386909,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Brine Pits Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.288322,
+    "lon": -2.135233,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Crosbie Field UL",
+    "kind": "airfield",
+    "lat": 52.0127,
+    "lon": 0.7475,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bericote Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.32719,
+    "lon": -1.547935,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Camp Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.473919,
+    "lon": -1.446033,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Blackmoor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.157794,
+    "lon": -0.585979,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Manor House Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.9726,
+    "lon": -0.7157,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Green Acres Airstrip",
+    "kind": "airfield",
+    "lat": 52.2136,
+    "lon": -3.0696,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stitchin's Hill Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.1669,
+    "lon": -2.3499,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Drayton Home Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.408663,
+    "lon": -0.596008,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Northfield Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.1848,
+    "lon": 0.0263,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Riding Bank Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.821429,
+    "lon": -1.447728,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Whaley Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.067213,
+    "lon": -0.148171,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Glebe Farm (Sibson) Airstrip",
+    "kind": "airfield",
+    "lat": 52.606,
+    "lon": -1.4621,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Crumpton Oaks Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.1336,
+    "lon": -2.344,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Sulby Airstrip",
+    "kind": "airfield",
+    "lat": 52.4332,
+    "lon": -1.0399,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Butterfield Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.0799,
+    "lon": -1.4035,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hanbeck Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.9767,
+    "lon": -0.4887,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Prospect Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.265742,
+    "lon": -0.672114,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Knettishall Airstrip",
+    "kind": "airfield",
+    "lat": 52.3756,
+    "lon": 0.882854,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kilkerran UL",
+    "kind": "airfield",
+    "lat": 55.299005,
+    "lon": -4.674436,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Causey Park Airstrip UL",
+    "kind": "airfield",
+    "lat": 55.2547,
+    "lon": -1.7126,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Croft Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.4579,
+    "lon": -1.5608,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Gilrudding Grange Airstrip",
+    "kind": "airfield",
+    "lat": 53.8936,
+    "lon": -1.0676,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Acaster Malbis Airstrip",
+    "kind": "airfield",
+    "lat": 53.883483,
+    "lon": -1.121874,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lodge Field House Airstrip",
+    "kind": "airfield",
+    "lat": 54.194,
+    "lon": -1.0671,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Inglesham Private Airstrip",
+    "kind": "airfield",
+    "lat": 51.669934,
+    "lon": -1.716056,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bridge Cottage Airstrip",
+    "kind": "airfield",
+    "lat": 53.6787,
+    "lon": -1.1017,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Newton-on-Rawcliffe Airstrip",
+    "kind": "airfield",
+    "lat": 54.290228,
+    "lon": -0.74444,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Meonstoke Airstrip",
+    "kind": "airfield",
+    "lat": 50.97394,
+    "lon": -1.147556,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Birchwood Lodge Airstrip",
+    "kind": "airfield",
+    "lat": 53.818,
+    "lon": -1.0146,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Newgate Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.3293,
+    "lon": -0.6838,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Selby House Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.203059,
+    "lon": -1.80046,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Thornton Watlass Airstrip UL",
+    "kind": "airfield",
+    "lat": 54.2617,
+    "lon": -1.6389,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Greenhills Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.745743,
+    "lon": -1.393826,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Burton-Constable Airstrip",
+    "kind": "airfield",
+    "lat": 53.808811,
+    "lon": -0.193634,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ings Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.2049,
+    "lon": -0.616,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Frandley House Airstrip",
+    "kind": "airfield",
+    "lat": 53.3047,
+    "lon": -2.5442,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Higher Barn Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.7451,
+    "lon": -2.6059,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Fern Farm Airstrip UL",
+    "kind": "airfield",
+    "lat": 53.2074,
+    "lon": -2.2528,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kenyon Hall Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.4542,
+    "lon": -2.5813,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Warrington Airstrip",
+    "kind": "airfield",
+    "lat": 53.409877,
+    "lon": -2.509024,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ash House Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.1669,
+    "lon": -2.56666,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Balado Airfield",
+    "kind": "airfield",
+    "lat": 56.217477,
+    "lon": -3.459611,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Balgrummo Steading Airstrip",
+    "kind": "airfield",
+    "lat": 56.2178,
+    "lon": -3.0207,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Nethershields Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.712329,
+    "lon": -4.075713,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cornbury House Airstrip",
+    "kind": "airfield",
+    "lat": 51.857548,
+    "lon": -1.496929,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Shempston Farm Airstrip",
+    "kind": "airfield",
+    "lat": 57.6958,
+    "lon": -3.3661,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Broomhill Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.843928,
+    "lon": -3.534551,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hadfold Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.001172,
+    "lon": -0.462499,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Fridd Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.1423,
+    "lon": 0.7585,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bossington Airstrip",
+    "kind": "airfield",
+    "lat": 51.0766,
+    "lon": -1.5389,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bovingdon Airstrip",
+    "kind": "airfield",
+    "lat": 51.7281,
+    "lon": -0.5474,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cardington Airstrip",
+    "kind": "airfield",
+    "lat": 52.1061,
+    "lon": -0.4171,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hamilton Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.093609,
+    "lon": 0.88829,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Easter Nether Cabra Farm Airstrip",
+    "kind": "airfield",
+    "lat": 57.560563,
+    "lon": -2.0301,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hill Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.840338,
+    "lon": -0.211895,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cheddington Airstrip",
+    "kind": "airfield",
+    "lat": 51.8328,
+    "lon": -0.6704,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Chelworth House Airstrip",
+    "kind": "airfield",
+    "lat": 51.0493,
+    "lon": 0.0142,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rushett Farm",
+    "kind": "airfield",
+    "lat": 51.3364,
+    "lon": -0.3144,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Danehill Airstrip",
+    "kind": "airfield",
+    "lat": 51.0264,
+    "lon": -0.0121,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Edington Private Airstrip",
+    "kind": "airfield",
+    "lat": 51.267796,
+    "lon": -2.101908,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Farley Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.04818,
+    "lon": -1.444627,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hawksview Airstrip",
+    "kind": "airfield",
+    "lat": 53.342308,
+    "lon": -2.525847,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Folly Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.904454,
+    "lon": -0.228803,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Baynard's Park Airstrip",
+    "kind": "airfield",
+    "lat": 51.118295,
+    "lon": -0.442193,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Landmead Farm Airfield",
+    "kind": "airfield",
+    "lat": 51.649084,
+    "lon": -1.370003,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Armshold Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.1746,
+    "lon": -0.0197,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Valley Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.76239,
+    "lon": -2.12734,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Holly Hill Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.806,
+    "lon": 0.9585,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "White Fen Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.51564,
+    "lon": -0.005399,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Manor Farm (Haddenham) Airstrip",
+    "kind": "airfield",
+    "lat": 51.763475,
+    "lon": -0.938333,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Furze Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.527447,
+    "lon": -0.352796,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Palmers Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.8735,
+    "lon": 0.2303,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hill Top Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.141744,
+    "lon": -0.621929,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Haw Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.491121,
+    "lon": -1.214263,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Nut Tree Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.447065,
+    "lon": 1.300228,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Harpsden Park Airstrip",
+    "kind": "airfield",
+    "lat": 51.5197,
+    "lon": -0.8969,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "East Haxted Farm Airfield",
+    "kind": "airfield",
+    "lat": 51.187844,
+    "lon": 0.047035,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pond Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.562552,
+    "lon": 1.453457,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Blue Tile Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.8276,
+    "lon": 1.0037,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "OaklandS Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.04,
+    "lon": -0.3309,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Shrove Furlong Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.7475,
+    "lon": -0.9084,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bensons Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.5937,
+    "lon": 0.4445,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Langham Airstrip",
+    "kind": "airfield",
+    "lat": 52.9355,
+    "lon": 0.9545,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Batchley Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.75577,
+    "lon": -1.59035,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Sutton Airstrip",
+    "kind": "airfield",
+    "lat": 50.923813,
+    "lon": -0.614376,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Welcross Grange Airstrip",
+    "kind": "airfield",
+    "lat": 51.059739,
+    "lon": -0.378342,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ventfield Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.80892,
+    "lon": -1.156054,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wisbridge Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.997988,
+    "lon": -0.009885,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lavenham Airstrip",
+    "kind": "airfield",
+    "lat": 52.132909,
+    "lon": 0.773785,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Retreat Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.746557,
+    "lon": 0.595665,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Radley Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.435778,
+    "lon": -1.465924,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rankins Farm Airfield",
+    "kind": "airfield",
+    "lat": 51.205248,
+    "lon": 0.509584,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bedwell Hey Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.3728,
+    "lon": 0.2249,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Baileys Fram Airstrip",
+    "kind": "airfield",
+    "lat": 51.7789,
+    "lon": -1.0192,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Roughay Farm Airfield",
+    "kind": "airfield",
+    "lat": 50.988908,
+    "lon": -1.253471,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Inglenook Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.1856,
+    "lon": 1.3156,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Newton Hall Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.03433,
+    "lon": 0.804234,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bere Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.8848,
+    "lon": -1.1571,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Foxburrow Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.744866,
+    "lon": 0.933151,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "New Lane Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.768709,
+    "lon": 0.930491,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Little Haugh Hall Private Airfield",
+    "kind": "airfield",
+    "lat": 52.2603,
+    "lon": 0.8502,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ivy Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.91066,
+    "lon": 1.34007,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "South Longwood Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.0189,
+    "lon": -1.2641,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Piltdown Airstrip",
+    "kind": "airfield",
+    "lat": 50.9814,
+    "lon": 0.0425,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Podington Airstrip",
+    "kind": "airfield",
+    "lat": 52.228246,
+    "lon": -0.605278,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kittyhawk Aerodrome",
+    "kind": "airfield",
+    "lat": 50.8693,
+    "lon": 0.1166,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Notley Green Airstrip",
+    "kind": "airfield",
+    "lat": 51.9934,
+    "lon": -0.0637,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Church Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.4532,
+    "lon": 1.5019,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "North Honer Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.78545,
+    "lon": -0.751241,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wildings Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.029956,
+    "lon": 0.448594,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Fisherwick Airfield",
+    "kind": "airfield",
+    "lat": 52.672908,
+    "lon": -1.723502,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lodge Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.7965,
+    "lon": 1.1059,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Great Friars Thornes Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.658476,
+    "lon": 0.64167,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pentlow Airstrip",
+    "kind": "airfield",
+    "lat": 52.077414,
+    "lon": 0.623453,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Gerpins Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.531481,
+    "lon": 0.231035,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Frieslands Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.895,
+    "lon": -0.4045,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Berry Grove Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.053005,
+    "lon": -0.896823,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "West Tisted Airfield",
+    "kind": "airfield",
+    "lat": 51.0474,
+    "lon": -1.0567,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Loadman Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.941689,
+    "lon": -2.143493,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Whitehall Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.9682,
+    "lon": 0.5224,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Stockbridge Airstrip",
+    "kind": "airfield",
+    "lat": 50.6043,
+    "lon": -1.2709,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Coldharbour Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.3077,
+    "lon": 0.0404,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Dalkeith Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.415286,
+    "lon": -0.388534,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Little Engeham Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.1003,
+    "lon": 0.7789,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Little Robhurst Airstrip",
+    "kind": "airfield",
+    "lat": 51.079836,
+    "lon": 0.740408,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Fir Grove Airstrip",
+    "kind": "airfield",
+    "lat": 52.5506,
+    "lon": 1.1736,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lamberhurst Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.321836,
+    "lon": 0.996376,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bowden Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.3619,
+    "lon": -1.6873,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Orange Grove Barn Airstrip",
+    "kind": "airfield",
+    "lat": 51.6677,
+    "lon": -2.1962,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Home Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.0533,
+    "lon": -1.729,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Westacott Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.8488,
+    "lon": -3.8699,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "New Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.391,
+    "lon": -2.677,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Halesland Glider Field",
+    "kind": "airfield",
+    "lat": 51.262,
+    "lon": -2.7319,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hawling Manor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.9036,
+    "lon": -1.9144,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Langport Airstrip",
+    "kind": "airfield",
+    "lat": 51.0789,
+    "lon": -2.8269,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Garston Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.46052,
+    "lon": -2.30159,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Oldbury on Severn Airstrip",
+    "kind": "airfield",
+    "lat": 51.6308,
+    "lon": -2.5593,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Middlegate Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.0621,
+    "lon": -2.7969,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "South Wraxall private Airstrip",
+    "kind": "airfield",
+    "lat": 51.3853,
+    "lon": -2.255,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Charmy Down Airstrip",
+    "kind": "airfield",
+    "lat": 51.427151,
+    "lon": -2.349594,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Great House Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.983593,
+    "lon": -2.259858,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lotmead Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.57274,
+    "lon": -1.71289,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Brookside Farm Private Airstrip",
+    "kind": "airfield",
+    "lat": 51.177984,
+    "lon": -3.527255,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Upfield Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.55177,
+    "lon": -2.895397,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hinderclay Meadows Airfield",
+    "kind": "airfield",
+    "lat": 52.344475,
+    "lon": 0.975893,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kimberley Hall Airstrip",
+    "kind": "airfield",
+    "lat": 52.59823,
+    "lon": 1.09269,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Llangarron Private Airstrip",
+    "kind": "airfield",
+    "lat": 51.883035,
+    "lon": -2.699869,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hatchgate Farm Airfield",
+    "kind": "airfield",
+    "lat": 51.341149,
+    "lon": -0.924697,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Blair Drummond Private Airstrip",
+    "kind": "airfield",
+    "lat": 56.150833,
+    "lon": -4.044535,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kylarrick House Airstrip",
+    "kind": "airfield",
+    "lat": 57.817058,
+    "lon": -4.174075,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hollym West Airfield",
+    "kind": "airfield",
+    "lat": 53.711034,
+    "lon": 0.036907,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hermitage Airstrip",
+    "kind": "airfield",
+    "lat": 50.86621,
+    "lon": -2.48844,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Mosside Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.741982,
+    "lon": -3.810046,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Deptford Airstrip",
+    "kind": "airfield",
+    "lat": 51.1476,
+    "lon": -1.971,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Deptford 'Farm' Airstrip",
+    "kind": "airfield",
+    "lat": 51.16246,
+    "lon": -1.97636,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Coetir Bach Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.824692,
+    "lon": -4.082623,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Curry Rivel Airstrip",
+    "kind": "airfield",
+    "lat": 51.013215,
+    "lon": -2.883267,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Buttermilk Hall Farm",
+    "kind": "airfield",
+    "lat": 52.15371,
+    "lon": -0.92815,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "The Moy Airstrip",
+    "kind": "airfield",
+    "lat": 54.43514,
+    "lon": -6.67659,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Coalisland Airstrip",
+    "kind": "airfield",
+    "lat": 54.53012,
+    "lon": -6.65808,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Slemish Airfield",
+    "kind": "airfield",
+    "lat": 54.902845,
+    "lon": -6.135285,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "New Farm Airfield",
+    "kind": "airfield",
+    "lat": 52.175375,
+    "lon": -0.831192,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Longford Airstrip",
+    "kind": "airfield",
+    "lat": 52.892833,
+    "lon": -2.531167,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tiffenden Airstrip",
+    "kind": "airfield",
+    "lat": 51.094475,
+    "lon": 0.740868,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Mullaglass",
+    "kind": "airfield",
+    "lat": 54.216441,
+    "lon": -6.401272,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Batch End Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.2975,
+    "lon": -2.95579,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Grove Field Airstrip",
+    "kind": "airfield",
+    "lat": 52.229,
+    "lon": -1.61853,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wickhambrook Airstrip",
+    "kind": "airfield",
+    "lat": 52.175037,
+    "lon": 0.536485,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Whilton Airstrip",
+    "kind": "airfield",
+    "lat": 52.275223,
+    "lon": -1.075908,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rhoshirwaun",
+    "kind": "airfield",
+    "lat": 52.84753,
+    "lon": -4.68153,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Dinas Farm Private Airstrip",
+    "kind": "airfield",
+    "lat": 52.897419,
+    "lon": -4.572135,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Polpidnick Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.0585,
+    "lon": -5.12772,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wateringhill Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.51163,
+    "lon": 0.18349,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wolves Hall Airstrip",
+    "kind": "airfield",
+    "lat": 51.887431,
+    "lon": 1.126199,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Trench Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.95193,
+    "lon": -2.92244,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Spite Hall Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.52297,
+    "lon": -1.11655,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wathstones Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.289667,
+    "lon": -1.447148,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Siege Cross Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.404734,
+    "lon": -1.233475,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Colthrop Manor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.404931,
+    "lon": -1.227732,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "New Grimmet Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.361009,
+    "lon": -4.643065,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tracy Island Airstrip",
+    "kind": "airfield",
+    "lat": 50.86442,
+    "lon": -2.91118,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Netherley Private Airstrip",
+    "kind": "airfield",
+    "lat": 57.05228,
+    "lon": -2.2652,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ravensworth Private Airstrip",
+    "kind": "airfield",
+    "lat": 54.46977,
+    "lon": -1.79088,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Laurel Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.37791,
+    "lon": 1.30868,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hopkiln Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.41115,
+    "lon": -0.9976,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Horsey Island Airfield",
+    "kind": "airfield",
+    "lat": 51.876469,
+    "lon": 1.232071,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rhigos Airstrip",
+    "kind": "airfield",
+    "lat": 51.74571,
+    "lon": -3.58662,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rectory Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.199324,
+    "lon": -0.194306,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Elan Valley Airstrip",
+    "kind": "airfield",
+    "lat": 52.28452,
+    "lon": -3.53961,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bernwood Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.911807,
+    "lon": -0.935533,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lamberhurst Airstrip",
+    "kind": "airfield",
+    "lat": 51.109145,
+    "lon": 0.418918,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Little Shelford Airstrip",
+    "kind": "airfield",
+    "lat": 52.13167,
+    "lon": 0.124326,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Throstle Nest Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.529774,
+    "lon": -0.927207,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Willington Court Airstrip",
+    "kind": "airfield",
+    "lat": 51.91507,
+    "lon": -2.24028,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Druridge Bay Airstrip",
+    "kind": "airfield",
+    "lat": 55.29918,
+    "lon": -1.56631,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bonnington Airstrip",
+    "kind": "airfield",
+    "lat": 51.05891,
+    "lon": 0.94806,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Frinsted Airstrip",
+    "kind": "airfield",
+    "lat": 51.27758,
+    "lon": 0.70572,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pointon Airstrip",
+    "kind": "airfield",
+    "lat": 52.87266,
+    "lon": -0.35822,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Romney Street Airstrip",
+    "kind": "airfield",
+    "lat": 51.335465,
+    "lon": 0.223031,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Croes Carn Einion Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.56951,
+    "lon": -3.07669,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Brickwall Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.09289,
+    "lon": 0.52848,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Shear Down Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.27719,
+    "lon": -1.18798,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Gunton Park Airstrip",
+    "kind": "airfield",
+    "lat": 52.855009,
+    "lon": 1.322994,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Chalk Pyt Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.03121,
+    "lon": -1.95191,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Acthorpe Top Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.373703,
+    "lon": -0.037165,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Meadow Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.06561,
+    "lon": 0.87312,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Benston Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.41649,
+    "lon": -4.23027,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Poplar Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.604,
+    "lon": 0.34632,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Balgone Airstrip",
+    "kind": "airfield",
+    "lat": 56.02625,
+    "lon": -2.69635,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Field Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.83822,
+    "lon": -0.95433,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Homestead Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.24093,
+    "lon": -0.64909,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Barton Ashes Airstrip",
+    "kind": "airfield",
+    "lat": 51.12826,
+    "lon": -1.37068,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Arden Heath Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.18639,
+    "lon": -1.67465,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bridge Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.64829,
+    "lon": 1.57163,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tilney-St-Lawrence Airstrip",
+    "kind": "airfield",
+    "lat": 52.70379,
+    "lon": 0.31321,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bradleys Lawn Airstrip",
+    "kind": "airfield",
+    "lat": 50.98873,
+    "lon": 0.2476,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "West Bergholt Airstrip",
+    "kind": "airfield",
+    "lat": 51.917882,
+    "lon": 0.860329,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tain Ultralight Airstrip",
+    "kind": "airfield",
+    "lat": 57.81513,
+    "lon": -3.969569,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Newry private Airstrip",
+    "kind": "airfield",
+    "lat": 54.14446,
+    "lon": -6.31402,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "The Plassey Airstrip",
+    "kind": "airfield",
+    "lat": 53.005876,
+    "lon": -2.97369,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "West Newland Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.690095,
+    "lon": 0.820706,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Woods Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.39349,
+    "lon": -1.839674,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "South Weald Private Airstrip",
+    "kind": "airfield",
+    "lat": 51.62295,
+    "lon": 0.26135,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Sears-Crossing Airstrip",
+    "kind": "airfield",
+    "lat": 51.89257,
+    "lon": -0.672483,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ripple Airstrip",
+    "kind": "airfield",
+    "lat": 51.204759,
+    "lon": 1.366682,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pittodrie-House",
+    "kind": "airfield",
+    "lat": 57.309118,
+    "lon": -2.488232,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ponton-Heath-Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.859217,
+    "lon": -0.657898,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Morley Saint Botolph Private Airstrip",
+    "kind": "airfield",
+    "lat": 52.561326,
+    "lon": 1.03856,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Nairns Mains Airstrip",
+    "kind": "airfield",
+    "lat": 55.937592,
+    "lon": -2.849793,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Moxon's Farm Private Airstrip",
+    "kind": "airfield",
+    "lat": 52.526274,
+    "lon": -1.402892,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Langmoor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.775269,
+    "lon": 0.859158,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hunsdon Lea Airstrip",
+    "kind": "airfield",
+    "lat": 50.37829,
+    "lon": -3.94406,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Denford Manor Airstrip",
+    "kind": "airfield",
+    "lat": 51.423163,
+    "lon": -1.50135,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Orchard House Airstrip",
+    "kind": "airfield",
+    "lat": 52.498341,
+    "lon": 0.278199,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Brown Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.134897,
+    "lon": 0.876782,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hickstead Airstrip",
+    "kind": "airfield",
+    "lat": 50.958165,
+    "lon": -0.196666,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Peter Hall Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.422054,
+    "lon": -1.393484,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hutton Grange Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.4061,
+    "lon": -1.44796,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Greenlease Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.7484,
+    "lon": -0.76941,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Goldstone Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.266869,
+    "lon": -0.377655,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Radwell Lodge Ultralight Airstrip",
+    "kind": "airfield",
+    "lat": 52.005332,
+    "lon": -0.215757,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Conaglen House Airstrip",
+    "kind": "airfield",
+    "lat": 56.77091,
+    "lon": -5.2371,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ginge Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.569481,
+    "lon": -1.344409,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ringstead Private Airstrip",
+    "kind": "airfield",
+    "lat": 52.363769,
+    "lon": -0.538888,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lower Park Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.24363,
+    "lon": -0.6288,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Godney Airstrip",
+    "kind": "airfield",
+    "lat": 51.197526,
+    "lon": -2.754478,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bonnallack Airstrip",
+    "kind": "airfield",
+    "lat": 50.09776,
+    "lon": -5.18582,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Woolaston Airstrip",
+    "kind": "airfield",
+    "lat": 51.689257,
+    "lon": -2.598588,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Chesham Vale Airstrip",
+    "kind": "airfield",
+    "lat": 51.73334,
+    "lon": -0.60826,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Fen End Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.313779,
+    "lon": 0.122867,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pillows Barn Airstrip",
+    "kind": "airfield",
+    "lat": 51.97252,
+    "lon": -2.298592,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Acton Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.02204,
+    "lon": 0.721062,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Moor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.14229,
+    "lon": -0.54942,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Marldon Airstrip",
+    "kind": "airfield",
+    "lat": 50.46088,
+    "lon": -3.60782,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Dysons Osiers Airstrip",
+    "kind": "airfield",
+    "lat": 51.69443,
+    "lon": -0.08695,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cowbit Airstrip",
+    "kind": "airfield",
+    "lat": 52.757061,
+    "lon": -0.140913,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Donnydeade Airstrip",
+    "kind": "airfield",
+    "lat": 54.47681,
+    "lon": -6.74402,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Clees Hall Airstrip",
+    "kind": "airfield",
+    "lat": 51.976581,
+    "lon": 0.741734,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Clotton airstrip UL",
+    "kind": "airfield",
+    "lat": 53.16963,
+    "lon": -2.69955,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hamilton House Airstrip",
+    "kind": "airfield",
+    "lat": 51.663785,
+    "lon": -1.446633,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Chipstead Private Airstrip",
+    "kind": "airfield",
+    "lat": 51.291025,
+    "lon": -0.166131,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Plains Airstrip",
+    "kind": "airfield",
+    "lat": 55.014319,
+    "lon": -6.538587,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kilfinichen Airstrip",
+    "kind": "airfield",
+    "lat": 56.38648,
+    "lon": -6.05542,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bowford Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.952993,
+    "lon": -0.396152,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Brockwood Bottom Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.03488,
+    "lon": -1.11519,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bethesda",
+    "kind": "airfield",
+    "lat": 51.832357,
+    "lon": -4.763131,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bennetsfield Private Airstrip",
+    "kind": "airfield",
+    "lat": 57.55888,
+    "lon": -4.19959,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tansterne Grange Airstrip",
+    "kind": "airfield",
+    "lat": 53.818186,
+    "lon": -0.141921,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Montrose Airstrip",
+    "kind": "airfield",
+    "lat": 56.727913,
+    "lon": -2.500514,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Fingland",
+    "kind": "airfield",
+    "lat": 55.324701,
+    "lon": -3.204789,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Spire-View Airstrip",
+    "kind": "airfield",
+    "lat": 51.020503,
+    "lon": -1.860466,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "South View Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.930497,
+    "lon": -0.287195,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Millfield Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.986646,
+    "lon": -0.309541,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Little Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.313229,
+    "lon": -0.448709,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lower-Durston Airstrip",
+    "kind": "airfield",
+    "lat": 51.051996,
+    "lon": -3.00549,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Boyndie Airstrip",
+    "kind": "airfield",
+    "lat": 57.667182,
+    "lon": -2.62882,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Biss Brook Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.236731,
+    "lon": -2.202587,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Langley House Airstrip",
+    "kind": "airfield",
+    "lat": 51.48283,
+    "lon": -2.10134,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Churchlands Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.824117,
+    "lon": 0.338101,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bywell Airfield",
+    "kind": "airfield",
+    "lat": 54.95719,
+    "lon": -1.92062,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "North Fen Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.425302,
+    "lon": 0.106194,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "West-Burton Airstrip",
+    "kind": "airfield",
+    "lat": 53.362942,
+    "lon": -0.828925,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Eccles Newton Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.65592,
+    "lon": -2.35326,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Low Moor Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.182606,
+    "lon": -0.731792,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Settrington Airstrip",
+    "kind": "airfield",
+    "lat": 54.127995,
+    "lon": -0.736513,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Greenhill Down Airstrip",
+    "kind": "airfield",
+    "lat": 51.5506,
+    "lon": -1.45504,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Top Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.130219,
+    "lon": -0.546368,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Broadmarsh Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.526831,
+    "lon": 0.982146,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tullochgribban-High Airstrip",
+    "kind": "airfield",
+    "lat": 57.307125,
+    "lon": -3.749256,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Idsworth Airstrip",
+    "kind": "airfield",
+    "lat": 50.92723,
+    "lon": -0.95384,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lempitlaw Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.585485,
+    "lon": -2.328248,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Barnfield Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.359721,
+    "lon": -0.012274,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Altamuskin",
+    "kind": "airfield",
+    "lat": 54.522128,
+    "lon": -7.083564,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Corston Airstrip",
+    "kind": "airfield",
+    "lat": 59.052331,
+    "lon": -3.19069,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lutton Garnsgate Airstrip",
+    "kind": "airfield",
+    "lat": 52.778003,
+    "lon": 0.093813,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bury Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.847497,
+    "lon": 0.314867,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Dungannon Airstrip",
+    "kind": "airfield",
+    "lat": 54.56089,
+    "lon": -6.8171,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Knoll Airstrip",
+    "kind": "airfield",
+    "lat": 52.40254,
+    "lon": -2.16059,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Walk Farm Airstrip",
+    "kind": "airfield",
+    "lat": 53.51763,
+    "lon": -0.17885,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Woodhouse Farm Airstrip",
+    "kind": "airfield",
+    "lat": 54.477841,
+    "lon": -1.119415,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Patridge Green Airstrip",
+    "kind": "airfield",
+    "lat": 50.953317,
+    "lon": -0.3159,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Old Mill Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.026236,
+    "lon": -0.655503,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Green Lane Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.71212,
+    "lon": 1.247592,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Phocle Green Airstrip",
+    "kind": "airfield",
+    "lat": 51.94328,
+    "lon": -2.54575,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Howden Airstrip",
+    "kind": "airfield",
+    "lat": 53.74275,
+    "lon": -0.85444,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Sheardale airstrip",
+    "kind": "airfield",
+    "lat": 56.144981,
+    "lon": -3.693255,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Buchlyvie Airstrip",
+    "kind": "airfield",
+    "lat": 56.121851,
+    "lon": -4.325039,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hilton of Carslogie Airstrip",
+    "kind": "airfield",
+    "lat": 56.315643,
+    "lon": -3.065972,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Dollar airstrip",
+    "kind": "airfield",
+    "lat": 56.170594,
+    "lon": -3.654502,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kier Garden Airstrip",
+    "kind": "airfield",
+    "lat": 56.114916,
+    "lon": -4.267439,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Teuchats Farm Airstrip",
+    "kind": "airfield",
+    "lat": 56.254848,
+    "lon": -2.969981,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "South Barnbeth Farm Airstrip",
+    "kind": "airfield",
+    "lat": 55.84734,
+    "lon": -4.615176,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Rands Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.02937,
+    "lon": 0.92903,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Mayobridge Airstrip",
+    "kind": "airfield",
+    "lat": 54.19153,
+    "lon": -6.24834,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pathfinder Flying Club Airstrip",
+    "kind": "airfield",
+    "lat": 52.35523,
+    "lon": -0.11775,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Crymych Airstrip",
+    "kind": "airfield",
+    "lat": 51.94453,
+    "lon": -4.62888,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Moss Edge Farm Airfield",
+    "kind": "airfield",
+    "lat": 53.93485,
+    "lon": -2.85422,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Devizes Airstrip",
+    "kind": "airfield",
+    "lat": 51.352243,
+    "lon": -1.95267,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Baldardo Field",
+    "kind": "airfield",
+    "lat": 56.666793,
+    "lon": -2.800847,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Tomlow Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.27084,
+    "lon": -1.32962,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Middlezoy Aerodrome",
+    "kind": "airfield",
+    "lat": 51.10308,
+    "lon": -2.90399,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Isham Airstrip",
+    "kind": "airfield",
+    "lat": 52.361109,
+    "lon": -0.718167,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Glen Quoich Estate",
+    "kind": "airfield",
+    "lat": 57.112565,
+    "lon": -5.272062,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Compton Chamberlayne Airstrip",
+    "kind": "airfield",
+    "lat": 51.060545,
+    "lon": -1.965385,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Pilling Sands Microlight",
+    "kind": "airfield",
+    "lat": 53.933,
+    "lon": -2.98,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Homefield Farm / Edenbridge Airstrip",
+    "kind": "airfield",
+    "lat": 51.208332,
+    "lon": 0.007167,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Dishforth Village Airfield",
+    "kind": "airfield",
+    "lat": 54.151402,
+    "lon": -1.421142,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Middleton Sands Microlight",
+    "kind": "airfield",
+    "lat": 54.0,
+    "lon": -2.9,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hazlewood Gallop / Tadcaster Airfield",
+    "kind": "airfield",
+    "lat": 53.845833,
+    "lon": -1.3205,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Newmarket Heath / Rowley Mile Airstrip",
+    "kind": "airfield",
+    "lat": 52.242,
+    "lon": 0.369,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Herridge Gallops / Collingbourne Ducis Airfield",
+    "kind": "airfield",
+    "lat": 51.2866,
+    "lon": -1.627626,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cuxwold Airfield",
+    "kind": "airfield",
+    "lat": 53.48734,
+    "lon": -0.21947,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Loxley Airfield",
+    "kind": "airfield",
+    "lat": 53.127462,
+    "lon": 0.03097,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Well Farm Airstrip",
+    "kind": "airfield",
+    "lat": 50.50611,
+    "lon": -3.72891,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ripley Airfield",
+    "kind": "airfield",
+    "lat": 53.06482,
+    "lon": -1.38859,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Arley Airfield",
+    "kind": "airfield",
+    "lat": 53.33304,
+    "lon": -2.51669,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "South Hykeham Airfield",
+    "kind": "airfield",
+    "lat": 53.173055,
+    "lon": -0.605224,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Colliers Elm Farm Airstrip",
+    "kind": "airfield",
+    "lat": 51.882617,
+    "lon": -2.351353,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Bicester Airfield",
+    "kind": "airfield",
+    "lat": 51.916698,
+    "lon": -1.13194,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Woodbridge Airfield",
+    "kind": "airfield",
+    "lat": 52.09,
+    "lon": 1.40583,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Wethersfield Air Base",
+    "kind": "airfield",
+    "lat": 51.971901,
+    "lon": 0.509444,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Plockton Airstrip",
+    "kind": "airfield",
+    "lat": 57.335499,
+    "lon": -5.67308,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Crosland Moor Airfield",
+    "kind": "airfield",
+    "lat": 53.621667,
+    "lon": -1.830278,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Breighton Airfield",
+    "kind": "airfield",
+    "lat": 53.802794,
+    "lon": -0.917179,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lundy Island Airfield",
+    "kind": "airfield",
+    "lat": 51.170505,
+    "lon": -4.670758,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Cark airfield",
+    "kind": "airfield",
+    "lat": 54.164266,
+    "lon": -2.96133,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Badminton Airfield",
+    "kind": "airfield",
+    "lat": 51.548417,
+    "lon": -2.303181,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Fadmoor Airfield",
+    "kind": "airfield",
+    "lat": 54.308098,
+    "lon": -0.974114,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Laurencekirk",
+    "kind": "airfield",
+    "lat": 56.870087,
+    "lon": -2.462225,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Polmont",
+    "kind": "airfield",
+    "lat": 55.980548,
+    "lon": -3.694702,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kildalloig Airstrip",
+    "kind": "airfield",
+    "lat": 55.412805,
+    "lon": -5.557641,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Castleton Farm",
+    "kind": "airfield",
+    "lat": 55.813033,
+    "lon": -3.064963,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Carlung Farm",
+    "kind": "airfield",
+    "lat": 55.704234,
+    "lon": -4.877671,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Lartington Moor Airstrip",
+    "kind": "airfield",
+    "lat": 54.53098,
+    "lon": -2.10375,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "(Duplicate)East Kirkby Airfield",
+    "kind": "airfield",
+    "lat": 53.13889,
+    "lon": -0.00056,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Fowler's Field Airstrip",
+    "kind": "airfield",
+    "lat": 51.000764,
+    "lon": -0.444937,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Old Meldrum",
+    "kind": "airfield",
+    "lat": 57.39204,
+    "lon": -2.385107,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Hillgate Farm Airstrip",
+    "kind": "airfield",
+    "lat": 52.667378,
+    "lon": -0.031328,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Ragley Hall Airstrip",
+    "kind": "airfield",
+    "lat": 52.2283,
+    "lon": -1.8439,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Kingstanding Airfield",
+    "kind": "airfield",
+    "lat": 51.848611,
+    "lon": -1.544167,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Methlick Airfied",
+    "kind": "airfield",
+    "lat": 57.448338,
+    "lon": -2.239615,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Dornoch Airfield",
+    "kind": "airfield",
+    "lat": 57.868999,
+    "lon": -4.023,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Flotta Isle Airstrip",
+    "kind": "airfield",
+    "lat": 58.825802,
+    "lon": -3.14278,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Out Skerries Airfield",
+    "kind": "airfield",
+    "lat": 60.4252,
+    "lon": -0.75,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Papa Stour Airstrip",
+    "kind": "airfield",
+    "lat": 60.321701,
+    "lon": -1.69306,
+    "icao": "",
+    "size": "small"
+  },
+  {
+    "name": "Glenforsa Airfield",
+    "kind": "airfield",
+    "lat": 56.517202,
+    "lon": -5.91401,
+    "icao": "",
+    "size": "small"
+  }
+]

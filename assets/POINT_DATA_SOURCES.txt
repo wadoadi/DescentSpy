@@ -1,0 +1,17 @@
+Bundled point catalogue:
+- UK airfield names, ICAO codes and coordinates: OurAirports, public domain.
+- UK town/place names and coordinates: GeoNames, CC BY 4.0.
+
+UK visual reporting points are loaded from the user-supplied
+`UK-VRPs.csv` asset. The file includes a "Valid From" date; the app displays
+that date and associated aerodrome information for each point. Confirm every
+coordinate and its current validity against current official charts/AIP before
+use. This app does not automatically check for AIRAC updates.
+
+NATS publishes the UK Aeronautical Information Publication (AIP) through its
+eAIP portal in AIRAC editions, with aerodrome-specific information and
+effective dates. Check the current NATS UK eAIP or official chart when
+validating any VRP.
+
+The point search is offline and searches bundled/custom point names and ICAO
+codes. It does not look up postcode coordinates.
