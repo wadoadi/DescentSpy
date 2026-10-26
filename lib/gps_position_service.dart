@@ -246,6 +246,14 @@ class GpsPositionService extends ChangeNotifier {
   }
 
   void _setPosition(Position position) {
+    if (kDebugMode) {
+      final arrived = DateTime.now();
+      debugPrint(
+        'GPS fix timestamp ${position.timestamp.toIso8601String()} '
+        'arrived ${arrived.toIso8601String()} '
+        'age ${arrived.difference(position.timestamp).inMilliseconds} ms',
+      );
+    }
     _position = position;
     notifyListeners();
   }

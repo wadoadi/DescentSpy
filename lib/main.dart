@@ -492,7 +492,11 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
       }
     }
     _lastPosition = position;
-    if (_plan != null) {
+    if (_plan != null &&
+        isNewerFix(
+          previousTimestamp: previous?.timestamp,
+          timestamp: timestamp,
+        )) {
       final altitudeFt = position.altitude * metersToFeet;
       _altitudeSamples.add(
         AltitudeSample(timestamp: timestamp, altitudeFt: altitudeFt),

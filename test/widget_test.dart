@@ -119,6 +119,27 @@ void main() {
       expect(result, closeTo(-600, 0.01));
     });
 
+    test('treats a repeated GPS fix as not newer than the last one', () {
+      final start = DateTime.utc(2026, 1, 1);
+
+      expect(isNewerFix(previousTimestamp: null, timestamp: start), isTrue);
+      expect(
+        isNewerFix(
+          previousTimestamp: start,
+          timestamp: start.add(const Duration(seconds: 1)),
+        ),
+        isTrue,
+      );
+      expect(isNewerFix(previousTimestamp: start, timestamp: start), isFalse);
+      expect(
+        isNewerFix(
+          previousTimestamp: start.add(const Duration(seconds: 1)),
+          timestamp: start,
+        ),
+        isFalse,
+      );
+    });
+
     test('waits for enough time-spaced GPS samples before showing VSI', () {
       final start = DateTime.utc(2026, 1, 1);
       final result = estimateVerticalSpeedFpm([

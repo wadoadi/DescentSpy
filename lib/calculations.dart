@@ -48,6 +48,15 @@ class AltitudeSample {
   final double altitudeFt;
 }
 
+/// True when [timestamp] is a new fix rather than a repeat of
+/// [previousTimestamp]. Callbacks that re-deliver the cached fix must not add
+/// the same altitude sample twice.
+bool isNewerFix({
+  required DateTime? previousTimestamp,
+  required DateTime timestamp,
+}) =>
+    previousTimestamp == null || timestamp.isAfter(previousTimestamp);
+
 double? estimateVerticalSpeedFpm(List<AltitudeSample> samples) {
   if (samples.length < 3) return null;
 
