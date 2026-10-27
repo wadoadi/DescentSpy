@@ -419,6 +419,18 @@ void main() {
     },
   );
 
+  test('sensor sample time is placed by its age on the since-boot clock', () {
+    final now = DateTime(2026, 10, 27, 12);
+    expect(
+      sensorSampleTime(now: now, nowElapsedMs: 10000, sampleElapsedMs: 9000),
+      DateTime(2026, 10, 27, 11, 59, 59),
+    );
+    expect(
+      sensorSampleTime(now: now, nowElapsedMs: 10000, sampleElapsedMs: 10000),
+      now,
+    );
+  });
+
   test('deduplicates same-category points at the same coordinates', () {
     const first = NavigationPoint(
       id: 'one',

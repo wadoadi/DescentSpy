@@ -87,6 +87,8 @@ class GpsPositionService extends ChangeNotifier {
   bool _debugRecording = false;
   final List<GpsDebugFix> _debugRecords = [];
   final List<GpsDebugEvent> _debugEvents = [];
+  DateTime? _debugRecordingWindowStart;
+  DateTime? _debugRecordingWindowEnd;
 
   static const _debugGapHistoryLength = 20;
   static const _debugRecordLimit = 500;
@@ -118,8 +120,16 @@ class GpsPositionService extends ChangeNotifier {
   /// Debug-only: lifecycle and GPS control events, oldest first.
   List<GpsDebugEvent> get debugEvents => List.unmodifiable(_debugEvents);
 
+  /// Start of the first recording since the last clear.
+  DateTime? get debugRecordingWindowStart => _debugRecordingWindowStart;
+
+  /// End of the last recording, or null while recording.
+  DateTime? get debugRecordingWindowEnd => _debugRecordingWindowEnd;
+
   void startDebugRecording() {
     if (_debugRecording) return;
+    _debugRecordingWindowStart ??= DateTime.now();
+    _debugRecordingWindowEnd = null;
     _debugRecording = true;
     logDebugEvent('recording started');
     notifyListeners();
@@ -127,6 +137,7 @@ class GpsPositionService extends ChangeNotifier {
 
   void stopDebugRecording() {
     if (!_debugRecording) return;
+    _debugRecordingWindowEnd = DateTime.now();
     _debugRecording = false;
     logDebugEvent('recording stopped');
     notifyListeners();
@@ -137,6 +148,8 @@ class GpsPositionService extends ChangeNotifier {
     if (_debugRecording) return;
     _debugRecords.clear();
     _debugEvents.clear();
+    _debugRecordingWindowStart = null;
+    _debugRecordingWindowEnd = null;
     notifyListeners();
   }
 

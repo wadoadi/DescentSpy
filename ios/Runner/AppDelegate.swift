@@ -53,7 +53,8 @@ final class BarometerStreamHandler: NSObject, FlutterStreamHandler {
       events([
         "hPa": data.pressure.doubleValue * 10,
         "relativeAltitudeM": data.relativeAltitude.doubleValue,
-        "elapsedMs": Int(ProcessInfo.processInfo.systemUptime * 1000),
+        "elapsedMs": Int(data.timestamp * 1000),
+        "nowElapsedMs": Int(ProcessInfo.processInfo.systemUptime * 1000),
       ])
     }
     return nil

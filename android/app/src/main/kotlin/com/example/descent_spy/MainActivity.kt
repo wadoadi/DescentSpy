@@ -61,6 +61,7 @@ class MainActivity : FlutterActivity() {
                                     mapOf(
                                         "hPa" to event.values[0].toDouble(),
                                         "elapsedMs" to event.timestamp / 1_000_000L,
+                                        "nowElapsedMs" to SystemClock.elapsedRealtime(),
                                     ),
                                 )
                             }

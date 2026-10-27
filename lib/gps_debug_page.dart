@@ -82,7 +82,7 @@ class _GpsDebugPageState extends State<GpsDebugPage> {
       );
     }
     final barometer = BarometerService.instance;
-    final baroReadings = barometer.recentReadings;
+    final baroReadings = _windowedBaroReadings();
     if (baroReadings.isNotEmpty) {
       buffer
         ..writeln()
@@ -119,9 +119,8 @@ class _GpsDebugPageState extends State<GpsDebugPage> {
         ? null
         : DateTime.now().difference(lastFix).inMilliseconds;
     final barometer = BarometerService.instance;
-    final latestBaro = barometer.recentReadings.isEmpty
-        ? null
-        : barometer.recentReadings.last;
+    final baroReadings = _windowedBaroReadings();
+    final latestBaro = baroReadings.isEmpty ? null : baroReadings.last;
     final baroRelativeM = latestBaro == null
         ? null
         : barometer.relativeAltitudeMeters(latestBaro);
@@ -209,7 +208,10 @@ class _GpsDebugPageState extends State<GpsDebugPage> {
                   'relative altitude: ${baroRelativeM == null ? 'none' : '${baroRelativeM.toStringAsFixed(1)} m'}',
                   style: style,
                 ),
-                Text('samples: ${barometer.sampleCount}', style: style),
+                Text(
+                  'samples in recording: ${baroReadings.length}',
+                  style: style,
+                ),
                 Text(
                   'last sample: ${baroSinceMs == null ? 'none' : '$baroSinceMs ms ago'}',
                   style: style,
@@ -327,6 +329,21 @@ class _GpsDebugPageState extends State<GpsDebugPage> {
         ],
       ),
     );
+  }
+
+  /// Barometer readings inside the recording window. The window runs from the
+  /// first recording start to the last recording stop, or to now while recording.
+  List<BarometerReading> _windowedBaroReadings() {
+    final service = GpsPositionService.instance;
+    final start = service.debugRecordingWindowStart;
+    if (start == null) return const [];
+    final end = service.debugRecordingWindowEnd ?? DateTime.now();
+    return BarometerService.instance.recentReadings
+        .where(
+          (reading) =>
+              !reading.time.isBefore(start) && !reading.time.isAfter(end),
+        )
+        .toList();
   }
 
   /// One record line; [index] points into [records], oldest first.

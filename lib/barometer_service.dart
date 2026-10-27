@@ -12,6 +12,17 @@ double pressureAltitudeMeters(double pressureHpa) {
   return 44330 * (1 - math.pow(pressureHpa / 1013.25, 1 / 5.255).toDouble());
 }
 
+/// Wall-clock time of a sensor sample. [sampleElapsedMs] and [nowElapsedMs]
+/// are on the device's since-boot clock; [now] is the wall clock at
+/// [nowElapsedMs]. Works for late-delivered samples too.
+DateTime sensorSampleTime({
+  required DateTime now,
+  required int nowElapsedMs,
+  required int sampleElapsedMs,
+}) {
+  return now.subtract(Duration(milliseconds: nowElapsedMs - sampleElapsedMs));
+}
+
 class BarometerReading {
   const BarometerReading({required this.time, required this.pressureHpa});
 
@@ -113,9 +124,18 @@ class BarometerService {
     _subscription = _pressureChannel.receiveBroadcastStream().listen(
       (event) {
         final map = event as Map<dynamic, dynamic>;
+        final now = DateTime.now();
+        final sampleElapsedMs = (map['elapsedMs'] as num?)?.toInt();
+        final nowElapsedMs = (map['nowElapsedMs'] as num?)?.toInt();
         _recordReading(
           BarometerReading(
-            time: DateTime.now(),
+            time: sampleElapsedMs == null || nowElapsedMs == null
+                ? now
+                : sensorSampleTime(
+                    now: now,
+                    nowElapsedMs: nowElapsedMs,
+                    sampleElapsedMs: sampleElapsedMs,
+                  ),
             pressureHpa: (map['hPa'] as num).toDouble(),
           ),
         );

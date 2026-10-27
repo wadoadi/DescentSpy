@@ -45,7 +45,8 @@ The app has three tabs:
   altitude source. Platform channels: `com.example.descent_spy/barometer` and
   `.../barometer_pressure` (Android uses SENSOR_DELAY_NORMAL; iOS uses
   CMAltimeter, which is not built or tested here). Preference key:
-  `vertical_speed_barometer`.
+  `vertical_speed_barometer`. Readings are stamped with the sensor's own time
+  (converted with the since-boot clock), not with arrival time.
 - After calculation, the live view shows target/current/delta panels for ground
   speed, GPS vertical speed, and altitude. A separate **REMAINING** panel
   shows remaining time, remaining distance, and (when a point was selected) a
@@ -241,7 +242,7 @@ Version: the Settings page shows `appVersion` and `appBuild` from
 `lib/app_version.dart`. Keep pubspec.yaml's version in step. Increment
 `appBuild` (and the pubspec build number after the +) with every build.
 Increment the V number (`appVersion`) only when the owner asks. Current: 0.7,
-build 4.
+build 5.
 
 ## Keeping this guide current
 
