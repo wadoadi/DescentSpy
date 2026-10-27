@@ -28,6 +28,8 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>DescentSpy uses GPS altitude and ground speed to show live descent guidance while the app is open.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>DescentSpy uses the iPhone's barometer, when available, to estimate vertical speed.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

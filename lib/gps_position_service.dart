@@ -26,6 +26,44 @@ class GpsSatelliteStatus {
       : GpsFixLevel.none;
 }
 
+/// Debug-only record of one GPS fix and when it arrived in the app.
+class GpsDebugFix {
+  const GpsDebugFix({
+    required this.arrival,
+    required this.fixTimestamp,
+    required this.ageMs,
+    required this.latitude,
+    required this.longitude,
+    required this.altitudeMeters,
+    required this.hasAltitude,
+    required this.speedMetersPerSecond,
+    required this.horizontalAccuracyMeters,
+  });
+
+  final DateTime arrival;
+  final DateTime fixTimestamp;
+  final int ageMs;
+  final double latitude;
+  final double longitude;
+  final double altitudeMeters;
+  final bool hasAltitude;
+  final double speedMetersPerSecond;
+  final double horizontalAccuracyMeters;
+}
+
+/// Debug-only lifecycle or GPS control event.
+class GpsDebugEvent {
+  const GpsDebugEvent({
+    required this.time,
+    required this.message,
+    required this.streamActive,
+  });
+
+  final DateTime time;
+  final String message;
+  final bool streamActive;
+}
+
 class GpsPositionService extends ChangeNotifier {
   GpsPositionService._();
 
@@ -43,11 +81,77 @@ class GpsPositionService extends ChangeNotifier {
   bool _starting = false;
   bool _shouldRun = false;
   bool _refreshingSatelliteStatus = false;
+  int _debugFixCount = 0;
+  DateTime? _debugLastArrival;
+  final List<int> _debugGapsMs = [];
+  bool _debugRecording = false;
+  final List<GpsDebugFix> _debugRecords = [];
+  final List<GpsDebugEvent> _debugEvents = [];
+
+  static const _debugGapHistoryLength = 20;
+  static const _debugRecordLimit = 500;
+  static const _debugEventLimit = 100;
 
   Position? get position => _position;
   GpsSatelliteStatus? get satelliteStatus => _satelliteStatus;
   String? get satelliteError => _satelliteError;
   String? get errorMessage => _errorMessage;
+
+  /// Debug-only diagnostics: fixes received since the service was created.
+  int get debugFixCount => _debugFixCount;
+
+  /// Debug-only diagnostics: local arrival time of the most recent fix.
+  DateTime? get debugLastArrival => _debugLastArrival;
+
+  /// Debug-only diagnostics: gaps in ms between the last fixes (oldest first).
+  List<int> get debugRecentGapsMs => List.unmodifiable(_debugGapsMs);
+
+  /// Debug-only: whether the shared position stream is currently listening.
+  bool get debugStreamActive => _subscription != null;
+
+  /// Debug-only: whether fixes are being stored as [debugRecords].
+  bool get debugRecording => _debugRecording;
+
+  /// Debug-only: stored fixes, oldest first, while recording.
+  List<GpsDebugFix> get debugRecords => List.unmodifiable(_debugRecords);
+
+  /// Debug-only: lifecycle and GPS control events, oldest first.
+  List<GpsDebugEvent> get debugEvents => List.unmodifiable(_debugEvents);
+
+  void startDebugRecording() {
+    if (!kDebugMode || _debugRecording) return;
+    _debugRecording = true;
+    logDebugEvent('recording started');
+    notifyListeners();
+  }
+
+  void stopDebugRecording() {
+    if (!kDebugMode || !_debugRecording) return;
+    _debugRecording = false;
+    logDebugEvent('recording stopped');
+    notifyListeners();
+  }
+
+  /// Clears stored fixes and events. Does nothing while recording.
+  void clearDebugRecords() {
+    if (!kDebugMode || _debugRecording) return;
+    _debugRecords.clear();
+    _debugEvents.clear();
+    notifyListeners();
+  }
+
+  /// Appends a debug event with the current stream state. No-op in release.
+  void logDebugEvent(String message) {
+    if (!kDebugMode) return;
+    _debugEvents.add(
+      GpsDebugEvent(
+        time: DateTime.now(),
+        message: message,
+        streamActive: _subscription != null,
+      ),
+    );
+    if (_debugEvents.length > _debugEventLimit) _debugEvents.removeAt(0);
+  }
 
   Future<void> refreshSatelliteStatus() async {
     if (_refreshingSatelliteStatus) return;
@@ -93,6 +197,7 @@ class GpsPositionService extends ChangeNotifier {
 
   Future<void> start() async {
     _shouldRun = true;
+    logDebugEvent('start requested');
     if (_subscription != null) {
       _startSatelliteMonitoring();
       return;
@@ -146,7 +251,12 @@ class GpsPositionService extends ChangeNotifier {
                 },
                 onError: (Object error) {
                   _subscription = null;
+                  logDebugEvent('stream error: $error');
                   _setError('GPS error: $error');
+                },
+                onDone: () {
+                  _subscription = null;
+                  logDebugEvent('stream done');
                 },
               );
     } on LocationServiceDisabledException {
@@ -169,6 +279,7 @@ class GpsPositionService extends ChangeNotifier {
     final subscription = _subscription;
     _subscription = null;
     await subscription?.cancel();
+    logDebugEvent('stop requested');
     _setError('GPS paused while app is in background.');
   }
 
@@ -253,9 +364,37 @@ class GpsPositionService extends ChangeNotifier {
         'arrived ${arrived.toIso8601String()} '
         'age ${arrived.difference(position.timestamp).inMilliseconds} ms',
       );
+      _recordDebugFix(arrived, position);
     }
     _position = position;
     notifyListeners();
+  }
+
+  void _recordDebugFix(DateTime arrived, Position position) {
+    _debugFixCount++;
+    final previous = _debugLastArrival;
+    if (previous != null) {
+      _debugGapsMs.add(arrived.difference(previous).inMilliseconds);
+      if (_debugGapsMs.length > _debugGapHistoryLength) {
+        _debugGapsMs.removeAt(0);
+      }
+    }
+    _debugLastArrival = arrived;
+    if (!_debugRecording) return;
+    _debugRecords.add(
+      GpsDebugFix(
+        arrival: arrived,
+        fixTimestamp: position.timestamp,
+        ageMs: arrived.difference(position.timestamp).inMilliseconds,
+        latitude: position.latitude,
+        longitude: position.longitude,
+        altitudeMeters: position.altitude,
+        hasAltitude: position.hasAltitude,
+        speedMetersPerSecond: position.speed,
+        horizontalAccuracyMeters: position.accuracy,
+      ),
+    );
+    if (_debugRecords.length > _debugRecordLimit) _debugRecords.removeAt(0);
   }
 
   void _setError(String? message) {

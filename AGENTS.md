@@ -37,6 +37,15 @@ The app has three tabs:
   selected.
 - **ADD BY LOCATION** opens the destination picker and uses direct GPS
   great-circle distance to the selected point.
+- Barometer (optional): if the device has a pressure sensor, Settings shows
+  **USE BAROMETER FOR VERTICAL SPEED** (off by default, with a warning that
+  barometric altitude can be wrong in some aircraft). When on, the live
+  vertical-speed panel uses barometer altitude over the same 30 s window and
+  is labelled **BARO**; otherwise it is labelled **GPS**. GPS remains the
+  altitude source. Platform channels: `com.example.descent_spy/barometer` and
+  `.../barometer_pressure` (Android uses SENSOR_DELAY_NORMAL; iOS uses
+  CMAltimeter, which is not built or tested here). Preference key:
+  `vertical_speed_barometer`.
 - After calculation, the live view shows target/current/delta panels for ground
   speed, GPS vertical speed, and altitude. A separate **REMAINING** panel
   shows remaining time, remaining distance, and (when a point was selected) a
@@ -117,6 +126,10 @@ The app has three tabs:
 - **REQUEST GPS PERMISSION** retries the permission prompt; if the permission
   has been permanently denied, it opens the platform app settings.
 - **OPEN DESTINATION POINTS** opens the full point manager.
+- Debug builds only (`kDebugMode`): **GPS DEBUG PAGE** opens
+  `lib/gps_debug_page.dart`, with START/STOP RECORDING of GPS fixes (last 500),
+  a copy-to-clipboard export, and the last 100 lifecycle and GPS start/stop/stream
+  events. Release builds show no entry point and log nothing.
 - Shows GPS fix age/state, satellite counts when available, horizontal accuracy,
   altitude/vertical accuracy, groundspeed, track/course, coordinates, and last
   update time. On Android, the shared GPS service requests GPS-provider updates
@@ -219,6 +232,14 @@ The Android Gradle JVM args include
 
 The user-facing setup, safety, data-source, test, and build overview is in
 `README.md`; keep it aligned with this guide when those details change.
+
+## Versioning
+
+Version: the Settings page shows `appVersion` and `appBuild` from
+`lib/app_version.dart`. Keep pubspec.yaml's version in step. Increment
+`appBuild` (and the pubspec build number after the +) with every build.
+Increment the V number (`appVersion`) only when the owner asks. Current: 0.7,
+build 3.
 
 ## Keeping this guide current
 

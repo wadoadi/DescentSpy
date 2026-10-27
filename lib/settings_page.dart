@@ -1,11 +1,15 @@
 import 'dart:async';
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'app_theme.dart';
+import 'app_version.dart';
+import 'barometer_service.dart';
 import 'calculations.dart';
+import 'gps_debug_page.dart';
 import 'gps_position_service.dart';
 import 'points_page.dart';
 
@@ -34,6 +38,8 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   bool _requestingPermission = false;
+  bool _barometerAvailable = false;
+  bool _useBarometer = false;
   bool _loadingKeyboardMode = true;
   PointSearchKeyboardMode _keyboardMode = PointSearchKeyboardMode.large;
   String? _keyboardModeError;
@@ -43,7 +49,22 @@ class _SettingsPageState extends State<SettingsPage> {
     super.initState();
     GpsPositionService.instance.addListener(_onGpsChanged);
     unawaited(_loadKeyboardMode());
+    unawaited(_loadBarometer());
     unawaited(GpsPositionService.instance.refreshSatelliteStatus());
+  }
+
+  Future<void> _loadBarometer() async {
+    final available = await BarometerService.instance.checkAvailable();
+    if (!mounted) return;
+    setState(() {
+      _barometerAvailable = available;
+      _useBarometer = BarometerService.instance.useForVerticalSpeed;
+    });
+  }
+
+  Future<void> _setUseBarometer(bool value) async {
+    setState(() => _useBarometer = value);
+    await BarometerService.instance.setUseForVerticalSpeed(value);
   }
 
   @override
@@ -172,6 +193,38 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
           ),
           const SizedBox(height: 14),
+          if (_barometerAvailable) ...[
+            Card(
+              color: context.appPanel,
+              child: Padding(
+                padding: const EdgeInsets.all(18),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    SwitchListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: Text(
+                        'USE BAROMETER FOR VERTICAL SPEED',
+                        style: TextStyle(
+                          color: context.appText,
+                          fontWeight: FontWeight.w900,
+                          fontSize: 17,
+                        ),
+                      ),
+                      value: _useBarometer,
+                      onChanged: _setUseBarometer,
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Barometric altitude can be wrong in some aircraft because of static port and ventilation effects. Check the aircraft altimeter. GPS altitude remains the altitude source.',
+                      style: TextStyle(color: context.appSecondaryText),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 14),
+          ],
           Card(
             color: context.appPanel,
             child: Padding(
@@ -444,9 +497,30 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
             ),
           ),
+          if (kDebugMode) ...[
+            const SizedBox(height: 14),
+            SizedBox(
+              height: 60,
+              child: OutlinedButton.icon(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(builder: (_) => const GpsDebugPage()),
+                ),
+                icon: const Icon(Icons.bug_report, size: 24),
+                label: const Text(
+                  'GPS DEBUG PAGE',
+                  style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16),
+                ),
+              ),
+            ),
+          ],
           const SizedBox(height: 10),
           Text(
             'DescentSpy is a planning aid. Verify navigation, weather, and aircraft performance using approved sources.',
+            style: TextStyle(color: context.appFaintText, fontSize: 13),
+          ),
+          const SizedBox(height: 10),
+          Text(
+            'Version $appVersion · build $appBuild',
             style: TextStyle(color: context.appFaintText, fontSize: 13),
           ),
         ],

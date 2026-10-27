@@ -1,12 +1,14 @@
 import 'dart:async';
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 import 'app_theme.dart';
+import 'barometer_service.dart';
 import 'calculations.dart';
 import 'gps_position_service.dart';
 import 'point_data.dart';
@@ -37,6 +39,7 @@ class _DescentSpyAppState extends State<DescentSpyApp>
     unawaited(WakelockPlus.enable());
     unawaited(GpsPositionService.instance.start());
     unawaited(_loadThemeMode());
+    unawaited(BarometerService.instance.restorePreference());
   }
 
   Future<void> _loadThemeMode() async {
@@ -107,6 +110,7 @@ class _DescentSpyAppState extends State<DescentSpyApp>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    GpsPositionService.instance.logDebugEvent('lifecycle ${state.name}');
     if (state == AppLifecycleState.resumed) {
       unawaited(WakelockPlus.enable());
       unawaited(GpsPositionService.instance.start());
@@ -228,6 +232,9 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
   Position? _lastPosition;
   double _gpsTravelledNm = 0;
   double? _verticalSpeedFpm;
+  final List<AltitudeSample> _barometerSamples = [];
+  double? _barometerVerticalSpeedFpm;
+  StreamSubscription<BarometerReading>? _barometerSubscription;
   String? _gpsMessage;
   Stopwatch? _planClock;
   Timer? _refreshTimer;
@@ -252,7 +259,31 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
   void initState() {
     super.initState();
     GpsPositionService.instance.addListener(_onGpsServiceChanged);
+    _barometerSubscription = BarometerService.instance.readings.listen(
+      _onBarometerReading,
+    );
     unawaited(_restoreFields().then((_) => _onGpsServiceChanged()));
+  }
+
+  void _onBarometerReading(BarometerReading reading) {
+    if (!mounted ||
+        _plan == null ||
+        !BarometerService.instance.useForVerticalSpeed) {
+      return;
+    }
+    _barometerSamples.add(
+      AltitudeSample(
+        timestamp: reading.time,
+        altitudeFt: reading.altitudeMeters * metersToFeet,
+      ),
+    );
+    final cutoff = reading.time.subtract(const Duration(seconds: 30));
+    _barometerSamples.removeWhere(
+      (sample) => sample.timestamp.isBefore(cutoff),
+    );
+    setState(() {
+      _barometerVerticalSpeedFpm = estimateVerticalSpeedFpm(_barometerSamples);
+    });
   }
 
   Future<void> _restoreFields() async {
@@ -292,6 +323,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
   @override
   void dispose() {
     GpsPositionService.instance.removeListener(_onGpsServiceChanged);
+    _barometerSubscription?.cancel();
     _refreshTimer?.cancel();
     _start.dispose();
     _target.dispose();
@@ -419,6 +451,8 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
         _groundspeedLockedForPlan = true;
         _altitudeSamples.clear();
         _verticalSpeedFpm = null;
+        _barometerSamples.clear();
+        _barometerVerticalSpeedFpm = null;
         _planClock = Stopwatch()..start();
       });
       _refreshTimer?.cancel();
@@ -513,6 +547,9 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
   @override
   Widget build(BuildContext context) {
     final gpsPosition = _lastPosition;
+    final useBarometerSpeed =
+        BarometerService.instance.useForVerticalSpeed &&
+        _barometerVerticalSpeedFpm != null;
     final currentAltitudeFt = gpsPosition == null
         ? null
         : gpsPosition.altitude * metersToFeet;
@@ -748,13 +785,20 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
               currentGroundSpeedKt: currentGroundSpeedKt,
               currentAltitudeFt: currentAltitudeFt,
               targetAltitudeFt: double.tryParse(_target.text.trim()),
-              verticalSpeedFpm: _verticalSpeedFpm,
+              verticalSpeedFpm: useBarometerSpeed
+                  ? _barometerVerticalSpeedFpm
+                  : _verticalSpeedFpm,
+              verticalSpeedSource: useBarometerSpeed ? 'BARO' : 'GPS',
               requiredRateFpm: liveRequiredRate,
               remainingTimeMinutes: remainingTimeMinutes,
               remainingDistanceNm: remainingDistanceNm,
               trackedDistanceNm: _gpsTravelledNm,
               point: _constraintPoint,
             ),
+            if (kDebugMode) ...[
+              const SizedBox(height: 14),
+              const _GpsDebugPanel(),
+            ],
           ],
           if (_plan != null && !_showTracking) ...[
             const SizedBox(height: 14),
@@ -937,6 +981,38 @@ class _GpsAccuracyIndicator extends StatelessWidget {
   }
 }
 
+class _GpsDebugPanel extends StatelessWidget {
+  const _GpsDebugPanel();
+
+  @override
+  Widget build(BuildContext context) {
+    final service = GpsPositionService.instance;
+    final lastFix = service.position?.timestamp;
+    final ageMs = lastFix == null
+        ? null
+        : DateTime.now().difference(lastFix).inMilliseconds;
+    final gaps = service.debugRecentGapsMs;
+    final style = TextStyle(
+      color: context.appSecondaryText,
+      fontFamily: 'monospace',
+      fontSize: 12,
+    );
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('GPS DEBUG', style: style.copyWith(fontWeight: FontWeight.w900)),
+        Text('fixes: ${service.debugFixCount}', style: style),
+        Text('last fix: ${lastFix?.toIso8601String() ?? 'none'}', style: style),
+        Text('age: ${ageMs == null ? 'none' : '$ageMs ms'}', style: style),
+        Text(
+          'gaps ms: ${gaps.isEmpty ? 'none' : gaps.join(' ')}',
+          style: style,
+        ),
+      ],
+    );
+  }
+}
+
 class _LiveVerticalRateCard extends StatelessWidget {
   const _LiveVerticalRateCard({
     required this.gpsMessage,
@@ -948,6 +1024,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
     required this.currentAltitudeFt,
     required this.targetAltitudeFt,
     required this.verticalSpeedFpm,
+    required this.verticalSpeedSource,
     required this.requiredRateFpm,
     required this.remainingTimeMinutes,
     required this.remainingDistanceNm,
@@ -964,6 +1041,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
   final double? currentAltitudeFt;
   final double? targetAltitudeFt;
   final double? verticalSpeedFpm;
+  final String verticalSpeedSource;
   final double? requiredRateFpm;
   final double? remainingTimeMinutes;
   final double? remainingDistanceNm;
@@ -1136,7 +1214,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           _TrackingPanel(
-            title: 'VERTICAL SPEED',
+            title: 'VERTICAL SPEED · $verticalSpeedSource',
             unit: 'ft/min',
             metrics: [
               _TrackingMetric(
