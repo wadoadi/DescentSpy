@@ -10,13 +10,23 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
 import androidx.core.content.ContextCompat
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
+import io.flutter.plugin.common.EventChannel
 import io.flutter.plugin.common.MethodChannel
 
 class MainActivity : FlutterActivity() {
     private val channelName = "com.example.descent_spy/gps_status"
+    private val barometerChannelName = "com.example.descent_spy/barometer"
+    private val barometerPressureChannelName =
+        "com.example.descent_spy/barometer_pressure"
+    private var sensorManager: SensorManager? = null
+    private var pressureListener: SensorEventListener? = null
     private var locationManager: LocationManager? = null
     private var gnssCallback: GnssStatus.Callback? = null
     private var gpsLocationListener: LocationListener? = null
@@ -29,6 +39,48 @@ class MainActivity : FlutterActivity() {
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
         locationManager = getSystemService(LOCATION_SERVICE) as LocationManager
+        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, barometerChannelName)
+            .setMethodCallHandler { call, result ->
+                when (call.method) {
+                    "isAvailable" -> result.success(
+                        sensorManager?.getDefaultSensor(Sensor.TYPE_PRESSURE) != null,
+                    )
+                    else -> result.notImplemented()
+                }
+            }
+        EventChannel(flutterEngine.dartExecutor.binaryMessenger, barometerPressureChannelName)
+            .setStreamHandler(
+                object : EventChannel.StreamHandler {
+                    override fun onListen(arguments: Any?, events: EventChannel.EventSink) {
+                        val manager = sensorManager ?: return
+                        val sensor = manager.getDefaultSensor(Sensor.TYPE_PRESSURE) ?: return
+                        val listener = object : SensorEventListener {
+                            override fun onSensorChanged(event: SensorEvent) {
+                                events.success(
+                                    mapOf(
+                                        "hPa" to event.values[0].toDouble(),
+                                        "elapsedMs" to event.timestamp / 1_000_000L,
+                                    ),
+                                )
+                            }
+
+                            override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
+                        }
+                        pressureListener = listener
+                        manager.registerListener(
+                            listener,
+                            sensor,
+                            SensorManager.SENSOR_DELAY_NORMAL,
+                        )
+                    }
+
+                    override fun onCancel(arguments: Any?) {
+                        pressureListener?.let { sensorManager?.unregisterListener(it) }
+                        pressureListener = null
+                    }
+                },
+            )
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, channelName)
             .setMethodCallHandler { call, result ->
                 when (call.method) {
