@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:math' as math;
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -497,22 +496,20 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
             ),
           ),
-          if (kDebugMode) ...[
-            const SizedBox(height: 14),
-            SizedBox(
-              height: 60,
-              child: OutlinedButton.icon(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute<void>(builder: (_) => const GpsDebugPage()),
-                ),
-                icon: const Icon(Icons.bug_report, size: 24),
-                label: const Text(
-                  'GPS DEBUG PAGE',
-                  style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16),
-                ),
+          const SizedBox(height: 14),
+          SizedBox(
+            height: 60,
+            child: OutlinedButton.icon(
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => const GpsDebugPage()),
+              ),
+              icon: const Icon(Icons.bug_report, size: 24),
+              label: const Text(
+                'GPS DEBUG PAGE',
+                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16),
               ),
             ),
-          ],
+          ),
           const SizedBox(height: 10),
           Text(
             'DescentSpy is a planning aid. Verify navigation, weather, and aircraft performance using approved sources.',

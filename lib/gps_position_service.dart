@@ -119,14 +119,14 @@ class GpsPositionService extends ChangeNotifier {
   List<GpsDebugEvent> get debugEvents => List.unmodifiable(_debugEvents);
 
   void startDebugRecording() {
-    if (!kDebugMode || _debugRecording) return;
+    if (_debugRecording) return;
     _debugRecording = true;
     logDebugEvent('recording started');
     notifyListeners();
   }
 
   void stopDebugRecording() {
-    if (!kDebugMode || !_debugRecording) return;
+    if (!_debugRecording) return;
     _debugRecording = false;
     logDebugEvent('recording stopped');
     notifyListeners();
@@ -134,15 +134,14 @@ class GpsPositionService extends ChangeNotifier {
 
   /// Clears stored fixes and events. Does nothing while recording.
   void clearDebugRecords() {
-    if (!kDebugMode || _debugRecording) return;
+    if (_debugRecording) return;
     _debugRecords.clear();
     _debugEvents.clear();
     notifyListeners();
   }
 
-  /// Appends a debug event with the current stream state. No-op in release.
+  /// Appends a diagnostic event with the current stream state.
   void logDebugEvent(String message) {
-    if (!kDebugMode) return;
     _debugEvents.add(
       GpsDebugEvent(
         time: DateTime.now(),
@@ -357,15 +356,15 @@ class GpsPositionService extends ChangeNotifier {
   }
 
   void _setPosition(Position position) {
+    final arrived = DateTime.now();
     if (kDebugMode) {
-      final arrived = DateTime.now();
       debugPrint(
         'GPS fix timestamp ${position.timestamp.toIso8601String()} '
         'arrived ${arrived.toIso8601String()} '
         'age ${arrived.difference(position.timestamp).inMilliseconds} ms',
       );
-      _recordDebugFix(arrived, position);
     }
+    _recordDebugFix(arrived, position);
     _position = position;
     notifyListeners();
   }
