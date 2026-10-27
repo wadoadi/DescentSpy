@@ -1092,7 +1092,28 @@ class _LiveVerticalRateCard extends StatelessWidget {
         currentGroundSpeedKt == null || targetGroundSpeedKt == null
         ? null
         : currentGroundSpeedKt! - targetGroundSpeedKt!;
-    final gpsIndicatorColor = switch (gpsFixLevel) {
+    final accuracyMode = defaultTargetPlatform != TargetPlatform.android;
+    final hasFix = !isStale && position != null;
+    final horizontalAccuracyM = position?.hasAccuracy == true
+        ? position!.accuracy
+        : null;
+    final statusLevel = accuracyMode
+        ? gpsAccuracyFixLevel(
+            fresh: hasFix,
+            horizontalAccuracyM: horizontalAccuracyM,
+          )
+        : gpsFixLevel;
+    final statusLabel = accuracyMode
+        ? gpsAccuracyLabel(
+            fresh: hasFix,
+            horizontalAccuracyM: horizontalAccuracyM,
+          )
+        : switch (gpsFixLevel) {
+            GpsFixLevel.none => 'NO LOCK',
+            GpsFixLevel.twoDimensional => '2D',
+            GpsFixLevel.threeDimensional => '3D',
+          };
+    final gpsIndicatorColor = switch (statusLevel) {
       GpsFixLevel.none => Theme.of(context).colorScheme.error,
       GpsFixLevel.twoDimensional => context.appWarning,
       GpsFixLevel.threeDimensional =>
@@ -1123,12 +1144,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Semantics(
-            label:
-                'LIVE VERTICAL RATE · GPS · ${switch (gpsFixLevel) {
-                  GpsFixLevel.none => 'NO LOCK',
-                  GpsFixLevel.twoDimensional => '2D',
-                  GpsFixLevel.threeDimensional => '3D',
-                }}',
+            label: 'LIVE VERTICAL RATE · GPS · $statusLabel',
             child: Wrap(
               key: const ValueKey('live-vertical-rate-gps-heading'),
               spacing: 8,
@@ -1157,11 +1173,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
                     ),
                     const SizedBox(width: 4),
                     Text(
-                      switch (gpsFixLevel) {
-                        GpsFixLevel.none => 'NO LOCK',
-                        GpsFixLevel.twoDimensional => '2D',
-                        GpsFixLevel.threeDimensional => '3D',
-                      },
+                      statusLabel,
                       key: const ValueKey('gps-fix-level-label'),
                       style: TextStyle(
                         color: gpsIndicatorColor,

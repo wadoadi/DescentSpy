@@ -64,6 +64,27 @@ class GpsDebugEvent {
   final bool streamActive;
 }
 
+/// Colour band for platforms without satellite counts, from horizontal
+/// accuracy: none without a fresh fix, orange above 10 m, green at or below 10 m.
+GpsFixLevel gpsAccuracyFixLevel({
+  required bool fresh,
+  required double? horizontalAccuracyM,
+}) {
+  if (!fresh || horizontalAccuracyM == null) return GpsFixLevel.none;
+  return horizontalAccuracyM <= 10
+      ? GpsFixLevel.threeDimensional
+      : GpsFixLevel.twoDimensional;
+}
+
+/// Label for platforms without satellite counts: "GPS ±N m", or "NO FIX".
+String gpsAccuracyLabel({
+  required bool fresh,
+  required double? horizontalAccuracyM,
+}) {
+  if (!fresh || horizontalAccuracyM == null) return 'NO FIX';
+  return 'GPS ±${horizontalAccuracyM.round()} m';
+}
+
 class GpsPositionService extends ChangeNotifier {
   GpsPositionService._();
 

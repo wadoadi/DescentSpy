@@ -69,8 +69,10 @@ The app has three tabs:
   altitude `ALT ±… ft`. Android determines lock state from a fresh GPS-provider
   fix and satellites used in the fix: at least three for 2D, and at least four
   plus a fresh GPS altitude for 3D. Fused/network altitude or speed alone does
-  not indicate a satellite lock. Other platforms may not expose this GNSS
-  detail and show **NO LOCK**.
+  not indicate a satellite lock. Platforms without satellite counts (iOS) show
+  **GPS ±N m** from horizontal accuracy, or **NO FIX** without a fresh fix or
+  accuracy value. The colours follow accuracy: red without a fix, orange above
+  10 m, green at or below 10 m. No satellite icon is shown on those platforms.
 - Inputs are saved using `shared_preferences`; clear actions remove saved
   values. The live tracking view intentionally has no clear-all button.
 
@@ -244,7 +246,7 @@ Version: the Settings page shows `appVersion` and `appBuild` from
 `lib/app_version.dart`. Keep pubspec.yaml's version in step. Increment
 `appBuild` (and the pubspec build number after the +) with every build.
 Increment the V number (`appVersion`) only when the owner asks. Current: 0.7,
-build 6. After each build, push the build to main.
+build 7. After each build, push the build to main.
 
 ## Keeping this guide current
 

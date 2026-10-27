@@ -431,6 +431,27 @@ void main() {
     );
   });
 
+  test('accuracy label shows GPS ±N m, or NO FIX without a fresh fix', () {
+    expect(gpsAccuracyLabel(fresh: true, horizontalAccuracyM: 4), 'GPS ±4 m');
+    expect(gpsAccuracyLabel(fresh: false, horizontalAccuracyM: 4), 'NO FIX');
+    expect(gpsAccuracyLabel(fresh: true, horizontalAccuracyM: null), 'NO FIX');
+  });
+
+  test('accuracy colour band: green at or below 10 m, orange above, none without a fix', () {
+    expect(
+      gpsAccuracyFixLevel(fresh: true, horizontalAccuracyM: 10),
+      GpsFixLevel.threeDimensional,
+    );
+    expect(
+      gpsAccuracyFixLevel(fresh: true, horizontalAccuracyM: 11),
+      GpsFixLevel.twoDimensional,
+    );
+    expect(
+      gpsAccuracyFixLevel(fresh: false, horizontalAccuracyM: 4),
+      GpsFixLevel.none,
+    );
+  });
+
   test('deduplicates same-category points at the same coordinates', () {
     const first = NavigationPoint(
       id: 'one',
