@@ -1249,7 +1249,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
           const SizedBox(height: 8),
           _TrackingPanel(
             title: 'VERTICAL SPEED · $verticalSpeedSource',
-            unit: 'ft/min',
+            unit: 'fpm',
             metrics: [
               _TrackingMetric(
                 label: 'TARGET',
@@ -1449,7 +1449,7 @@ class _AltitudeResultsState extends State<_AltitudeResults> {
                                     ? 'CLIMB RATE'
                                     : 'DESCENT RATE',
                                 value: '${widget.plan.rateFpm.round()}',
-                                unit: 'ft/min',
+                                unit: 'fpm',
                               ),
                             ),
                             Expanded(
