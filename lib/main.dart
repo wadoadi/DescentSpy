@@ -174,11 +174,33 @@ class FlightToolsPage extends StatelessWidget {
           bottom: TabBar(
             indicatorColor: context.appAccent,
             indicatorWeight: 4,
-            labelStyle: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
             tabs: const [
-              Tab(icon: Icon(Icons.trending_up), text: 'ALTITUDE'),
-              Tab(icon: Icon(Icons.air), text: 'WIND & RUNWAY'),
-              Tab(icon: Icon(Icons.settings), text: 'SETTINGS'),
+              Tab(
+                height: 56,
+                icon: Icon(Icons.trending_up),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    'ALTITUDE',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Tab(
+                height: 56,
+                icon: Icon(Icons.air),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    'WIND & RUNWAY',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              Tab(
+                height: 56,
+                icon: Icon(Icons.settings, semanticLabel: 'Settings'),
+              ),
             ],
           ),
         ),
@@ -1921,12 +1943,16 @@ class _SectionHeading extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w900,
-            letterSpacing: 1,
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.centerLeft,
+          child: Text(
+            title,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 1,
+            ),
           ),
         ),
         const SizedBox(height: 5),

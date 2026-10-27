@@ -46,7 +46,9 @@ The app has three tabs:
   `.../barometer_pressure` (Android uses SENSOR_DELAY_NORMAL; iOS uses
   CMAltimeter, which is not built or tested here). Preference key:
   `vertical_speed_barometer`. Readings are stamped with the sensor's own time
-  (converted with the since-boot clock), not with arrival time.
+  (converted with the since-boot clock), not with arrival time. A stream error
+  is logged as a GPS debug event and the stream restarts after 2 s, up to 5
+  retries in a row; a reading resets the count.
 - After calculation, the live view shows target/current/delta panels for ground
   speed, GPS vertical speed, and altitude. A separate **REMAINING** panel
   shows remaining time, remaining distance, and (when a point was selected) a
@@ -242,7 +244,7 @@ Version: the Settings page shows `appVersion` and `appBuild` from
 `lib/app_version.dart`. Keep pubspec.yaml's version in step. Increment
 `appBuild` (and the pubspec build number after the +) with every build.
 Increment the V number (`appVersion`) only when the owner asks. Current: 0.7,
-build 5. After each build, push the build to main.
+build 6. After each build, push the build to main.
 
 ## Keeping this guide current
 

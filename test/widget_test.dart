@@ -532,11 +532,33 @@ void main() {
     expect(find.text('CHECK WIND'), findsOneWidget);
   });
 
+  testWidgets('tabs and section headings fit a 360 px phone width', (
+    tester,
+  ) async {
+    tester.view.devicePixelRatio = 1;
+    tester.view.physicalSize = const Size(360, 780);
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    await tester.pumpWidget(const DescentSpyApp());
+    expect(tester.takeException(), isNull);
+
+    await tester.tap(find.text('WIND & RUNWAY'));
+    await tester.pumpAndSettle();
+    expect(find.text('INTENDED RUNWAY'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+
+    await tester.tap(find.byIcon(Icons.settings));
+    await tester.pumpAndSettle();
+    expect(find.text('COLOUR SCHEME'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
   testWidgets('settings changes theme and opens the points screen', (
     tester,
   ) async {
     await tester.pumpWidget(const DescentSpyApp());
-    await tester.tap(find.text('SETTINGS'));
+    await tester.tap(find.byIcon(Icons.settings));
     await tester.pumpAndSettle();
 
     expect(find.text('COLOUR SCHEME'), findsOneWidget);
@@ -573,7 +595,7 @@ void main() {
     await tester.tapAt(tester.getCenter(find.widgetWithText(Tab, 'ALTITUDE')));
     await tester.pumpAndSettle();
     expect(find.text('5° PATH'), findsOneWidget);
-    await tester.tap(find.text('SETTINGS'));
+    await tester.tap(find.byIcon(Icons.settings));
     await tester.pumpAndSettle();
     await tester.drag(find.byType(ListView).first, const Offset(0, 1000));
     await tester.pumpAndSettle();

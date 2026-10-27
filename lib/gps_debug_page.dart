@@ -216,6 +216,15 @@ class _GpsDebugPageState extends State<GpsDebugPage> {
                   'last sample: ${baroSinceMs == null ? 'none' : '$baroSinceMs ms ago'}',
                   style: style,
                 ),
+                Text(
+                  'stream: ${barometer.streaming ? 'on' : 'off'}'
+                  '   retries: ${barometer.retryCount}/5',
+                  style: style,
+                ),
+                Text(
+                  'last error: ${barometer.lastError ?? 'none'}',
+                  style: style,
+                ),
                 if (barometer.available == true && barometer.sampleCount == 0)
                   Text(
                     'Turn on USE BAROMETER FOR VERTICAL SPEED in Settings to sample.',

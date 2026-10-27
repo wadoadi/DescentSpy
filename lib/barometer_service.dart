@@ -4,6 +4,8 @@ import 'dart:math' as math;
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'gps_position_service.dart';
+
 const verticalSpeedBarometerPreferenceKey = 'vertical_speed_barometer';
 
 /// Pressure altitude in metres from station pressure in hPa (ISA model).
@@ -46,14 +48,32 @@ class BarometerService {
   );
 
   static const _recentLimit = 500;
+  static const _maxRetries = 5;
+  static const _retryDelay = Duration(seconds: 2);
 
   final _readings = StreamController<BarometerReading>.broadcast();
   final List<BarometerReading> _recent = [];
   StreamSubscription<dynamic>? _subscription;
+  Timer? _retryTimer;
   bool? _available;
   bool _useForVerticalSpeed = false;
   int _sampleCount = 0;
+  int _retries = 0;
   double? _referenceAltitudeMeters;
+  String? _lastError;
+  DateTime? _lastErrorAt;
+
+  /// Whether the pressure stream is currently listening.
+  bool get streaming => _subscription != null;
+
+  /// The most recent stream error, or null if none this session.
+  String? get lastError => _lastError;
+
+  /// When [lastError] happened.
+  DateTime? get lastErrorAt => _lastErrorAt;
+
+  /// Restart attempts since the last reading.
+  int get retryCount => _retries;
 
   /// Whether the device has a pressure sensor. Null until checked.
   bool? get available => _available;
@@ -110,6 +130,9 @@ class BarometerService {
     _useForVerticalSpeed = value;
     final preferences = await SharedPreferences.getInstance();
     await preferences.setBool(verticalSpeedBarometerPreferenceKey, value);
+    _retryTimer?.cancel();
+    _retryTimer = null;
+    _retries = 0;
     if (value) {
       await _startIfAvailable();
     } else {
@@ -140,12 +163,43 @@ class BarometerService {
           ),
         );
       },
-      onError: (Object error) => _stop(),
-      onDone: _stop,
+      onError: (Object error) {
+        _reportError('$error');
+        _stop();
+        _scheduleRetry();
+      },
+      onDone: () {
+        _stop();
+        _scheduleRetry();
+      },
     );
   }
 
+  void _reportError(String message) {
+    _lastError = message;
+    _lastErrorAt = DateTime.now();
+    GpsPositionService.instance.logDebugEvent('barometer error: $message');
+  }
+
+  /// Restarts the stream after [_retryDelay], at most [_maxRetries] times in a
+  /// row. A reading resets the count.
+  void _scheduleRetry() {
+    if (!_useForVerticalSpeed || _retryTimer != null) return;
+    if (_retries >= _maxRetries) {
+      GpsPositionService.instance.logDebugEvent(
+        'barometer stopped after $_maxRetries retries',
+      );
+      return;
+    }
+    _retries++;
+    _retryTimer = Timer(_retryDelay, () {
+      _retryTimer = null;
+      if (_useForVerticalSpeed) unawaited(_startIfAvailable());
+    });
+  }
+
   void _recordReading(BarometerReading reading) {
+    _retries = 0;
     _sampleCount++;
     _referenceAltitudeMeters ??= reading.altitudeMeters;
     _recent.add(reading);
