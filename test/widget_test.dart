@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:descent_spy/barometer_service.dart';
 import 'package:descent_spy/calculations.dart';
 import 'package:descent_spy/gps_position_service.dart';
 import 'package:descent_spy/main.dart';
@@ -405,6 +406,18 @@ void main() {
       );
     });
   });
+
+  test(
+    'pressure altitude is zero at standard pressure and about 988 m at 900 hPa',
+    () {
+      expect(pressureAltitudeMeters(1013.25), closeTo(0, 0.01));
+      expect(pressureAltitudeMeters(900), closeTo(988.6, 0.5));
+      expect(
+        pressureAltitudeMeters(1000),
+        greaterThan(pressureAltitudeMeters(1010)),
+      );
+    },
+  );
 
   test('deduplicates same-category points at the same coordinates', () {
     const first = NavigationPoint(
