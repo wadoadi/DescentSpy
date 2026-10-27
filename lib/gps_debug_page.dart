@@ -7,8 +7,8 @@ import 'app_theme.dart';
 import 'barometer_service.dart';
 import 'gps_position_service.dart';
 
-/// Debug-only diagnostics page: records GPS fixes and shows lifecycle events.
-/// Reachable from Settings only in debug builds.
+/// Diagnostics page: records GPS fixes and shows lifecycle and barometer data.
+/// Reachable from Settings in all builds, for on-device testing.
 class GpsDebugPage extends StatefulWidget {
   const GpsDebugPage({super.key});
 

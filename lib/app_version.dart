@@ -2,4 +2,4 @@
 // The build number (appBuild) increments with every build. Keep pubspec.yaml's
 // version in step: `version: <appVersion>.0+<appBuild>`.
 const String appVersion = '0.7';
-const int appBuild = 3;
+const int appBuild = 4;

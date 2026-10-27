@@ -126,10 +126,12 @@ The app has three tabs:
 - **REQUEST GPS PERMISSION** retries the permission prompt; if the permission
   has been permanently denied, it opens the platform app settings.
 - **OPEN DESTINATION POINTS** opens the full point manager.
-- Debug builds only (`kDebugMode`): **GPS DEBUG PAGE** opens
+- **GPS DEBUG PAGE** (all builds, for on-device testing) opens
   `lib/gps_debug_page.dart`, with START/STOP RECORDING of GPS fixes (last 500),
-  a copy-to-clipboard export, and the last 100 lifecycle and GPS start/stop/stream
-  events. Release builds show no entry point and log nothing.
+  CLEAR, a COPY ALL export of records, the last 100 lifecycle and GPS
+  start/stop/stream events, and barometer readings. Only the `debugPrint` lines
+  are debug-only. The live-card debug panel in the altitude planner stays
+  debug-only (`kDebugMode`).
 - Shows GPS fix age/state, satellite counts when available, horizontal accuracy,
   altitude/vertical accuracy, groundspeed, track/course, coordinates, and last
   update time. On Android, the shared GPS service requests GPS-provider updates
@@ -239,7 +241,7 @@ Version: the Settings page shows `appVersion` and `appBuild` from
 `lib/app_version.dart`. Keep pubspec.yaml's version in step. Increment
 `appBuild` (and the pubspec build number after the +) with every build.
 Increment the V number (`appVersion`) only when the owner asks. Current: 0.7,
-build 3.
+build 4.
 
 ## Keeping this guide current
 
