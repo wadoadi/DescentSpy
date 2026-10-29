@@ -429,6 +429,29 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
     },
   );
 
+  /// Sits on the distance field's line, half the width. The label scales down
+  /// to fit narrow phones.
+  Widget _addByLocationButton() => SizedBox(
+    height: 62,
+    child: FilledButton.icon(
+      key: const ValueKey('add-by-location'),
+      onPressed: _chooseDistancePoint,
+      icon: const Icon(Icons.add_location_alt, size: 26),
+      label: const FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(
+          'ADD BY LOCATION',
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),
+        ),
+      ),
+      style: FilledButton.styleFrom(
+        backgroundColor: context.appAccent,
+        foregroundColor: context.appBackground,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      ),
+    ),
+  );
+
   Widget _groundSpeedStatus() => Text(
     'Leave blank for GPS; type a value for manual input.',
     style: TextStyle(color: context.appMutedText, fontSize: 13),
@@ -703,7 +726,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
               builder: (context, constraints) {
                 final fields = <Widget>[
                   _groundSpeedField(),
-                  if (_mode != _PlanMode.profile) _constraintField(),
+                  if (_mode == _PlanMode.time) _constraintField(),
                   if (_mode == _PlanMode.profile)
                     _InfoCard(
                       text:
@@ -711,6 +734,15 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
                       icon: Icons.info_outline,
                     ),
                 ];
+                final distanceLine = _mode == _PlanMode.distance
+                    ? Row(
+                        children: [
+                          Expanded(child: _constraintField()),
+                          const SizedBox(width: 10),
+                          Expanded(child: _addByLocationButton()),
+                        ],
+                      )
+                    : null;
                 if (constraints.maxWidth < 480) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -718,6 +750,10 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
                       for (var index = 0; index < fields.length; index++) ...[
                         if (index > 0) const SizedBox(height: 8),
                         fields[index],
+                      ],
+                      if (distanceLine != null) ...[
+                        const SizedBox(height: 8),
+                        distanceLine,
                       ],
                       const SizedBox(height: 6),
                       _groundSpeedStatus(),
@@ -736,34 +772,16 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
                         ],
                       ],
                     ),
+                    if (distanceLine != null) ...[
+                      const SizedBox(height: 10),
+                      distanceLine,
+                    ],
                     const SizedBox(height: 4),
                     _groundSpeedStatus(),
                   ],
                 );
               },
             ),
-            if (_mode == _PlanMode.distance) ...[
-              const SizedBox(height: 10),
-              SizedBox(
-                height: 62,
-                child: FilledButton.icon(
-                  key: const ValueKey('add-by-location'),
-                  onPressed: _chooseDistancePoint,
-                  icon: const Icon(Icons.add_location_alt, size: 26),
-                  label: const Text(
-                    'ADD BY LOCATION',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900),
-                  ),
-                  style: FilledButton.styleFrom(
-                    backgroundColor: context.appAccent,
-                    foregroundColor: context.appBackground,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                  ),
-                ),
-              ),
-            ],
             const SizedBox(height: 18),
             SizedBox(
               height: 62,

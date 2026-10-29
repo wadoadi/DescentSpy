@@ -246,7 +246,8 @@ Version: the Settings page shows `appVersion` and `appBuild` from
 `lib/app_version.dart`. Keep pubspec.yaml's version in step. Increment
 `appBuild` (and the pubspec build number after the +) with every build.
 Increment the V number (`appVersion`) only when the owner asks. Current: 0.7,
-build 8. After each build, push the build to main.
+build 10. After each build, push the build to main.
+Owner preference: push to main after each build without asking for re-confirmation.
 
 ## Keeping this guide current
 

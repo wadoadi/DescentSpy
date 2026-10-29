@@ -431,6 +431,22 @@ void main() {
     );
   });
 
+  test('point bearing: due east is 90, due south 180, due west 270', () {
+    const lat = 52.74;
+    const lon = 0.55;
+    double bearingTo(double toLat, double toLon) => calculatePointRange(
+      fromLatitude: lat,
+      fromLongitude: lon,
+      toLatitude: toLat,
+      toLongitude: toLon,
+    ).bearingDeg;
+
+    expect(bearingTo(lat + 0.05, lon), closeTo(0, 0.1));
+    expect(bearingTo(lat, lon + 0.05), closeTo(90, 0.1));
+    expect(bearingTo(lat - 0.05, lon), closeTo(180, 0.1));
+    expect(bearingTo(lat, lon - 0.05), closeTo(270, 0.1));
+  });
+
   test('accuracy label shows GPS ±N m, or NO FIX without a fresh fix', () {
     expect(gpsAccuracyLabel(fresh: true, horizontalAccuracyM: 4), 'GPS ±4 m');
     expect(gpsAccuracyLabel(fresh: false, horizontalAccuracyM: 4), 'NO FIX');
@@ -1032,40 +1048,27 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets(
-    'distance planning fields share a row and location button is full width',
-    (tester) async {
-      await tester.pumpWidget(const DescentSpyApp());
-      await tester.pumpAndSettle();
+  testWidgets('ADD BY LOCATION shares the distance field line, split 50/50', (
+    tester,
+  ) async {
+    await tester.pumpWidget(const DescentSpyApp());
+    await tester.pumpAndSettle();
 
-      final fields = find.byType(TextField);
-      final speedPosition = tester.getTopLeft(fields.at(2));
-      final distancePosition = tester.getTopLeft(fields.at(3));
-      expect(distancePosition.dy, closeTo(speedPosition.dy, 1));
+    final distanceRect = tester.getRect(find.byType(TextField).at(3));
+    final locationRect = tester.getRect(
+      find.byKey(const ValueKey('add-by-location')),
+    );
+    expect(locationRect.center.dy, closeTo(distanceRect.center.dy, 40));
+    expect(locationRect.left, closeTo(distanceRect.right + 10, 1));
+    expect(locationRect.width, closeTo(distanceRect.width, 1));
 
-      final locationButton = find.byKey(const ValueKey('add-by-location'));
-      final calculateButton = find.byKey(const ValueKey('calculate-plan'));
-      await tester.drag(find.byType(ListView).first, const Offset(0, -400));
-      await tester.pump();
-      await tester.ensureVisible(calculateButton);
-      await tester.pump();
-      expect(
-        tester.getSize(locationButton).width,
-        closeTo(tester.getSize(calculateButton).width, 1),
-      );
-      expect(
-        tester.getTopLeft(locationButton).dy,
-        lessThan(tester.getTopLeft(calculateButton).dy),
-      );
-
-      await tester.tap(find.text('3° PATH'));
-      await tester.pump();
-      expect(
-        find.text('Standard 3° path estimates time and distance.'),
-        findsOneWidget,
-      );
-    },
-  );
+    await tester.tap(find.text('3° PATH'));
+    await tester.pump();
+    expect(
+      find.text('Standard 3° path estimates time and distance.'),
+      findsOneWidget,
+    );
+  });
 }
 
 Widget _testPointFinderApp() => MaterialApp(
