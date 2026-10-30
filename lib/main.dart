@@ -1499,7 +1499,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           Text(
-            'GPS altitude is approximate; compare with the aircraft altimeter.',
+            'GPS altitude is approximate.',
             style: TextStyle(color: context.appMutedText, fontSize: 13),
           ),
           if (gpsMessage != null || isStale) ...[
@@ -1637,15 +1637,6 @@ class _LiveVerticalRateCard extends StatelessWidget {
               style: TextStyle(color: context.appMutedText, fontSize: 12),
             ),
           ],
-          const SizedBox(height: 8),
-          Text(
-            'GPS-derived values are approximate. DELTA shows current minus target, except altitude (target minus current).',
-            style: TextStyle(
-              color: context.appMutedText,
-              fontSize: 12,
-              height: 1.3,
-            ),
-          ),
           if (point != null) ...[
             const SizedBox(height: 4),
             Text(
