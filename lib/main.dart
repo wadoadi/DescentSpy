@@ -322,6 +322,7 @@ class _LiveCalc {
     required this.remainingDistanceNm,
     required this.remainingTimeMinutes,
     required this.requiredRateFpm,
+    required this.pointBearingDeg,
   });
 
   final Position? gpsPosition;
@@ -332,13 +333,35 @@ class _LiveCalc {
   final double? remainingDistanceNm;
   final double? remainingTimeMinutes;
   final double? requiredRateFpm;
+  final double? pointBearingDeg;
 }
 
 class _RateSample {
-  const _RateSample(this.time, this.fpm);
+  const _RateSample(this.time, this.value);
 
   final DateTime time;
-  final double fpm;
+  final double value;
+}
+
+/// Timed samples of one live reading, averaged over the smoothing window.
+class _SmoothedSeries {
+  final List<_RateSample> _samples = [];
+
+  void record(DateTime now, double value, Duration window) {
+    _samples.removeWhere((sample) => now.difference(sample.time) > window);
+    _samples.add(_RateSample(now, value));
+  }
+
+  double? average(DateTime now, Duration window) {
+    final recent = _samples.where(
+      (sample) => now.difference(sample.time) <= window,
+    );
+    if (recent.isEmpty) return null;
+    final total = recent.fold<double>(0, (sum, sample) => sum + sample.value);
+    return total / recent.length;
+  }
+
+  void clear() => _samples.clear();
 }
 
 class _AltitudePlannerState extends State<AltitudePlanner> {
@@ -350,8 +373,13 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
   AltitudePlan? _plan;
   String? _error;
   final List<AltitudeSample> _altitudeSamples = [];
-  final List<_RateSample> _requiredRateSamples = [];
-  final List<_RateSample> _currentRateSamples = [];
+  final _SmoothedSeries _requiredRate = _SmoothedSeries();
+  final _SmoothedSeries _currentRate = _SmoothedSeries();
+  final _SmoothedSeries _altitude = _SmoothedSeries();
+  final _SmoothedSeries _groundSpeed = _SmoothedSeries();
+  final _SmoothedSeries _remainingDistance = _SmoothedSeries();
+  final _SmoothedSeries _bearingSin = _SmoothedSeries();
+  final _SmoothedSeries _bearingCos = _SmoothedSeries();
   Position? _lastPosition;
   double _gpsTravelledNm = 0;
   double? _verticalSpeedFpm;
@@ -620,8 +648,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
         _startAltitudeLockedForPlan = true;
         _groundspeedLockedForPlan = true;
         _altitudeSamples.clear();
-        _requiredRateSamples.clear();
-        _currentRateSamples.clear();
+        _clearRateSamples();
         _verticalSpeedFpm = null;
         _barometerSamples.clear();
         _barometerVerticalSpeedFpm = null;
@@ -769,7 +796,16 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
             targetAltitudeFt: double.tryParse(_target.text.trim()) ?? 0,
             remainingTimeMinutes: remainingTimeMinutes,
           );
+    final pointBearingDeg = !gpsIsStale && gpsPosition != null && _constraintPoint != null
+        ? calculatePointRange(
+            fromLatitude: gpsPosition.latitude,
+            fromLongitude: gpsPosition.longitude,
+            toLatitude: _constraintPoint!.latitude,
+            toLongitude: _constraintPoint!.longitude,
+          ).bearingDeg
+        : null;
     return _LiveCalc(
+      pointBearingDeg: pointBearingDeg,
       gpsPosition: gpsPosition,
       currentAltitudeFt: currentAltitudeFt,
       gpsIsStale: gpsIsStale,
@@ -788,36 +824,56 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
       ? _barometerVerticalSpeedFpm
       : _verticalSpeedFpm;
 
-  /// Keeps one sample of each live rate per timer tick, and drops samples
-  /// older than the smoothing window.
+  Duration get _smoothingWindow =>
+      Duration(seconds: widget.rateSmoothingSeconds);
+
+  /// Keeps one sample of each live reading per timer tick. Readings that are
+  /// missing or stale are not recorded, so they average out of the window.
   void _recordRateSamples() {
     final now = DateTime.now();
-    final window = Duration(seconds: widget.rateSmoothingSeconds);
-    _requiredRateSamples.removeWhere(
-      (sample) => now.difference(sample.time) > window,
-    );
-    _currentRateSamples.removeWhere(
-      (sample) => now.difference(sample.time) > window,
-    );
+    final window = _smoothingWindow;
     final live = _liveCalc(now);
     if (live.requiredRateFpm != null) {
-      _requiredRateSamples.add(_RateSample(now, live.requiredRateFpm!));
+      _requiredRate.record(now, live.requiredRateFpm!, window);
     }
     final current = _displayedVerticalSpeedFpm();
     if (!live.gpsIsStale && current != null) {
-      _currentRateSamples.add(_RateSample(now, current));
+      _currentRate.record(now, current, window);
+    }
+    if (!live.gpsIsStale && live.currentAltitudeFt != null) {
+      _altitude.record(now, live.currentAltitudeFt!, window);
+    }
+    if (!live.gpsIsStale && live.currentGroundSpeedKt != null) {
+      _groundSpeed.record(now, live.currentGroundSpeedKt!, window);
+    }
+    if (live.remainingDistanceNm != null) {
+      _remainingDistance.record(now, live.remainingDistanceNm!, window);
+    }
+    final bearing = live.pointBearingDeg;
+    if (bearing != null) {
+      final radians = bearing * math.pi / 180;
+      _bearingSin.record(now, math.sin(radians), window);
+      _bearingCos.record(now, math.cos(radians), window);
     }
   }
 
-  /// Average of the samples that fall inside the smoothing window at [now].
-  double? _smoothedRate(List<_RateSample> samples, DateTime now) {
-    final window = Duration(seconds: widget.rateSmoothingSeconds);
-    final recent = samples.where(
-      (sample) => now.difference(sample.time) <= window,
-    );
-    if (recent.isEmpty) return null;
-    final total = recent.fold<double>(0, (sum, sample) => sum + sample.fpm);
-    return total / recent.length;
+  void _clearRateSamples() {
+    _requiredRate.clear();
+    _currentRate.clear();
+    _altitude.clear();
+    _groundSpeed.clear();
+    _remainingDistance.clear();
+    _bearingSin.clear();
+    _bearingCos.clear();
+  }
+
+  /// Bearing to the point, averaged as a vector so 359° and 1° average to 0°.
+  double? _smoothedBearingDeg(DateTime now) {
+    final sine = _bearingSin.average(now, _smoothingWindow);
+    final cosine = _bearingCos.average(now, _smoothingWindow);
+    if (sine == null || cosine == null) return null;
+    final degrees = math.atan2(sine, cosine) * 180 / math.pi;
+    return (degrees + 360) % 360;
   }
 
   Widget build(BuildContext context) {
@@ -835,8 +891,20 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
         _barometerVerticalSpeedFpm != null;
     final liveRequiredRate = live.requiredRateFpm == null
         ? null
-        : _smoothedRate(_requiredRateSamples, now);
-    final liveVerticalSpeedFpm = _smoothedRate(_currentRateSamples, now);
+        : _requiredRate.average(now, _smoothingWindow);
+    final liveVerticalSpeedFpm = _currentRate.average(now, _smoothingWindow);
+    final smoothedAltitudeFt = currentAltitudeFt == null
+        ? null
+        : _altitude.average(now, _smoothingWindow);
+    final smoothedGroundSpeedKt = currentGroundSpeedKt == null
+        ? null
+        : _groundSpeed.average(now, _smoothingWindow);
+    final smoothedRemainingDistanceNm = remainingDistanceNm == null
+        ? null
+        : _remainingDistance.average(now, _smoothingWindow);
+    final smoothedBearingDeg = live.pointBearingDeg == null
+        ? null
+        : _smoothedBearingDeg(now);
     return SafeArea(
       child: ListView(
         padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
@@ -1023,17 +1091,18 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
                   : GpsPositionService.instance.satelliteStatus?.fixLevel ??
                         GpsFixLevel.none,
               targetGroundSpeedKt: targetGroundSpeedKt,
-              currentGroundSpeedKt: currentGroundSpeedKt,
+              currentGroundSpeedKt: smoothedGroundSpeedKt,
               speedUnit: widget.speedUnit,
-              currentAltitudeFt: currentAltitudeFt,
+              currentAltitudeFt: smoothedAltitudeFt,
               targetAltitudeFt: double.tryParse(_target.text.trim()),
               verticalSpeedFpm: liveVerticalSpeedFpm,
               verticalSpeedSource: useBarometerSpeed ? 'BARO' : 'GPS',
               requiredRateFpm: liveRequiredRate,
               remainingTimeMinutes: remainingTimeMinutes,
-              remainingDistanceNm: remainingDistanceNm,
+              remainingDistanceNm: smoothedRemainingDistanceNm,
               trackedDistanceNm: _gpsTravelledNm,
               point: _constraintPoint,
+              pointBearingDeg: smoothedBearingDeg,
             ),
             if (kDebugMode) ...[
               const SizedBox(height: 14),
@@ -1110,8 +1179,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
         _planClock = null;
         _gpsTravelledNm = 0;
         _altitudeSamples.clear();
-        _requiredRateSamples.clear();
-        _currentRateSamples.clear();
+        _clearRateSamples();
         _verticalSpeedFpm = null;
       });
     }
@@ -1164,8 +1232,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
       _planClock = null;
       _gpsTravelledNm = 0;
       _altitudeSamples.clear();
-      _requiredRateSamples.clear();
-      _currentRateSamples.clear();
+      _clearRateSamples();
       _verticalSpeedFpm = null;
       _showTracking = false;
       _groundspeedLockedForPlan = false;
@@ -1275,6 +1342,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
     required this.remainingDistanceNm,
     required this.trackedDistanceNm,
     required this.point,
+    required this.pointBearingDeg,
   });
 
   final String? gpsMessage;
@@ -1293,6 +1361,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
   final double? remainingDistanceNm;
   final double trackedDistanceNm;
   final NavigationPoint? point;
+  final double? pointBearingDeg;
 
   @override
   Widget build(BuildContext context) {
@@ -1345,14 +1414,6 @@ class _LiveVerticalRateCard extends StatelessWidget {
             ? const Color(0xFF8BE28B)
             : const Color(0xFF1B5E20),
     };
-    final pointRange = !isStale && position != null && point != null
-        ? calculatePointRange(
-            fromLatitude: position!.latitude,
-            fromLongitude: position!.longitude,
-            toLatitude: point!.latitude,
-            toLongitude: point!.longitude,
-          )
-        : null;
 
     return Container(
       padding: const EdgeInsets.all(12),
@@ -1564,14 +1625,14 @@ class _LiveVerticalRateCard extends StatelessWidget {
               ),
               _TrackingMetric(
                 label: point == null ? 'POINT' : 'TO POINT',
-                value: pointRange == null
+                value: pointBearingDeg == null
                     ? '—'
-                    : (pointRange.bearingDeg.round() % 360).toString().padLeft(
+                    : (pointBearingDeg!.round() % 360).toString().padLeft(
                         3,
                         '0',
                       ),
-                unit: pointRange == null ? '' : '°T',
-                bearingDegrees: pointRange?.bearingDeg,
+                unit: pointBearingDeg == null ? '' : '°T',
+                bearingDegrees: pointBearingDeg,
               ),
             ],
           ),

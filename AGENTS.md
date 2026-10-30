@@ -130,12 +130,15 @@ The app has three tabs:
   `descent_ground_speed` and `wind_speed` keep their meaning; the choice is saved
   under `speed_unit`. Conversions use 1 kt = 1.852 km/h = 1.15078 mph
   (`lib/speed_unit.dart`). Live speed-deviation alerts stay at 5 kt.
-- **LIVE RATE SMOOTHING** (1–30 s, default 5 s) sets the window over which the
-  live TARGET (required) and CURRENT vertical rates are averaged. The planner
-  samples both rates once per second while a plan runs and shows the mean of the
-  samples inside the window. The required rate is still calculated from the
-  latest GPS altitude, and CURRENT still comes from the 30 s GPS or barometer
-  fit before this averaging. Preference key: `vertical_rate_smoothing_seconds`.
+- **LIVE SMOOTHING** (1–30 s, default 5 s) sets the averaging window for GPS
+  altitude, ground speed (CURRENT), remaining distance, bearing to the point,
+  and the TARGET and CURRENT vertical rates. The planner records each reading
+  once per second while a plan runs and shows the mean over the window. Bearing
+  is averaged as sine and cosine, so 359° and 1° average to 0°. The required
+  rate is still calculated from the latest GPS altitude, and the 30 s GPS or
+  barometer fit still feeds CURRENT before averaging. Clock-based time, typed
+  targets and GPS status are not smoothed. Preference key:
+  `vertical_rate_smoothing_seconds`.
 - **POINT SEARCH KEYBOARD** chooses the large QWERTY keyboard (default) or the
   device system keyboard; the selection persists across launches.
 - **VERTICAL PATH PROFILE** selects the persistent 3° or 5° path used by the

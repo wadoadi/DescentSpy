@@ -335,7 +335,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    'LIVE RATE SMOOTHING',
+                    'LIVE SMOOTHING',
                     style: TextStyle(
                       color: context.appText,
                       fontWeight: FontWeight.w900,
@@ -344,7 +344,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Averages the live TARGET and CURRENT vertical rates over this many seconds.',
+                    'Averages GPS altitude, ground speed, remaining distance, bearing to the point, and the TARGET and CURRENT vertical rates over this many seconds. Clock time, typed targets and GPS status are not smoothed.',
                     style: TextStyle(color: context.appSecondaryText),
                   ),
                   const SizedBox(height: 12),
