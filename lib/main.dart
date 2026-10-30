@@ -1880,10 +1880,12 @@ class _TrackingPanel extends StatelessWidget {
           const SizedBox(height: 6),
           Row(
             children: [
-              for (final metric in metrics.where(
-                (metric) => showDeltas || !metric.isDelta,
-              ))
-                Expanded(
+              for (final metric in metrics)
+                if (!showDeltas && metric.isDelta)
+                  // Keep the slot so the remaining values stay in place.
+                  const Expanded(child: SizedBox.shrink())
+                else
+                  Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
