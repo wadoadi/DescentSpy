@@ -536,7 +536,9 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
 
   Widget _groundSpeedField() => _NumberField(
     controller: _groundspeed,
-    label: 'GROUND SPEED',
+    label: _groundspeedManuallyOverridden
+        ? 'Set Ground Speed'
+        : 'Live Ground Speed',
     unit: widget.speedUnit.label,
     hint: 'Leave blank for GPS',
     clearValueOnOpen:
@@ -545,7 +547,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
     minimumValue: 1,
     maximumValue: 999,
     onChanged: (value) {
-      _groundspeedManuallyOverridden = value.isNotEmpty;
+      setState(() => _groundspeedManuallyOverridden = value.isNotEmpty);
       if (!_restoring) {
         unawaited(
           SharedPreferences.getInstance().then(
@@ -566,7 +568,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
 
   Widget _currentAltitudeField() => _NumberField(
     controller: _start,
-    label: 'CURRENT ALTITUDE',
+    label: _startAltitudeManuallyOverridden ? 'Set Altitude' : 'Live Altitude',
     unit: 'ft',
     hint: 'Leave blank for GPS',
     clearValueOnOpen:
@@ -575,7 +577,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
     minimumValue: 0,
     maximumValue: 60000,
     onChanged: (value) {
-      _startAltitudeManuallyOverridden = value.isNotEmpty;
+      setState(() => _startAltitudeManuallyOverridden = value.isNotEmpty);
       if (!_restoring) {
         unawaited(
           SharedPreferences.getInstance().then(
