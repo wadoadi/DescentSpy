@@ -779,7 +779,6 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
     setState(() => _gpsMessage = null);
   }
 
-  @override
   /// Live values for the tracking view at [now]. The required rate is the
   /// raw value; the TARGET panel shows its smoothed average.
   _LiveCalc _liveCalc(DateTime now) {
@@ -826,14 +825,15 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
             targetAltitudeFt: double.tryParse(_target.text.trim()) ?? 0,
             remainingTimeMinutes: remainingTimeMinutes,
           );
-    final pointBearingDeg = !gpsIsStale && gpsPosition != null && _constraintPoint != null
-        ? calculatePointRange(
+    final pointBearingDeg =
+        gpsPosition == null || gpsIsStale || _constraintPoint == null
+        ? null
+        : calculatePointRange(
             fromLatitude: gpsPosition.latitude,
             fromLongitude: gpsPosition.longitude,
             toLatitude: _constraintPoint!.latitude,
             toLongitude: _constraintPoint!.longitude,
-          ).bearingDeg
-        : null;
+          ).bearingDeg;
     return _LiveCalc(
       pointBearingDeg: pointBearingDeg,
       gpsPosition: gpsPosition,
@@ -906,6 +906,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
     return (degrees + 360) % 360;
   }
 
+  @override
   Widget build(BuildContext context) {
     final now = DateTime.now();
     final live = _liveCalc(now);
