@@ -20,7 +20,6 @@ const verticalPathProfilePreferenceKey = 'descent_vertical_path_profile';
 
 const verticalRateSmoothingPreferenceKey = 'vertical_rate_smoothing_seconds';
 const defaultVerticalRateSmoothingSeconds = 5;
-const showLiveDeltasPreferenceKey = 'show_live_deltas';
 const minVerticalRateSmoothingSeconds = 1;
 const maxVerticalRateSmoothingSeconds = 30;
 

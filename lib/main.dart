@@ -34,7 +34,6 @@ class _DescentSpyAppState extends State<DescentSpyApp>
   VerticalPathProfile _verticalPathProfile = VerticalPathProfile.threeDegree;
   SpeedUnit _speedUnit = SpeedUnit.knots;
   int _rateSmoothingSeconds = defaultVerticalRateSmoothingSeconds;
-  bool _showLiveDeltas = true;
 
   @override
   void initState() {
@@ -57,14 +56,12 @@ class _DescentSpyAppState extends State<DescentSpyApp>
       final savedSmoothing = preferences.getInt(
         verticalRateSmoothingPreferenceKey,
       );
-      final savedShowDeltas = preferences.getBool(showLiveDeltasPreferenceKey);
       if (!mounted) return;
       setState(() {
         if (savedMode != null) {
           _themeMode = savedMode == 'light' ? ThemeMode.light : ThemeMode.dark;
         }
         _speedUnit = SpeedUnit.fromName(savedSpeedUnit);
-        _showLiveDeltas = savedShowDeltas ?? true;
         _rateSmoothingSeconds = (savedSmoothing ?? _rateSmoothingSeconds)
             .clamp(minVerticalRateSmoothingSeconds, maxVerticalRateSmoothingSeconds)
             .toInt();
@@ -117,22 +114,6 @@ class _DescentSpyAppState extends State<DescentSpyApp>
           exception: error,
           library: 'DescentSpy settings',
           context: ErrorDescription('while saving the vertical path profile'),
-        ),
-      );
-    }
-  }
-
-  Future<void> _setShowLiveDeltas(bool show) async {
-    setState(() => _showLiveDeltas = show);
-    try {
-      final preferences = await SharedPreferences.getInstance();
-      await preferences.setBool(showLiveDeltasPreferenceKey, show);
-    } catch (error) {
-      FlutterError.reportError(
-        FlutterErrorDetails(
-          exception: error,
-          library: 'DescentSpy settings',
-          context: ErrorDescription('while saving the delta setting'),
         ),
       );
     }
@@ -208,8 +189,6 @@ class _DescentSpyAppState extends State<DescentSpyApp>
         onSpeedUnitChanged: _setSpeedUnit,
         rateSmoothingSeconds: _rateSmoothingSeconds,
         onRateSmoothingChanged: _setRateSmoothingSeconds,
-        showLiveDeltas: _showLiveDeltas,
-        onShowLiveDeltasChanged: _setShowLiveDeltas,
       ),
     );
   }
@@ -226,8 +205,6 @@ class FlightToolsPage extends StatelessWidget {
     required this.onSpeedUnitChanged,
     required this.rateSmoothingSeconds,
     required this.onRateSmoothingChanged,
-    required this.showLiveDeltas,
-    required this.onShowLiveDeltasChanged,
   });
 
   final ThemeMode themeMode;
@@ -238,8 +215,6 @@ class FlightToolsPage extends StatelessWidget {
   final ValueChanged<SpeedUnit> onSpeedUnitChanged;
   final int rateSmoothingSeconds;
   final ValueChanged<int> onRateSmoothingChanged;
-  final bool showLiveDeltas;
-  final ValueChanged<bool> onShowLiveDeltasChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -290,7 +265,6 @@ class FlightToolsPage extends StatelessWidget {
               profile: verticalPathProfile,
               speedUnit: speedUnit,
               rateSmoothingSeconds: rateSmoothingSeconds,
-              showLiveDeltas: showLiveDeltas,
             ),
             WindPlanner(speedUnit: speedUnit),
             SettingsPage(
@@ -302,8 +276,6 @@ class FlightToolsPage extends StatelessWidget {
               onSpeedUnitChanged: onSpeedUnitChanged,
               rateSmoothingSeconds: rateSmoothingSeconds,
               onRateSmoothingChanged: onRateSmoothingChanged,
-              showLiveDeltas: showLiveDeltas,
-              onShowLiveDeltasChanged: onShowLiveDeltasChanged,
               onOpenPoints: () {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
@@ -328,13 +300,11 @@ class AltitudePlanner extends StatefulWidget {
     required this.profile,
     required this.speedUnit,
     required this.rateSmoothingSeconds,
-    required this.showLiveDeltas,
   });
 
   final VerticalPathProfile profile;
   final SpeedUnit speedUnit;
   final int rateSmoothingSeconds;
-  final bool showLiveDeltas;
 
   @override
   State<AltitudePlanner> createState() => _AltitudePlannerState();
@@ -1138,7 +1108,6 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
               trackedDistanceNm: _gpsTravelledNm,
               point: _constraintPoint,
               pointBearingDeg: smoothedBearingDeg,
-              showDeltas: widget.showLiveDeltas,
             ),
             if (kDebugMode) ...[
               const SizedBox(height: 14),
@@ -1379,7 +1348,6 @@ class _LiveVerticalRateCard extends StatelessWidget {
     required this.trackedDistanceNm,
     required this.point,
     required this.pointBearingDeg,
-    required this.showDeltas,
   });
 
   final String? gpsMessage;
@@ -1399,7 +1367,6 @@ class _LiveVerticalRateCard extends StatelessWidget {
   final double trackedDistanceNm;
   final NavigationPoint? point;
   final double? pointBearingDeg;
-  final bool showDeltas;
 
   @override
   Widget build(BuildContext context) {
@@ -1552,7 +1519,6 @@ class _LiveVerticalRateCard extends StatelessWidget {
           const SizedBox(height: 10),
           _TrackingPanel(
             title: 'GROUND SPEED (${speedUnit.label})',
-            showDeltas: showDeltas,
             metrics: [
               _TrackingMetric(
                 label: 'TARGET',
@@ -1568,7 +1534,6 @@ class _LiveVerticalRateCard extends StatelessWidget {
               ),
               _TrackingMetric(
                 label: 'DELTA',
-                isDelta: true,
                 value: speedDelta == null
                     ? '—'
                     : _signed(speedUnit.fromKnots(speedDelta), 1),
@@ -1580,7 +1545,6 @@ class _LiveVerticalRateCard extends StatelessWidget {
           const SizedBox(height: 8),
           _TrackingPanel(
             title: 'VERTICAL SPEED (fpm) · $verticalSpeedSource',
-            showDeltas: showDeltas,
             metrics: [
               _TrackingMetric(
                 label: 'TARGET',
@@ -1593,7 +1557,6 @@ class _LiveVerticalRateCard extends StatelessWidget {
               ),
               _TrackingMetric(
                 label: 'DELTA',
-                isDelta: true,
                 value: deviation == null ? '—' : _signedFpm(deviation),
               ),
             ],
@@ -1601,7 +1564,6 @@ class _LiveVerticalRateCard extends StatelessWidget {
           const SizedBox(height: 8),
           _TrackingPanel(
             title: 'ALTITUDE (ft)',
-            showDeltas: showDeltas,
             metrics: [
               _TrackingMetric(
                 label: 'TARGET',
@@ -1613,7 +1575,6 @@ class _LiveVerticalRateCard extends StatelessWidget {
               ),
               _TrackingMetric(
                 label: 'DELTA',
-                isDelta: true,
                 value: altitudeDelta == null ? '—' : _signed(altitudeDelta, 0),
               ),
             ],
@@ -1648,7 +1609,6 @@ class _LiveVerticalRateCard extends StatelessWidget {
           const SizedBox(height: 8),
           _TrackingPanel(
             title: point == null ? 'REMAINING' : 'REMAINING - ${point!.name}',
-            showDeltas: showDeltas,
             metrics: [
               _TrackingMetric(
                 label: 'TIME (min)',
@@ -1854,17 +1814,14 @@ class _TrackingPanel extends StatelessWidget {
   const _TrackingPanel({
     required this.title,
     required this.metrics,
-    required this.showDeltas,
   });
 
   /// Panel heading. Units go here, once per panel, e.g. "GROUND SPEED (kt)".
   final String title;
   final List<_TrackingMetric> metrics;
-  final bool showDeltas;
 
   @override
   Widget build(BuildContext context) {
-    final hidesDelta = !showDeltas && metrics.any((metric) => metric.isDelta);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
@@ -1887,13 +1844,8 @@ class _TrackingPanel extends StatelessWidget {
           const SizedBox(height: 6),
           Row(
             children: [
-              // With deltas hidden, spacers centre the remaining values.
-              if (hidesDelta) const Spacer(),
-              for (final metric in metrics.where(
-                (metric) => showDeltas || !metric.isDelta,
-              ))
+              for (final metric in metrics)
                 Expanded(
-                  flex: hidesDelta ? 2 : 1,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -1939,7 +1891,6 @@ class _TrackingPanel extends StatelessWidget {
                     ],
                   ),
                 ),
-              if (hidesDelta) const Spacer(),
             ],
           ),
         ],
@@ -1959,14 +1910,12 @@ class _TrackingMetric {
     required this.label,
     required this.value,
     this.alert = false,
-    this.isDelta = false,
     this.bearingDegrees,
   });
 
   final String label;
   final String value;
   final bool alert;
-  final bool isDelta;
   final double? bearingDegrees;
 }
 
