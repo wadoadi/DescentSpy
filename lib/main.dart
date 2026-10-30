@@ -33,6 +33,7 @@ class _DescentSpyAppState extends State<DescentSpyApp>
   ThemeMode _themeMode = ThemeMode.dark;
   VerticalPathProfile _verticalPathProfile = VerticalPathProfile.threeDegree;
   SpeedUnit _speedUnit = SpeedUnit.knots;
+  int _rateSmoothingSeconds = defaultVerticalRateSmoothingSeconds;
 
   @override
   void initState() {
@@ -52,12 +53,18 @@ class _DescentSpyAppState extends State<DescentSpyApp>
         verticalPathProfilePreferenceKey,
       );
       final savedSpeedUnit = preferences.getString(speedUnitPreferenceKey);
+      final savedSmoothing = preferences.getInt(
+        verticalRateSmoothingPreferenceKey,
+      );
       if (!mounted) return;
       setState(() {
         if (savedMode != null) {
           _themeMode = savedMode == 'light' ? ThemeMode.light : ThemeMode.dark;
         }
         _speedUnit = SpeedUnit.fromName(savedSpeedUnit);
+        _rateSmoothingSeconds = (savedSmoothing ?? _rateSmoothingSeconds)
+            .clamp(minVerticalRateSmoothingSeconds, maxVerticalRateSmoothingSeconds)
+            .toInt();
         _verticalPathProfile = VerticalPathProfile.values.firstWhere(
           (profile) => profile.name == savedProfile,
           orElse: () => VerticalPathProfile.threeDegree,
@@ -107,6 +114,22 @@ class _DescentSpyAppState extends State<DescentSpyApp>
           exception: error,
           library: 'DescentSpy settings',
           context: ErrorDescription('while saving the vertical path profile'),
+        ),
+      );
+    }
+  }
+
+  Future<void> _setRateSmoothingSeconds(int seconds) async {
+    setState(() => _rateSmoothingSeconds = seconds);
+    try {
+      final preferences = await SharedPreferences.getInstance();
+      await preferences.setInt(verticalRateSmoothingPreferenceKey, seconds);
+    } catch (error) {
+      FlutterError.reportError(
+        FlutterErrorDetails(
+          exception: error,
+          library: 'DescentSpy settings',
+          context: ErrorDescription('while saving the rate smoothing'),
         ),
       );
     }
@@ -164,6 +187,8 @@ class _DescentSpyAppState extends State<DescentSpyApp>
         onVerticalPathProfileChanged: _setVerticalPathProfile,
         speedUnit: _speedUnit,
         onSpeedUnitChanged: _setSpeedUnit,
+        rateSmoothingSeconds: _rateSmoothingSeconds,
+        onRateSmoothingChanged: _setRateSmoothingSeconds,
       ),
     );
   }
@@ -178,6 +203,8 @@ class FlightToolsPage extends StatelessWidget {
     required this.onVerticalPathProfileChanged,
     required this.speedUnit,
     required this.onSpeedUnitChanged,
+    required this.rateSmoothingSeconds,
+    required this.onRateSmoothingChanged,
   });
 
   final ThemeMode themeMode;
@@ -186,6 +213,8 @@ class FlightToolsPage extends StatelessWidget {
   final ValueChanged<VerticalPathProfile> onVerticalPathProfileChanged;
   final SpeedUnit speedUnit;
   final ValueChanged<SpeedUnit> onSpeedUnitChanged;
+  final int rateSmoothingSeconds;
+  final ValueChanged<int> onRateSmoothingChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -232,7 +261,11 @@ class FlightToolsPage extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            AltitudePlanner(profile: verticalPathProfile, speedUnit: speedUnit),
+            AltitudePlanner(
+              profile: verticalPathProfile,
+              speedUnit: speedUnit,
+              rateSmoothingSeconds: rateSmoothingSeconds,
+            ),
             WindPlanner(speedUnit: speedUnit),
             SettingsPage(
               themeMode: themeMode,
@@ -241,6 +274,8 @@ class FlightToolsPage extends StatelessWidget {
               onVerticalPathProfileChanged: onVerticalPathProfileChanged,
               speedUnit: speedUnit,
               onSpeedUnitChanged: onSpeedUnitChanged,
+              rateSmoothingSeconds: rateSmoothingSeconds,
+              onRateSmoothingChanged: onRateSmoothingChanged,
               onOpenPoints: () {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
@@ -264,16 +299,47 @@ class AltitudePlanner extends StatefulWidget {
     super.key,
     required this.profile,
     required this.speedUnit,
+    required this.rateSmoothingSeconds,
   });
 
   final VerticalPathProfile profile;
   final SpeedUnit speedUnit;
+  final int rateSmoothingSeconds;
 
   @override
   State<AltitudePlanner> createState() => _AltitudePlannerState();
 }
 
 enum _PlanMode { distance, time, profile }
+
+class _LiveCalc {
+  const _LiveCalc({
+    required this.gpsPosition,
+    required this.currentAltitudeFt,
+    required this.gpsIsStale,
+    required this.targetGroundSpeedKt,
+    required this.currentGroundSpeedKt,
+    required this.remainingDistanceNm,
+    required this.remainingTimeMinutes,
+    required this.requiredRateFpm,
+  });
+
+  final Position? gpsPosition;
+  final double? currentAltitudeFt;
+  final bool gpsIsStale;
+  final double? targetGroundSpeedKt;
+  final double? currentGroundSpeedKt;
+  final double? remainingDistanceNm;
+  final double? remainingTimeMinutes;
+  final double? requiredRateFpm;
+}
+
+class _RateSample {
+  const _RateSample(this.time, this.fpm);
+
+  final DateTime time;
+  final double fpm;
+}
 
 class _AltitudePlannerState extends State<AltitudePlanner> {
   final _start = TextEditingController();
@@ -284,6 +350,8 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
   AltitudePlan? _plan;
   String? _error;
   final List<AltitudeSample> _altitudeSamples = [];
+  final List<_RateSample> _requiredRateSamples = [];
+  final List<_RateSample> _currentRateSamples = [];
   Position? _lastPosition;
   double _gpsTravelledNm = 0;
   double? _verticalSpeedFpm;
@@ -552,6 +620,8 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
         _startAltitudeLockedForPlan = true;
         _groundspeedLockedForPlan = true;
         _altitudeSamples.clear();
+        _requiredRateSamples.clear();
+        _currentRateSamples.clear();
         _verticalSpeedFpm = null;
         _barometerSamples.clear();
         _barometerVerticalSpeedFpm = null;
@@ -559,7 +629,9 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
       });
       _refreshTimer?.cancel();
       _refreshTimer = Timer.periodic(const Duration(seconds: 1), (_) {
-        if (mounted) setState(() {});
+        if (!mounted) return;
+        _recordRateSamples();
+        setState(() {});
       });
     } on ArgumentError catch (error) {
       setState(() {
@@ -651,11 +723,10 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  /// Live values for the tracking view at [now]. The required rate is the
+  /// raw value; the TARGET panel shows its smoothed average.
+  _LiveCalc _liveCalc(DateTime now) {
     final gpsPosition = _lastPosition;
-    final useBarometerSpeed =
-        BarometerService.instance.useForVerticalSpeed &&
-        _barometerVerticalSpeedFpm != null;
     final currentAltitudeFt = gpsPosition == null
         ? null
         : gpsPosition.altitude * metersToFeet;
@@ -675,7 +746,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
         : math.max(0.0, selectedDistanceNm - _gpsTravelledNm).toDouble();
     final gpsIsStale =
         gpsPosition == null ||
-        DateTime.now().difference(gpsPosition.timestamp) >
+        now.difference(gpsPosition.timestamp) >
             const Duration(seconds: 10);
     final targetGroundSpeedKt = _targetGroundSpeedKt();
     final currentGroundSpeedKt = gpsPosition == null || gpsIsStale
@@ -689,7 +760,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
             groundspeedKt: targetGroundSpeedKt,
           )
         : null;
-    final liveRequiredRate =
+    final requiredRateFpm =
         currentAltitudeFt == null || gpsIsStale || remainingTimeMinutes == null
         ? null
         : calculateLiveRequiredRateFpm(
@@ -698,6 +769,74 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
             targetAltitudeFt: double.tryParse(_target.text.trim()) ?? 0,
             remainingTimeMinutes: remainingTimeMinutes,
           );
+    return _LiveCalc(
+      gpsPosition: gpsPosition,
+      currentAltitudeFt: currentAltitudeFt,
+      gpsIsStale: gpsIsStale,
+      targetGroundSpeedKt: targetGroundSpeedKt,
+      currentGroundSpeedKt: currentGroundSpeedKt,
+      remainingDistanceNm: remainingDistanceNm,
+      remainingTimeMinutes: remainingTimeMinutes,
+      requiredRateFpm: requiredRateFpm,
+    );
+  }
+
+  /// The vertical rate shown as CURRENT: barometer when enabled, else GPS.
+  double? _displayedVerticalSpeedFpm() =>
+      BarometerService.instance.useForVerticalSpeed &&
+          _barometerVerticalSpeedFpm != null
+      ? _barometerVerticalSpeedFpm
+      : _verticalSpeedFpm;
+
+  /// Keeps one sample of each live rate per timer tick, and drops samples
+  /// older than the smoothing window.
+  void _recordRateSamples() {
+    final now = DateTime.now();
+    final window = Duration(seconds: widget.rateSmoothingSeconds);
+    _requiredRateSamples.removeWhere(
+      (sample) => now.difference(sample.time) > window,
+    );
+    _currentRateSamples.removeWhere(
+      (sample) => now.difference(sample.time) > window,
+    );
+    final live = _liveCalc(now);
+    if (live.requiredRateFpm != null) {
+      _requiredRateSamples.add(_RateSample(now, live.requiredRateFpm!));
+    }
+    final current = _displayedVerticalSpeedFpm();
+    if (!live.gpsIsStale && current != null) {
+      _currentRateSamples.add(_RateSample(now, current));
+    }
+  }
+
+  /// Average of the samples that fall inside the smoothing window at [now].
+  double? _smoothedRate(List<_RateSample> samples, DateTime now) {
+    final window = Duration(seconds: widget.rateSmoothingSeconds);
+    final recent = samples.where(
+      (sample) => now.difference(sample.time) <= window,
+    );
+    if (recent.isEmpty) return null;
+    final total = recent.fold<double>(0, (sum, sample) => sum + sample.fpm);
+    return total / recent.length;
+  }
+
+  Widget build(BuildContext context) {
+    final now = DateTime.now();
+    final live = _liveCalc(now);
+    final gpsPosition = live.gpsPosition;
+    final currentAltitudeFt = live.currentAltitudeFt;
+    final gpsIsStale = live.gpsIsStale;
+    final targetGroundSpeedKt = live.targetGroundSpeedKt;
+    final currentGroundSpeedKt = live.currentGroundSpeedKt;
+    final remainingDistanceNm = live.remainingDistanceNm;
+    final remainingTimeMinutes = live.remainingTimeMinutes;
+    final useBarometerSpeed =
+        BarometerService.instance.useForVerticalSpeed &&
+        _barometerVerticalSpeedFpm != null;
+    final liveRequiredRate = live.requiredRateFpm == null
+        ? null
+        : _smoothedRate(_requiredRateSamples, now);
+    final liveVerticalSpeedFpm = _smoothedRate(_currentRateSamples, now);
     return SafeArea(
       child: ListView(
         padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
@@ -888,9 +1027,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
               speedUnit: widget.speedUnit,
               currentAltitudeFt: currentAltitudeFt,
               targetAltitudeFt: double.tryParse(_target.text.trim()),
-              verticalSpeedFpm: useBarometerSpeed
-                  ? _barometerVerticalSpeedFpm
-                  : _verticalSpeedFpm,
+              verticalSpeedFpm: liveVerticalSpeedFpm,
               verticalSpeedSource: useBarometerSpeed ? 'BARO' : 'GPS',
               requiredRateFpm: liveRequiredRate,
               remainingTimeMinutes: remainingTimeMinutes,
@@ -973,6 +1110,8 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
         _planClock = null;
         _gpsTravelledNm = 0;
         _altitudeSamples.clear();
+        _requiredRateSamples.clear();
+        _currentRateSamples.clear();
         _verticalSpeedFpm = null;
       });
     }
@@ -1025,6 +1164,8 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
       _planClock = null;
       _gpsTravelledNm = 0;
       _altitudeSamples.clear();
+      _requiredRateSamples.clear();
+      _currentRateSamples.clear();
       _verticalSpeedFpm = null;
       _showTracking = false;
       _groundspeedLockedForPlan = false;

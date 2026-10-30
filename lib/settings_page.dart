@@ -25,6 +25,8 @@ class SettingsPage extends StatefulWidget {
     required this.onVerticalPathProfileChanged,
     required this.speedUnit,
     required this.onSpeedUnitChanged,
+    required this.rateSmoothingSeconds,
+    required this.onRateSmoothingChanged,
     required this.onOpenPoints,
   });
 
@@ -34,6 +36,8 @@ class SettingsPage extends StatefulWidget {
   final ValueChanged<VerticalPathProfile> onVerticalPathProfileChanged;
   final SpeedUnit speedUnit;
   final ValueChanged<SpeedUnit> onSpeedUnitChanged;
+  final int rateSmoothingSeconds;
+  final ValueChanged<int> onRateSmoothingChanged;
   final VoidCallback onOpenPoints;
 
   @override
@@ -317,6 +321,52 @@ class _SettingsPageState extends State<SettingsPage> {
                         widget.onSpeedUnitChanged(selection.first);
                       }
                     },
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 14),
+          Card(
+            color: context.appPanel,
+            child: Padding(
+              padding: const EdgeInsets.all(18),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    'LIVE RATE SMOOTHING',
+                    style: TextStyle(
+                      color: context.appText,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 17,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Averages the live TARGET and CURRENT vertical rates over this many seconds.',
+                    style: TextStyle(color: context.appSecondaryText),
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    '${widget.rateSmoothingSeconds} s',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: context.appText,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 20,
+                    ),
+                  ),
+                  Slider(
+                    min: minVerticalRateSmoothingSeconds.toDouble(),
+                    max: maxVerticalRateSmoothingSeconds.toDouble(),
+                    divisions:
+                        maxVerticalRateSmoothingSeconds -
+                        minVerticalRateSmoothingSeconds,
+                    label: '${widget.rateSmoothingSeconds} s',
+                    value: widget.rateSmoothingSeconds.toDouble(),
+                    onChanged: (value) =>
+                        widget.onRateSmoothingChanged(value.round()),
                   ),
                 ],
               ),
