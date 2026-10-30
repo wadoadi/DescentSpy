@@ -940,7 +940,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
         padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
         children: [
           if (!_showTracking) ...[
-            const _SectionHeading(
+            _SectionHeading(
               title: 'CLIMB / DESCENT PLAN',
               subtitle: 'Set a target above or below current altitude. Enter altitude in ft and ground speed in ${widget.speedUnit.label}.',
             ),
