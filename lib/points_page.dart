@@ -1270,13 +1270,13 @@ class _PointEditorState extends State<_PointEditor> {
           children: [
             TextField(
               controller: _name,
-              decoration: const InputDecoration(labelText: 'POINT NAME'),
+              decoration: const InputDecoration(labelText: 'Point Name'),
               textCapitalization: TextCapitalization.words,
             ),
             const SizedBox(height: 12),
             DropdownButtonFormField<PointCategory>(
               initialValue: _category,
-              decoration: const InputDecoration(labelText: 'POINT TYPE'),
+              decoration: const InputDecoration(labelText: 'Point Type'),
               items: [
                 for (final category in PointCategory.values)
                   DropdownMenuItem(
@@ -1291,13 +1291,13 @@ class _PointEditorState extends State<_PointEditor> {
             const SizedBox(height: 12),
             _CoordinateField(
               controller: _latitude,
-              label: 'LATITUDE',
+              label: 'Latitude',
               maxIntegerDigits: 2,
             ),
             const SizedBox(height: 10),
             _CoordinateField(
               controller: _longitude,
-              label: 'LONGITUDE',
+              label: 'Longitude',
               maxIntegerDigits: 3,
             ),
             if (_error != null) ...[

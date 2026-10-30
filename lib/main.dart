@@ -567,9 +567,9 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
     controller: _constraint,
     label: _mode == _PlanMode.distance
         ? _constraintPointName == null
-              ? 'DISTANCE'
-              : 'DISTANCE · ${_shortLocationName(_constraintPointName!)}'
-        : 'TIME AVAILABLE',
+              ? 'Distance'
+              : 'Distance · ${_shortLocationName(_constraintPointName!)}'
+        : 'Time Available',
     unit: _mode == _PlanMode.distance ? 'NM' : 'min',
     hint: _mode == _PlanMode.distance ? 'e.g. 25.0' : 'e.g. 12',
     maxIntegerDigits: _mode == _PlanMode.distance ? 3 : 4,
@@ -913,7 +913,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
         padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
         children: [
           if (!_showTracking) ...[
-            const _SectionHeading(title: 'CLIMB / DESCENT PLAN'),
+            const _SectionHeading(title: 'Climb / Descent Plan'),
             const SizedBox(height: 18),
             Row(
               children: [
@@ -922,12 +922,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
                 Expanded(
                   child: _NumberField(
                     controller: _target,
-                    // In portrait the box is narrow, so the label takes two lines.
-                    label:
-                        MediaQuery.orientationOf(context) ==
-                            Orientation.portrait
-                        ? 'TARGET\nALTITUDE'
-                        : 'TARGET ALTITUDE',
+                    label: 'Target Altitude',
                     unit: 'ft',
                     hint: 'e.g. 3000',
                     maxIntegerDigits: 6,
@@ -1434,7 +1429,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Semantics(
-            label: 'LIVE VERTICAL RATE · GPS · $statusLabel',
+            label: 'Live Vertical Rate · GPS · $statusLabel',
             child: Wrap(
               key: const ValueKey('live-vertical-rate-gps-heading'),
               spacing: 8,
@@ -1445,7 +1440,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      'LIVE VERTICAL RATE ·',
+                      'Live Vertical Rate ·',
                       style: TextStyle(
                         color: context.appWarning,
                         fontWeight: FontWeight.w900,
@@ -1518,7 +1513,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
           ],
           const SizedBox(height: 10),
           _TrackingPanel(
-            title: 'GROUND SPEED (${speedUnit.label})',
+            title: 'Ground Speed (${speedUnit.label})',
             metrics: [
               _TrackingMetric(
                 label: 'TARGET',
@@ -1544,7 +1539,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           _TrackingPanel(
-            title: 'VERTICAL SPEED (fpm) · $verticalSpeedSource',
+            title: 'Vertical Speed (fpm) · $verticalSpeedSource',
             metrics: [
               _TrackingMetric(
                 label: 'TARGET',
@@ -1563,7 +1558,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           _TrackingPanel(
-            title: 'ALTITUDE (ft)',
+            title: 'Altitude (ft)',
             metrics: [
               _TrackingMetric(
                 label: 'TARGET',
@@ -1608,7 +1603,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
           ],
           const SizedBox(height: 8),
           _TrackingPanel(
-            title: point == null ? 'REMAINING' : 'REMAINING - ${point!.name}',
+            title: point == null ? 'Remaining' : 'Remaining - ${point!.name}',
             metrics: [
               _TrackingMetric(
                 label: 'TIME (min)',
@@ -2029,7 +2024,7 @@ class _WindPlannerState extends State<WindPlanner> {
         padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
         children: [
           const _SectionHeading(
-            title: 'WIND & RUNWAY',
+            title: 'Wind & Runway',
             subtitle: 'Wind direction is where the wind comes FROM. Enter runway number, e.g. 07.',
           ),
           const SizedBox(height: 18),
@@ -2039,7 +2034,7 @@ class _WindPlannerState extends State<WindPlanner> {
               Expanded(
                 child: _NumberField(
                   controller: _windDirection,
-                  label: 'WIND DIRECTION',
+                  label: 'Wind Direction',
                   unit: '°',
                   hint: '180',
                   onChanged: (value) {
@@ -2055,7 +2050,7 @@ class _WindPlannerState extends State<WindPlanner> {
               Expanded(
                 child: _NumberField(
                   controller: _windSpeed,
-                  label: 'WIND SPEED',
+                  label: 'Wind Speed',
                   unit: widget.speedUnit.label,
                   hint: '20',
                   onChanged: (value) {
@@ -2075,7 +2070,7 @@ class _WindPlannerState extends State<WindPlanner> {
           const SizedBox(height: 14),
           _NumberField(
             controller: _runway,
-            label: 'INTENDED RUNWAY',
+            label: 'Intended Runway',
             unit: 'RWY',
             hint: '07',
             onChanged: (value) {
