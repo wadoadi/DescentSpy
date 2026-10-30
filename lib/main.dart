@@ -1637,6 +1637,13 @@ class _LiveVerticalRateCard extends StatelessWidget {
               style: TextStyle(color: context.appMutedText, fontSize: 12),
             ),
           ],
+          if (point != null) ...[
+            const SizedBox(height: 4),
+            Text(
+              'Point arrow shows true bearing, not a wind-corrected heading.',
+              style: TextStyle(color: context.appMutedText, fontSize: 12),
+            ),
+          ],
           const SizedBox(height: 4),
           Text(
             'Planning aid only.',
