@@ -130,6 +130,12 @@ The app has three tabs:
   `descent_ground_speed` and `wind_speed` keep their meaning; the choice is saved
   under `speed_unit`. Conversions use 1 kt = 1.852 km/h = 1.15078 mph
   (`lib/speed_unit.dart`). Live speed-deviation alerts stay at 5 kt.
+- **SHOW LIVE DELTAS** (default on) shows or hides the DELTA readings on the
+  live panels (ground speed, vertical speed and altitude). Preference key:
+  `show_live_deltas`. Live panel headings carry the unit once, for example
+  `GROUND SPEED (kt)`, `VERTICAL SPEED (fpm) · GPS` and `ALTITUDE (ft)`. The
+  REMAINING panel has mixed units, so its unit is in each column label, for
+  example `DISTANCE (NM)`.
 - **LIVE SMOOTHING** (1–30 s, default 5 s) sets the averaging window for GPS
   altitude, ground speed (CURRENT), remaining distance, bearing to the point,
   and the TARGET and CURRENT vertical rates. The planner records each reading
@@ -224,7 +230,7 @@ The app has three tabs:
 
 Important persisted preference keys include `app_theme_mode`, `descent_*`,
 `descent_ground_speed_manual`, `descent_start_manual`,
-`descent_vertical_path_profile`, `speed_unit`, `vertical_rate_smoothing_seconds`, `point_search_keyboard_mode`,
+`descent_vertical_path_profile`, `speed_unit`, `vertical_rate_smoothing_seconds`, `show_live_deltas`, `point_search_keyboard_mode`,
 `navigation_custom_points`, and
 `navigation_favourite_ids`. Preserve compatibility when changing these keys.
 

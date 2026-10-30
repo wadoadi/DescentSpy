@@ -27,6 +27,8 @@ class SettingsPage extends StatefulWidget {
     required this.onSpeedUnitChanged,
     required this.rateSmoothingSeconds,
     required this.onRateSmoothingChanged,
+    required this.showLiveDeltas,
+    required this.onShowLiveDeltasChanged,
     required this.onOpenPoints,
   });
 
@@ -38,6 +40,8 @@ class SettingsPage extends StatefulWidget {
   final ValueChanged<SpeedUnit> onSpeedUnitChanged;
   final int rateSmoothingSeconds;
   final ValueChanged<int> onRateSmoothingChanged;
+  final bool showLiveDeltas;
+  final ValueChanged<bool> onShowLiveDeltasChanged;
   final VoidCallback onOpenPoints;
 
   @override
@@ -323,6 +327,26 @@ class _SettingsPageState extends State<SettingsPage> {
                     },
                   ),
                 ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 14),
+          Card(
+            color: context.appPanel,
+            child: SwitchListTile(
+              value: widget.showLiveDeltas,
+              onChanged: widget.onShowLiveDeltasChanged,
+              title: Text(
+                'SHOW LIVE DELTAS',
+                style: TextStyle(
+                  color: context.appText,
+                  fontWeight: FontWeight.w900,
+                  fontSize: 17,
+                ),
+              ),
+              subtitle: Text(
+                'Shows the DELTA readings on the live panels (speed, vertical speed and altitude).',
+                style: TextStyle(color: context.appSecondaryText),
               ),
             ),
           ),
