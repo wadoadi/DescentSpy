@@ -18,7 +18,7 @@ The app has three tabs:
 ### Altitude
 
 - Plans a climb or descent from entered current and target altitude in `ft`.
-- Ground speed in `kt` is required. It starts GPS tracking on app start and
+- Ground speed is required, in the unit chosen under **SPEED UNIT** (`kt` by default). It starts GPS tracking on app start and
   fills the field with the latest GPS groundspeed (including `0` when
   stationary). Leave the field blank to use GPS or enter a value for manual
   input. Clearing a manual value returns to GPS readings. The altitude and
@@ -79,7 +79,7 @@ The app has three tabs:
 ### Wind & Runway
 
 - Accepts wind direction in degrees (where the wind comes from), wind speed in
-  `kt`, and intended runway number.
+  the **SPEED UNIT** (`kt` by default), and intended runway number.
 - Validates ranges and calculates headwind/tailwind and crosswind components
   for the intended runway and reciprocal.
 - Displays a warning and reciprocal-runway suggestion when the reciprocal has
@@ -124,6 +124,12 @@ The app has three tabs:
   The light scheme uses a darker cool-grey background with brighter panels for
   stronger surface separation and readable text contrast. The dark scheme uses
   a near-black background behind clearly lighter panels.
+- **SPEED UNIT** chooses `KT` (default), `KM/H`, or `MPH` for ground speed and
+  wind speed entry, the live ground-speed panel, the altitude results, the wind
+  results, and the GPS ground-speed diagnostic. Speeds are stored in knots, so
+  `descent_ground_speed` and `wind_speed` keep their meaning; the choice is saved
+  under `speed_unit`. Conversions use 1 kt = 1.852 km/h = 1.15078 mph
+  (`lib/speed_unit.dart`). Live speed-deviation alerts stay at 5 kt.
 - **POINT SEARCH KEYBOARD** chooses the large QWERTY keyboard (default) or the
   device system keyboard; the selection persists across launches.
 - **VERTICAL PATH PROFILE** selects the persistent 3° or 5° path used by the
@@ -183,6 +189,8 @@ The app has three tabs:
 - `lib/settings_page.dart` — appearance and point-search keyboard selection,
   vertical path profile selection, GPS permission retry, GPS fix diagnostics,
   and navigation to the point manager.
+- `lib/speed_unit.dart` — the speed unit setting (kt, km/h, mph) and conversions
+  between the displayed unit and the knots used by calculations.
 - `lib/calculations.dart` — pure altitude planning, live rate, GPS groundspeed,
   selectable 3°/5° path profiles, and runway wind calculations. Prefer
   extending/test-driving calculations here rather than embedding formulas in
@@ -207,7 +215,7 @@ The app has three tabs:
 
 Important persisted preference keys include `app_theme_mode`, `descent_*`,
 `descent_ground_speed_manual`, `descent_start_manual`,
-`descent_vertical_path_profile`, `point_search_keyboard_mode`,
+`descent_vertical_path_profile`, `speed_unit`, `point_search_keyboard_mode`,
 `navigation_custom_points`, and
 `navigation_favourite_ids`. Preserve compatibility when changing these keys.
 

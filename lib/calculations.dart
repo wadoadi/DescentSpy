@@ -1,5 +1,7 @@
 import 'dart:math' as math;
 
+import 'speed_unit.dart';
+
 const double _feetPerNmAtThreeDegrees = 318;
 const double metersToFeet = 3.28084;
 const double metersPerSecondToKnots = 1.943844;
@@ -16,9 +18,11 @@ enum VerticalPathProfile {
 
 const verticalPathProfilePreferenceKey = 'descent_vertical_path_profile';
 
+/// Ground speed text for the field, in [unit] (defaults to knots).
 String? gpsGroundSpeedEntry({
   required double speedMetersPerSecond,
   required bool manuallyOverridden,
+  SpeedUnit unit = SpeedUnit.knots,
 }) {
   if (manuallyOverridden ||
       !speedMetersPerSecond.isFinite ||
@@ -28,7 +32,7 @@ String? gpsGroundSpeedEntry({
   if (speedMetersPerSecond <= 0.5) return '0';
   final speedKt = speedMetersPerSecond * metersPerSecondToKnots;
   if (speedKt >= 1000) return null;
-  return speedKt.round().toString();
+  return unit.fromKnots(speedKt).round().toString();
 }
 
 String? gpsAltitudeEntry({

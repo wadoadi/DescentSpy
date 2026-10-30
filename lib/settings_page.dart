@@ -11,6 +11,7 @@ import 'calculations.dart';
 import 'gps_debug_page.dart';
 import 'gps_position_service.dart';
 import 'points_page.dart';
+import 'speed_unit.dart';
 
 const _metersToFeet = 3.28084;
 const _metersPerSecondToKnots = 1.943844;
@@ -22,6 +23,8 @@ class SettingsPage extends StatefulWidget {
     required this.onThemeModeChanged,
     required this.verticalPathProfile,
     required this.onVerticalPathProfileChanged,
+    required this.speedUnit,
+    required this.onSpeedUnitChanged,
     required this.onOpenPoints,
   });
 
@@ -29,6 +32,8 @@ class SettingsPage extends StatefulWidget {
   final ValueChanged<ThemeMode> onThemeModeChanged;
   final VerticalPathProfile verticalPathProfile;
   final ValueChanged<VerticalPathProfile> onVerticalPathProfileChanged;
+  final SpeedUnit speedUnit;
+  final ValueChanged<SpeedUnit> onSpeedUnitChanged;
   final VoidCallback onOpenPoints;
 
   @override
@@ -277,6 +282,55 @@ class _SettingsPageState extends State<SettingsPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
+                    'SPEED UNIT',
+                    style: TextStyle(
+                      color: context.appText,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 17,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Sets the unit for ground speed and wind speed entry and display.',
+                    style: TextStyle(color: context.appSecondaryText),
+                  ),
+                  const SizedBox(height: 12),
+                  SegmentedButton<SpeedUnit>(
+                    showSelectedIcon: false,
+                    segments: const [
+                      ButtonSegment(
+                        value: SpeedUnit.knots,
+                        label: Text('KT'),
+                      ),
+                      ButtonSegment(
+                        value: SpeedUnit.kilometresPerHour,
+                        label: Text('KM/H'),
+                      ),
+                      ButtonSegment(
+                        value: SpeedUnit.milesPerHour,
+                        label: Text('MPH'),
+                      ),
+                    ],
+                    selected: {widget.speedUnit},
+                    onSelectionChanged: (selection) {
+                      if (selection.isNotEmpty) {
+                        widget.onSpeedUnitChanged(selection.first);
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 14),
+          Card(
+            color: context.appPanel,
+            child: Padding(
+              padding: const EdgeInsets.all(18),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
                     'POINT SEARCH KEYBOARD',
                     style: TextStyle(
                       color: context.appText,
@@ -389,7 +443,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         label: 'GROUND SPEED',
                         value: position == null || !position.hasSpeed
                             ? '—'
-                            : '${(position.speed * _metersPerSecondToKnots).toStringAsFixed(1)} kt',
+                            : '${widget.speedUnit.fromKnots(position.speed * _metersPerSecondToKnots).toStringAsFixed(1)} ${widget.speedUnit.label}',
                       ),
                       _GpsStatusMetric(
                         label: 'TRACK / COURSE',

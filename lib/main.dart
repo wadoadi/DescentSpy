@@ -14,6 +14,7 @@ import 'gps_position_service.dart';
 import 'point_data.dart';
 import 'points_page.dart';
 import 'settings_page.dart';
+import 'speed_unit.dart';
 
 void main() {
   runApp(const DescentSpyApp());
@@ -31,6 +32,7 @@ class _DescentSpyAppState extends State<DescentSpyApp>
   static const _themePreferenceKey = 'app_theme_mode';
   ThemeMode _themeMode = ThemeMode.dark;
   VerticalPathProfile _verticalPathProfile = VerticalPathProfile.threeDegree;
+  SpeedUnit _speedUnit = SpeedUnit.knots;
 
   @override
   void initState() {
@@ -49,11 +51,13 @@ class _DescentSpyAppState extends State<DescentSpyApp>
       final savedProfile = preferences.getString(
         verticalPathProfilePreferenceKey,
       );
+      final savedSpeedUnit = preferences.getString(speedUnitPreferenceKey);
       if (!mounted) return;
       setState(() {
         if (savedMode != null) {
           _themeMode = savedMode == 'light' ? ThemeMode.light : ThemeMode.dark;
         }
+        _speedUnit = SpeedUnit.fromName(savedSpeedUnit);
         _verticalPathProfile = VerticalPathProfile.values.firstWhere(
           (profile) => profile.name == savedProfile,
           orElse: () => VerticalPathProfile.threeDegree,
@@ -108,6 +112,22 @@ class _DescentSpyAppState extends State<DescentSpyApp>
     }
   }
 
+  Future<void> _setSpeedUnit(SpeedUnit unit) async {
+    setState(() => _speedUnit = unit);
+    try {
+      final preferences = await SharedPreferences.getInstance();
+      await preferences.setString(speedUnitPreferenceKey, unit.name);
+    } catch (error) {
+      FlutterError.reportError(
+        FlutterErrorDetails(
+          exception: error,
+          library: 'DescentSpy settings',
+          context: ErrorDescription('while saving the speed unit'),
+        ),
+      );
+    }
+  }
+
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     GpsPositionService.instance.logDebugEvent('lifecycle ${state.name}');
@@ -142,6 +162,8 @@ class _DescentSpyAppState extends State<DescentSpyApp>
         onThemeModeChanged: _setThemeMode,
         verticalPathProfile: _verticalPathProfile,
         onVerticalPathProfileChanged: _setVerticalPathProfile,
+        speedUnit: _speedUnit,
+        onSpeedUnitChanged: _setSpeedUnit,
       ),
     );
   }
@@ -154,12 +176,16 @@ class FlightToolsPage extends StatelessWidget {
     required this.onThemeModeChanged,
     required this.verticalPathProfile,
     required this.onVerticalPathProfileChanged,
+    required this.speedUnit,
+    required this.onSpeedUnitChanged,
   });
 
   final ThemeMode themeMode;
   final ValueChanged<ThemeMode> onThemeModeChanged;
   final VerticalPathProfile verticalPathProfile;
   final ValueChanged<VerticalPathProfile> onVerticalPathProfileChanged;
+  final SpeedUnit speedUnit;
+  final ValueChanged<SpeedUnit> onSpeedUnitChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -206,13 +232,15 @@ class FlightToolsPage extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            AltitudePlanner(profile: verticalPathProfile),
-            const WindPlanner(),
+            AltitudePlanner(profile: verticalPathProfile, speedUnit: speedUnit),
+            WindPlanner(speedUnit: speedUnit),
             SettingsPage(
               themeMode: themeMode,
               onThemeModeChanged: onThemeModeChanged,
               verticalPathProfile: verticalPathProfile,
               onVerticalPathProfileChanged: onVerticalPathProfileChanged,
+              speedUnit: speedUnit,
+              onSpeedUnitChanged: onSpeedUnitChanged,
               onOpenPoints: () {
                 Navigator.of(context).push(
                   MaterialPageRoute<void>(
@@ -232,9 +260,14 @@ class FlightToolsPage extends StatelessWidget {
 }
 
 class AltitudePlanner extends StatefulWidget {
-  const AltitudePlanner({super.key, required this.profile});
+  const AltitudePlanner({
+    super.key,
+    required this.profile,
+    required this.speedUnit,
+  });
 
   final VerticalPathProfile profile;
+  final SpeedUnit speedUnit;
 
   @override
   State<AltitudePlanner> createState() => _AltitudePlannerState();
@@ -287,6 +320,24 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
     unawaited(_restoreFields().then((_) => _onGpsServiceChanged()));
   }
 
+  @override
+  void didUpdateWidget(AltitudePlanner oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.speedUnit != widget.speedUnit) {
+      // Keep the field showing the same speed, now in the new unit.
+      _groundspeed.text = speedTextFromKnots(
+        speedTextToKnots(_groundspeed.text, oldWidget.speedUnit),
+        widget.speedUnit,
+      );
+    }
+  }
+
+  /// Ground speed from the field (typed in the selected unit), in knots.
+  double? _targetGroundSpeedKt() {
+    final value = double.tryParse(_groundspeed.text.trim());
+    return value == null ? null : widget.speedUnit.toKnots(value);
+  }
+
   void _onBarometerReading(BarometerReading reading) {
     if (!mounted ||
         _plan == null ||
@@ -321,7 +372,10 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
       _groundspeedManuallyOverridden =
           preferences.getBool('descent_ground_speed_manual') ?? false;
       _groundspeed.text = _groundspeedManuallyOverridden
-          ? preferences.getString('descent_ground_speed') ?? ''
+          ? speedTextFromKnots(
+              preferences.getString('descent_ground_speed') ?? '',
+              widget.speedUnit,
+            )
           : '';
       _constraint.text = preferences.getString('descent_constraint') ?? '';
       final savedMode = preferences.getString('descent_mode');
@@ -357,7 +411,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
   Widget _groundSpeedField() => _NumberField(
     controller: _groundspeed,
     label: 'GROUND SPEED',
-    unit: 'kt',
+    unit: widget.speedUnit.label,
     hint: 'Leave blank for GPS',
     clearValueOnOpen:
         !_groundspeedManuallyOverridden && _groundspeed.text.isNotEmpty,
@@ -376,7 +430,10 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
           ),
         );
       }
-      _saveField('descent_ground_speed', value);
+      _saveField(
+        'descent_ground_speed',
+        speedTextToKnots(value, widget.speedUnit),
+      );
       _clearResult();
     },
   );
@@ -460,7 +517,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
   void _calculate() {
     final start = double.tryParse(_start.text.trim());
     final target = double.tryParse(_target.text.trim());
-    final speed = double.tryParse(_groundspeed.text.trim());
+    final speed = _targetGroundSpeedKt();
     final constraint = _mode == _PlanMode.profile
         ? null
         : double.tryParse(_constraint.text.trim());
@@ -548,12 +605,16 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
       speedMetersPerSecond: position.speed,
       manuallyOverridden:
           _groundspeedManuallyOverridden || _groundspeedLockedForPlan,
+      unit: widget.speedUnit,
     );
     if (groundspeedEntry != null &&
         groundspeedEntry != _groundspeed.text &&
         !_restoring) {
       _groundspeed.text = groundspeedEntry;
-      _saveField('descent_ground_speed', groundspeedEntry);
+      _saveField(
+        'descent_ground_speed',
+        speedTextToKnots(groundspeedEntry, widget.speedUnit),
+      );
     }
     final timestamp = position.timestamp;
     final previous = _lastPosition;
@@ -616,7 +677,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
         gpsPosition == null ||
         DateTime.now().difference(gpsPosition.timestamp) >
             const Duration(seconds: 10);
-    final targetGroundSpeedKt = double.tryParse(_groundspeed.text.trim());
+    final targetGroundSpeedKt = _targetGroundSpeedKt();
     final currentGroundSpeedKt = gpsPosition == null || gpsIsStale
         ? null
         : gpsPosition.speed * metersPerSecondToKnots;
@@ -644,7 +705,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
           if (!_showTracking) ...[
             const _SectionHeading(
               title: 'CLIMB / DESCENT PLAN',
-              subtitle: 'Set a target above or below current altitude. Enter altitude in ft and ground speed in kt.',
+              subtitle: 'Set a target above or below current altitude. Enter altitude in ft and ground speed in ${widget.speedUnit.label}.',
             ),
             const SizedBox(height: 18),
             Row(
@@ -811,6 +872,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
             _AltitudeResults(
               plan: _plan!,
               groundspeedKt: targetGroundSpeedKt ?? 0,
+              speedUnit: widget.speedUnit,
             ),
             const SizedBox(height: 14),
             _LiveVerticalRateCard(
@@ -823,6 +885,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
                         GpsFixLevel.none,
               targetGroundSpeedKt: targetGroundSpeedKt,
               currentGroundSpeedKt: currentGroundSpeedKt,
+              speedUnit: widget.speedUnit,
               currentAltitudeFt: currentAltitudeFt,
               targetAltitudeFt: double.tryParse(_target.text.trim()),
               verticalSpeedFpm: useBarometerSpeed
@@ -1061,6 +1124,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
     required this.gpsFixLevel,
     required this.targetGroundSpeedKt,
     required this.currentGroundSpeedKt,
+    required this.speedUnit,
     required this.currentAltitudeFt,
     required this.targetAltitudeFt,
     required this.verticalSpeedFpm,
@@ -1078,6 +1142,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
   final GpsFixLevel gpsFixLevel;
   final double? targetGroundSpeedKt;
   final double? currentGroundSpeedKt;
+  final SpeedUnit speedUnit;
   final double? currentAltitudeFt;
   final double? targetAltitudeFt;
   final double? verticalSpeedFpm;
@@ -1247,19 +1312,26 @@ class _LiveVerticalRateCard extends StatelessWidget {
           const SizedBox(height: 10),
           _TrackingPanel(
             title: 'GROUND SPEED',
-            unit: 'kt',
+            unit: speedUnit.label,
             metrics: [
               _TrackingMetric(
                 label: 'TARGET',
-                value: targetGroundSpeedKt?.round().toString() ?? '—',
+                value: targetGroundSpeedKt == null
+                    ? '—'
+                    : speedUnit.fromKnots(targetGroundSpeedKt!).round().toString(),
               ),
               _TrackingMetric(
                 label: 'CURRENT',
-                value: currentGroundSpeedKt?.toStringAsFixed(1) ?? '—',
+                value: currentGroundSpeedKt == null
+                    ? '—'
+                    : speedUnit.fromKnots(currentGroundSpeedKt!).toStringAsFixed(1),
               ),
               _TrackingMetric(
                 label: 'DELTA',
-                value: speedDelta == null ? '—' : _signed(speedDelta, 1),
+                value: speedDelta == null
+                    ? '—'
+                    : _signed(speedUnit.fromKnots(speedDelta), 1),
+                // The 5 kt alert threshold applies in knots whatever unit shows.
                 alert: speedDelta != null && speedDelta.abs() >= 5,
               ),
             ],
@@ -1397,10 +1469,15 @@ class _LiveVerticalRateCard extends StatelessWidget {
 }
 
 class _AltitudeResults extends StatefulWidget {
-  const _AltitudeResults({required this.plan, required this.groundspeedKt});
+  const _AltitudeResults({
+    required this.plan,
+    required this.groundspeedKt,
+    required this.speedUnit,
+  });
 
   final AltitudePlan plan;
   final double groundspeedKt;
+  final SpeedUnit speedUnit;
 
   @override
   State<_AltitudeResults> createState() => _AltitudeResultsState();
@@ -1485,8 +1562,11 @@ class _AltitudeResultsState extends State<_AltitudeResults> {
                             Expanded(
                               child: _Metric(
                                 label: 'GROUND SPEED',
-                                value: widget.groundspeedKt.round().toString(),
-                                unit: 'kt',
+                                value: widget.speedUnit
+                                    .fromKnots(widget.groundspeedKt)
+                                    .round()
+                                    .toString(),
+                                unit: widget.speedUnit.label,
                               ),
                             ),
                             Expanded(
@@ -1642,7 +1722,9 @@ class _TrackingMetric {
 }
 
 class WindPlanner extends StatefulWidget {
-  const WindPlanner({super.key});
+  const WindPlanner({super.key, required this.speedUnit});
+
+  final SpeedUnit speedUnit;
 
   @override
   State<WindPlanner> createState() => _WindPlannerState();
@@ -1672,7 +1754,10 @@ class _WindPlannerState extends State<WindPlanner> {
     if (!mounted) return;
     setState(() {
       _windDirection.text = preferences.getString('wind_direction') ?? '';
-      _windSpeed.text = preferences.getString('wind_speed') ?? '';
+      _windSpeed.text = speedTextFromKnots(
+        preferences.getString('wind_speed') ?? '',
+        widget.speedUnit,
+      );
       _runway.text = preferences.getString('wind_runway') ?? '';
       _restoring = false;
     });
@@ -1688,6 +1773,18 @@ class _WindPlannerState extends State<WindPlanner> {
   }
 
   @override
+  void didUpdateWidget(WindPlanner oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.speedUnit != widget.speedUnit) {
+      // Keep the field showing the same speed, now in the new unit.
+      _windSpeed.text = speedTextFromKnots(
+        speedTextToKnots(_windSpeed.text, oldWidget.speedUnit),
+        widget.speedUnit,
+      );
+    }
+  }
+
+  @override
   void dispose() {
     _windDirection.dispose();
     _windSpeed.dispose();
@@ -1697,7 +1794,10 @@ class _WindPlannerState extends State<WindPlanner> {
 
   void _calculate() {
     final direction = double.tryParse(_windDirection.text.trim());
-    final speed = double.tryParse(_windSpeed.text.trim());
+    final typedSpeed = double.tryParse(_windSpeed.text.trim());
+    final speed = typedSpeed == null
+        ? null
+        : widget.speedUnit.toKnots(typedSpeed);
     final runway = int.tryParse(_runway.text.trim());
     if (direction == null || speed == null || runway == null) {
       setState(() {
@@ -1758,10 +1858,13 @@ class _WindPlannerState extends State<WindPlanner> {
                 child: _NumberField(
                   controller: _windSpeed,
                   label: 'WIND SPEED',
-                  unit: 'kt',
+                  unit: widget.speedUnit.label,
                   hint: '20',
                   onChanged: (value) {
-                    _saveField('wind_speed', value);
+                    _saveField(
+                      'wind_speed',
+                      speedTextToKnots(value, widget.speedUnit),
+                    );
                     _clearResult();
                   },
                   maxIntegerDigits: 3,
@@ -1810,7 +1913,10 @@ class _WindPlannerState extends State<WindPlanner> {
           ],
           if (_assessment != null) ...[
             const SizedBox(height: 18),
-            _WindResults(assessment: _assessment!),
+            _WindResults(
+              assessment: _assessment!,
+              speedUnit: widget.speedUnit,
+            ),
           ],
           const SizedBox(height: 14),
           _ClearAllButton(onPressed: _clearAll),
@@ -1857,9 +1963,10 @@ class _WindPlannerState extends State<WindPlanner> {
 }
 
 class _WindResults extends StatelessWidget {
-  const _WindResults({required this.assessment});
+  const _WindResults({required this.assessment, required this.speedUnit});
 
   final WindAssessment assessment;
+  final SpeedUnit speedUnit;
 
   @override
   Widget build(BuildContext context) {
@@ -1906,16 +2013,20 @@ class _WindResults extends StatelessWidget {
                   Expanded(
                     child: _Metric(
                       label: current.headwindKt >= 0 ? 'HEADWIND' : 'TAILWIND',
-                      value: (current.headwindKt.abs()).toStringAsFixed(1),
-                      unit: 'kt',
+                      value: speedUnit
+                          .fromKnots(current.headwindKt.abs())
+                          .toStringAsFixed(1),
+                      unit: speedUnit.label,
                       alert: current.tailwindKt > 0.5,
                     ),
                   ),
                   Expanded(
                     child: _Metric(
                       label: 'CROSSWIND',
-                      value: current.crosswindKt.toStringAsFixed(1),
-                      unit: 'kt',
+                      value: speedUnit
+                          .fromKnots(current.crosswindKt)
+                          .toStringAsFixed(1),
+                      unit: speedUnit.label,
                     ),
                   ),
                 ],
@@ -1940,16 +2051,20 @@ class _WindResults extends StatelessWidget {
                       label: reciprocal.headwindKt >= 0
                           ? 'HEADWIND'
                           : 'TAILWIND',
-                      value: reciprocal.headwindKt.abs().toStringAsFixed(1),
-                      unit: 'kt',
+                      value: speedUnit
+                          .fromKnots(reciprocal.headwindKt.abs())
+                          .toStringAsFixed(1),
+                      unit: speedUnit.label,
                       alert: reciprocal.tailwindKt > 0.5,
                     ),
                   ),
                   Expanded(
                     child: _Metric(
                       label: 'CROSSWIND',
-                      value: reciprocal.crosswindKt.toStringAsFixed(1),
-                      unit: 'kt',
+                      value: speedUnit
+                          .fromKnots(reciprocal.crosswindKt)
+                          .toStringAsFixed(1),
+                      unit: speedUnit.label,
                     ),
                   ),
                 ],
