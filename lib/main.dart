@@ -595,7 +595,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
     controller: _constraint,
     label: _mode == _PlanMode.distance
         ? _constraintPointName == null
-              ? 'DISTANCE AVAILABLE'
+              ? 'DISTANCE'
               : 'DISTANCE · ${_shortLocationName(_constraintPointName!)}'
         : 'TIME AVAILABLE',
     unit: _mode == _PlanMode.distance ? 'NM' : 'min',
@@ -2407,6 +2407,11 @@ class _NumberField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: label,
         hintText: hint,
+        hintStyle: const TextStyle(
+          fontSize: 13,
+          fontStyle: FontStyle.italic,
+          fontWeight: FontWeight.normal,
+        ),
         suffixText: unit,
         suffixStyle: TextStyle(
           color: context.appWarning,
