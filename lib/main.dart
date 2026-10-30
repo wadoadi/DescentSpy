@@ -1662,8 +1662,9 @@ class _LiveVerticalRateCard extends StatelessWidget {
                 label: 'DISTANCE (NM)',
                 value: remainingDistanceNm?.toStringAsFixed(1) ?? '—',
               ),
-              _TrackingMetric(
-                label: point == null ? 'POINT' : 'TO POINT (°T)',
+              if (point != null)
+                _TrackingMetric(
+                label: 'TO POINT (°T)',
                 value: pointBearingDeg == null
                     ? '—'
                     : (pointBearingDeg!.round() % 360).toString().padLeft(
@@ -1863,6 +1864,7 @@ class _TrackingPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final hidesDelta = !showDeltas && metrics.any((metric) => metric.isDelta);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
@@ -1885,12 +1887,13 @@ class _TrackingPanel extends StatelessWidget {
           const SizedBox(height: 6),
           Row(
             children: [
-              for (final metric in metrics)
-                if (!showDeltas && metric.isDelta)
-                  // Keep the slot so the remaining values stay in place.
-                  const Expanded(child: SizedBox.shrink())
-                else
-                  Expanded(
+              // With deltas hidden, spacers centre the remaining values.
+              if (hidesDelta) const Spacer(),
+              for (final metric in metrics.where(
+                (metric) => showDeltas || !metric.isDelta,
+              ))
+                Expanded(
+                  flex: hidesDelta ? 2 : 1,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -1936,6 +1939,7 @@ class _TrackingPanel extends StatelessWidget {
                     ],
                   ),
                 ),
+              if (hidesDelta) const Spacer(),
             ],
           ),
         ],
