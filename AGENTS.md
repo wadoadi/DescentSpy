@@ -124,7 +124,7 @@ The app has three tabs:
   The light scheme uses a darker cool-grey background with brighter panels for
   stronger surface separation and readable text contrast. The dark scheme uses
   a near-black background behind clearly lighter panels.
-- **SPEED UNIT** chooses `KT` (default), `KM/H`, or `MPH` for ground speed and
+- **SPEED UNIT** chooses `kt` (default), `km/h`, or `mph` for ground speed and
   wind speed entry, the live ground-speed panel, the altitude results, the wind
   results, and the GPS ground-speed diagnostic. Speeds are stored in knots, so
   `descent_ground_speed` and `wind_speed` keep their meaning; the choice is saved

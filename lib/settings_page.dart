@@ -300,15 +300,15 @@ class _SettingsPageState extends State<SettingsPage> {
                     segments: const [
                       ButtonSegment(
                         value: SpeedUnit.knots,
-                        label: Text('KT'),
+                        label: Text('kt'),
                       ),
                       ButtonSegment(
                         value: SpeedUnit.kilometresPerHour,
-                        label: Text('KM/H'),
+                        label: Text('km/h'),
                       ),
                       ButtonSegment(
                         value: SpeedUnit.milesPerHour,
-                        label: Text('MPH'),
+                        label: Text('mph'),
                       ),
                     ],
                     selected: {widget.speedUnit},
