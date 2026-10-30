@@ -943,10 +943,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
         padding: const EdgeInsets.fromLTRB(18, 18, 18, 28),
         children: [
           if (!_showTracking) ...[
-            _SectionHeading(
-              title: 'CLIMB / DESCENT PLAN',
-              subtitle: 'Set a target above or below current altitude. Enter altitude in ft and ground speed in ${widget.speedUnit.label}.',
-            ),
+            const _SectionHeading(title: 'CLIMB / DESCENT PLAN'),
             const SizedBox(height: 18),
             Row(
               children: [
@@ -955,7 +952,12 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
                 Expanded(
                   child: _NumberField(
                     controller: _target,
-                    label: 'TARGET ALTITUDE',
+                    // In portrait the box is narrow, so the label takes two lines.
+                    label:
+                        MediaQuery.orientationOf(context) ==
+                            Orientation.portrait
+                        ? 'TARGET\nALTITUDE'
+                        : 'TARGET ALTITUDE',
                     unit: 'ft',
                     hint: 'e.g. 3000',
                     maxIntegerDigits: 6,
@@ -2321,10 +2323,10 @@ class _WindResults extends StatelessWidget {
 }
 
 class _SectionHeading extends StatelessWidget {
-  const _SectionHeading({required this.title, required this.subtitle});
+  const _SectionHeading({required this.title, this.subtitle});
 
   final String title;
-  final String subtitle;
+  final String? subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -2343,15 +2345,17 @@ class _SectionHeading extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 5),
-        Text(
-          subtitle,
-          style: TextStyle(
-            color: context.appSecondaryText,
-            fontSize: 15,
-            height: 1.4,
+        if (subtitle != null) ...[
+          const SizedBox(height: 5),
+          Text(
+            subtitle!,
+            style: TextStyle(
+              color: context.appSecondaryText,
+              fontSize: 15,
+              height: 1.4,
+            ),
           ),
-        ),
+        ],
       ],
     );
   }
