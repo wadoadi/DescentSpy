@@ -1129,7 +1129,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
             const SizedBox(height: 22),
           ],
           Text(
-            'Planning aid only. Confirm against aircraft performance, current conditions, and approved procedures.',
+            'Planning aid only.',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: context.appFaintText,
@@ -1644,11 +1644,6 @@ class _LiveVerticalRateCard extends StatelessWidget {
               style: TextStyle(color: context.appMutedText, fontSize: 12),
             ),
           ],
-          const SizedBox(height: 4),
-          Text(
-            'Planning aid only.',
-            style: TextStyle(color: context.appMutedText, fontSize: 12),
-          ),
         ],
       ),
     );
