@@ -447,10 +447,20 @@ void main() {
     expect(bearingTo(lat, lon - 0.05), closeTo(270, 0.1));
   });
 
-  test('accuracy label shows GPS ±N m, or NO FIX without a fresh fix', () {
-    expect(gpsAccuracyLabel(fresh: true, horizontalAccuracyM: 4), 'GPS ±4 m');
+  test('accuracy label shows ±N m, or NO FIX without a fresh fix', () {
+    expect(gpsAccuracyLabel(fresh: true, horizontalAccuracyM: 4), '±4 m');
     expect(gpsAccuracyLabel(fresh: false, horizontalAccuracyM: 4), 'NO FIX');
     expect(gpsAccuracyLabel(fresh: true, horizontalAccuracyM: null), 'NO FIX');
+  });
+
+  test('travel direction uses GPS course only when moving', () {
+    expect(
+      gpsTravelDirectionDeg(headingDeg: 370, speedMps: 5),
+      closeTo(10, 0.001),
+    );
+    expect(gpsTravelDirectionDeg(headingDeg: 90, speedMps: 0.5), isNull);
+    expect(gpsTravelDirectionDeg(headingDeg: -1, speedMps: 5), isNull);
+    expect(gpsTravelDirectionDeg(headingDeg: 90, speedMps: double.nan), isNull);
   });
 
   test('accuracy colour band: green at or below 10 m, orange above, none without a fix', () {

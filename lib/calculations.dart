@@ -60,11 +60,25 @@ class AltitudeSample {
 /// True when [timestamp] is a new fix rather than a repeat of
 /// [previousTimestamp]. Callbacks that re-deliver the cached fix must not add
 /// the same altitude sample twice.
+/// Below this ground speed GPS course is noise, so the arrow falls back to the
+/// true bearing to the point. About 2 kt.
+const double minimumTravelSpeedMps = 1.0;
+
+/// Direction of travel from the GPS course, or null when the course is not
+/// usable (missing, or moving slower than [minimumTravelSpeedMps]).
+double? gpsTravelDirectionDeg({
+  required double headingDeg,
+  required double speedMps,
+}) {
+  if (!headingDeg.isFinite || headingDeg < 0) return null;
+  if (!speedMps.isFinite || speedMps < minimumTravelSpeedMps) return null;
+  return headingDeg % 360;
+}
+
 bool isNewerFix({
   required DateTime? previousTimestamp,
   required DateTime timestamp,
-}) =>
-    previousTimestamp == null || timestamp.isAfter(previousTimestamp);
+}) => previousTimestamp == null || timestamp.isAfter(previousTimestamp);
 
 double? estimateVerticalSpeedFpm(List<AltitudeSample> samples) {
   if (samples.length < 3) return null;

@@ -63,7 +63,10 @@ class _DescentSpyAppState extends State<DescentSpyApp>
         }
         _speedUnit = SpeedUnit.fromName(savedSpeedUnit);
         _rateSmoothingSeconds = (savedSmoothing ?? _rateSmoothingSeconds)
-            .clamp(minVerticalRateSmoothingSeconds, maxVerticalRateSmoothingSeconds)
+            .clamp(
+              minVerticalRateSmoothingSeconds,
+              maxVerticalRateSmoothingSeconds,
+            )
             .toInt();
         _verticalPathProfile = VerticalPathProfile.values.firstWhere(
           (profile) => profile.name == savedProfile,
@@ -774,8 +777,7 @@ class _AltitudePlannerState extends State<AltitudePlanner> {
         : math.max(0.0, selectedDistanceNm - _gpsTravelledNm).toDouble();
     final gpsIsStale =
         gpsPosition == null ||
-        now.difference(gpsPosition.timestamp) >
-            const Duration(seconds: 10);
+        now.difference(gpsPosition.timestamp) > const Duration(seconds: 10);
     final targetGroundSpeedKt = _targetGroundSpeedKt();
     final currentGroundSpeedKt = gpsPosition == null || gpsIsStale
         ? null
@@ -1406,6 +1408,13 @@ class _LiveVerticalRateCard extends StatelessWidget {
             GpsFixLevel.twoDimensional => '2D',
             GpsFixLevel.threeDimensional => '3D',
           };
+    final trackDeg = hasFix
+        ? gpsTravelDirectionDeg(
+            headingDeg: position!.heading,
+            speedMps: position!.speed,
+          )
+        : null;
+    final arrowDeg = trackDeg ?? pointBearingDeg;
     final gpsIndicatorColor = switch (statusLevel) {
       GpsFixLevel.none => Theme.of(context).colorScheme.error,
       GpsFixLevel.twoDimensional => context.appWarning,
@@ -1519,13 +1528,18 @@ class _LiveVerticalRateCard extends StatelessWidget {
                 label: 'TARGET',
                 value: targetGroundSpeedKt == null
                     ? '—'
-                    : speedUnit.fromKnots(targetGroundSpeedKt!).round().toString(),
+                    : speedUnit
+                          .fromKnots(targetGroundSpeedKt!)
+                          .round()
+                          .toString(),
               ),
               _TrackingMetric(
                 label: 'CURRENT',
                 value: currentGroundSpeedKt == null
                     ? '—'
-                    : speedUnit.fromKnots(currentGroundSpeedKt!).toStringAsFixed(1),
+                    : speedUnit
+                          .fromKnots(currentGroundSpeedKt!)
+                          .toStringAsFixed(1),
               ),
               _TrackingMetric(
                 label: 'DELTA',
@@ -1619,15 +1633,15 @@ class _LiveVerticalRateCard extends StatelessWidget {
               ),
               if (point != null)
                 _TrackingMetric(
-                label: 'TO POINT (°T)',
-                value: pointBearingDeg == null
-                    ? '—'
-                    : (pointBearingDeg!.round() % 360).toString().padLeft(
-                        3,
-                        '0',
-                      ),
-                bearingDegrees: pointBearingDeg,
-              ),
+                  label: 'TO POINT (°T)',
+                  value: pointBearingDeg == null
+                      ? '—'
+                      : (pointBearingDeg!.round() % 360).toString().padLeft(
+                          3,
+                          '0',
+                        ),
+                  arrowDegrees: arrowDeg,
+                ),
             ],
           ),
           if (remainingDistanceNm != null) ...[
@@ -1640,7 +1654,7 @@ class _LiveVerticalRateCard extends StatelessWidget {
           if (point != null) ...[
             const SizedBox(height: 4),
             Text(
-              'Point arrow shows true bearing, not a wind-corrected heading.',
+              'TO POINT is a true bearing, not a wind-corrected heading. The arrow follows GPS track when moving.',
               style: TextStyle(color: context.appMutedText, fontSize: 12),
             ),
           ],
@@ -1797,10 +1811,7 @@ class _AltitudeResultsState extends State<_AltitudeResults> {
 }
 
 class _TrackingPanel extends StatelessWidget {
-  const _TrackingPanel({
-    required this.title,
-    required this.metrics,
-  });
+  const _TrackingPanel({required this.title, required this.metrics});
 
   /// Panel heading. Units go here, once per panel, e.g. "GROUND SPEED (kt)".
   final String title;
@@ -1845,9 +1856,9 @@ class _TrackingPanel extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          if (metric.bearingDegrees != null) ...[
+                          if (metric.arrowDegrees != null) ...[
                             Transform.rotate(
-                              angle: metric.bearingDegrees! * math.pi / 180,
+                              angle: metric.arrowDegrees! * math.pi / 180,
                               child: Icon(
                                 Icons.navigation,
                                 color: context.appAccent,
@@ -1896,13 +1907,15 @@ class _TrackingMetric {
     required this.label,
     required this.value,
     this.alert = false,
-    this.bearingDegrees,
+    this.arrowDegrees,
   });
 
   final String label;
   final String value;
   final bool alert;
-  final double? bearingDegrees;
+
+  /// Direction the arrow icon points, in degrees true.
+  final double? arrowDegrees;
 }
 
 class WindPlanner extends StatefulWidget {
@@ -2097,10 +2110,7 @@ class _WindPlannerState extends State<WindPlanner> {
           ],
           if (_assessment != null) ...[
             const SizedBox(height: 18),
-            _WindResults(
-              assessment: _assessment!,
-              speedUnit: widget.speedUnit,
-            ),
+            _WindResults(assessment: _assessment!, speedUnit: widget.speedUnit),
           ],
           const SizedBox(height: 14),
           _ClearAllButton(onPressed: _clearAll),

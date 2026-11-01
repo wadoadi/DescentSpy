@@ -76,13 +76,14 @@ GpsFixLevel gpsAccuracyFixLevel({
       : GpsFixLevel.twoDimensional;
 }
 
-/// Label for platforms without satellite counts: "GPS ±N m", or "NO FIX".
+/// Accuracy for platforms without satellite counts: "±N m", or "NO FIX".
+/// The live header already prints "GPS" before this label.
 String gpsAccuracyLabel({
   required bool fresh,
   required double? horizontalAccuracyM,
 }) {
   if (!fresh || horizontalAccuracyM == null) return 'NO FIX';
-  return 'GPS ±${horizontalAccuracyM.round()} m';
+  return '±${horizontalAccuracyM.round()} m';
 }
 
 class GpsPositionService extends ChangeNotifier {

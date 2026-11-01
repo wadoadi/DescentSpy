@@ -52,7 +52,9 @@ The app has three tabs:
 - After calculation, the live view shows target/current/delta panels for ground
   speed, GPS vertical speed, and altitude. A separate **REMAINING** panel
   shows remaining time, remaining distance, and (when a point was selected) a
-  live arrow and true bearing to the point. When a point is selected, its name
+  live arrow and true bearing to the point. The arrow follows GPS track while
+  moving (about 2 kt or faster) and falls back to the true bearing when
+  stationary; the TO POINT number is always the true bearing. When a point is selected, its name
   appears in the distance field label and the live panel title is
   **REMAINING - [point name]**, truncated to fit.
 - The **VERTICAL PLAN** summary is collapsible from its header; it starts
