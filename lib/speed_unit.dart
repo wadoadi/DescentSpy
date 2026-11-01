@@ -30,11 +30,13 @@ enum SpeedUnit {
 }
 
 /// Converts a text field value typed in [unit] to the knots text stored in
-/// preferences. Text that is not a number is returned unchanged.
+/// preferences, rounded to one decimal place. Text that is not a number is
+/// returned unchanged.
 String speedTextToKnots(String text, SpeedUnit unit) {
   final value = double.tryParse(text.trim());
   if (value == null) return text;
-  return unit.toKnots(value).toString();
+  final knots = double.parse(unit.toKnots(value).toStringAsFixed(1));
+  return SpeedUnit.formatValue(knots);
 }
 
 /// Converts knots text from preferences to a text field value in [unit].

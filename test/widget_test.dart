@@ -564,7 +564,7 @@ void main() {
   ) async {
     await tester.pumpWidget(const DescentSpyApp());
 
-    expect(find.text('CLIMB / DESCENT PLAN'), findsOneWidget);
+    expect(find.text('Climb / Descent Plan'), findsOneWidget);
     await tester.drag(find.byType(ListView).first, const Offset(0, -500));
     await tester.pumpAndSettle();
     expect(find.text('CALCULATE PLAN'), findsOneWidget);
@@ -573,7 +573,7 @@ void main() {
     await tester.tap(find.text('WIND & RUNWAY'));
     await tester.pumpAndSettle();
 
-    expect(find.text('INTENDED RUNWAY'), findsOneWidget);
+    expect(find.text('Intended Runway'), findsOneWidget);
     await tester.drag(find.byType(ListView).first, const Offset(0, -500));
     await tester.pumpAndSettle();
     expect(find.text('CHECK WIND'), findsOneWidget);
@@ -592,7 +592,7 @@ void main() {
 
     await tester.tap(find.text('WIND & RUNWAY'));
     await tester.pumpAndSettle();
-    expect(find.text('INTENDED RUNWAY'), findsOneWidget);
+    expect(find.text('Intended Runway'), findsOneWidget);
     expect(tester.takeException(), isNull);
 
     await tester.tap(find.byIcon(Icons.settings));
@@ -629,16 +629,25 @@ void main() {
       ),
       VerticalPathProfile.fiveDegree.name,
     );
+    await tester.dragUntilVisible(
+      find.text('POINT SEARCH KEYBOARD'),
+      find.byType(ListView).first,
+      const Offset(0, -200),
+    );
     expect(find.text('POINT SEARCH KEYBOARD'), findsOneWidget);
+    await tester.runAsync(
+      () => Future<void>.delayed(const Duration(milliseconds: 100)),
+    );
+    await tester.pumpAndSettle();
     await tester.ensureVisible(find.text('SYSTEM'));
     await tester.tap(find.text('SYSTEM'));
     await tester.pumpAndSettle();
-    expect(
-      (await SharedPreferences.getInstance()).getString(
+    final storedKeyboardMode = await tester.runAsync(
+      () async => (await SharedPreferences.getInstance()).getString(
         pointSearchKeyboardPreferenceKey,
       ),
-      PointSearchKeyboardMode.system.name,
     );
+    expect(storedKeyboardMode, PointSearchKeyboardMode.system.name);
     await tester.tapAt(tester.getCenter(find.widgetWithText(Tab, 'ALTITUDE')));
     await tester.pumpAndSettle();
     expect(find.text('5° PATH'), findsOneWidget);
@@ -650,8 +659,11 @@ void main() {
     await tester.tap(find.text('3°'));
     await tester.pumpAndSettle();
 
-    await tester.drag(find.byType(ListView).first, const Offset(0, -500));
-    await tester.pumpAndSettle();
+    await tester.dragUntilVisible(
+      find.text('REQUEST GPS PERMISSION'),
+      find.byType(ListView).first,
+      const Offset(0, -200),
+    );
     expect(find.text('REQUEST GPS PERMISSION'), findsOneWidget);
     expect(find.text('GPS STATUS'), findsOneWidget);
     expect(find.text('SATELLITES'), findsOneWidget);
@@ -861,7 +873,7 @@ void main() {
     await tester.pumpAndSettle();
     await tester.drag(find.byType(ListView).first, const Offset(0, 1000));
     await tester.pumpAndSettle();
-    expect(find.text('CLIMB / DESCENT PLAN'), findsOneWidget);
+    expect(find.text('Climb / Descent Plan'), findsOneWidget);
   });
 
   testWidgets('uses large keypad and remembers descent values until cleared', (
@@ -872,7 +884,7 @@ void main() {
 
     await tester.tap(find.byType(TextField).first);
     await tester.pumpAndSettle();
-    expect(find.text('CURRENT ALTITUDE'), findsWidgets);
+    expect(find.text('Live Altitude'), findsWidgets);
     await tester.tap(find.widgetWithText(FilledButton, '1'));
     await tester.tap(find.widgetWithText(FilledButton, '0'));
     await tester.tap(find.widgetWithText(FilledButton, '0'));

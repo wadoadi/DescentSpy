@@ -26,8 +26,8 @@ void main() {
       expect(speedTextFromKnots('100', SpeedUnit.kilometresPerHour), '185.2');
       expect(speedTextFromKnots('100', SpeedUnit.knots), '100');
       expect(speedTextFromKnots('', SpeedUnit.milesPerHour), '');
-      expect(speedTextToKnots('185.2', SpeedUnit.kilometresPerHour),
-          closeTo(100, 1e-6));
+      expect(speedTextToKnots('185.2', SpeedUnit.kilometresPerHour), '100');
+      expect(speedTextToKnots('185.3', SpeedUnit.kilometresPerHour), '100.1');
       expect(speedTextToKnots('abc', SpeedUnit.knots), 'abc');
     });
 
@@ -50,7 +50,10 @@ void main() {
         '22',
       );
       expect(
-        gpsGroundSpeedEntry(speedMetersPerSecond: 10, manuallyOverridden: false),
+        gpsGroundSpeedEntry(
+          speedMetersPerSecond: 10,
+          manuallyOverridden: false,
+        ),
         '19',
       );
     });
